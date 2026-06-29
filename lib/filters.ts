@@ -1,6 +1,6 @@
 import { Movement, Product, Stock } from "@/data/products";
 
-export type CategoryTab = "todos" | "masculino" | "feminino";
+export type CategoryTab = "todos" | "masculino";
 
 export type Filters = {
   search: string;

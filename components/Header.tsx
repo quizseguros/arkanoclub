@@ -10,7 +10,7 @@ import { useSearch } from "@/lib/search-context";
 
 const navLinks = [
   { href: "/#catalogo", label: "Catálogo" },
-  { href: "/#femininos", label: "Femininos" },
+  { href: "/#sob-encomenda", label: "Sob Encomenda" },
   { href: "/quem-somos", label: "Quem Somos" },
   { href: "/vender-relogio", label: "Vender seu relógio" },
   { href: "/grupo-vip", label: "Grupo VIP" },

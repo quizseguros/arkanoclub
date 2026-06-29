@@ -15,4 +15,5 @@ export const brands: Brand[] = [
   { slug: "mido", name: "Mido", logo: "/img/marcas/mido.svg", hasLogo: true },
   { slug: "baltic", name: "Baltic", logo: "/img/marcas/baltic.svg", hasLogo: true },
   { slug: "venezianico", name: "Venezianico", logo: "/img/marcas/venezianico.png", hasLogo: true },
+  { slug: "christopher-ward", name: "Christopher Ward", logo: "", hasLogo: false },
 ];

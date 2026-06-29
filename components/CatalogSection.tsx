@@ -10,7 +10,6 @@ import ProductCard from "./ProductCard";
 const tabs: { value: CategoryTab; label: string }[] = [
   { value: "todos", label: "Todos" },
   { value: "masculino", label: "Masculino" },
-  { value: "feminino", label: "Femininos" },
 ];
 
 type Props = {
@@ -30,7 +29,7 @@ export default function CatalogSection({ filters, onChange, priceBounds, diamete
         <div className="mb-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <h2 className="text-2xl font-light text-arkano-champagne">Catálogo completo</h2>
           <div className="flex w-full flex-wrap items-center gap-3 sm:w-auto">
-            <div id="femininos" className="flex gap-2 rounded-full border border-white/10 p-1">
+            <div className="flex gap-2 rounded-full border border-white/10 p-1">
               {tabs.map((tab) => (
                 <button
                   key={tab.value}

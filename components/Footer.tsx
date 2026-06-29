@@ -21,7 +21,7 @@ export default function Footer() {
           <h4 className="mb-4 text-sm font-medium tracking-wide text-arkano-champagne">Navegação</h4>
           <ul className="space-y-2 text-sm text-arkano-champagne/60">
             <li><Link href="/#catalogo" className="hover:text-arkano-gold">Catálogo</Link></li>
-            <li><Link href="/#femininos" className="hover:text-arkano-gold">Femininos</Link></li>
+            <li><Link href="/#sob-encomenda" className="hover:text-arkano-gold">Sob Encomenda</Link></li>
             <li><Link href="/quem-somos" className="hover:text-arkano-gold">Quem somos</Link></li>
             <li><Link href="/vender-relogio" className="hover:text-arkano-gold">Vender seu relógio</Link></li>
             <li><Link href="/grupo-vip" className="hover:text-arkano-gold">Grupo VIP</Link></li>
