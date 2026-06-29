@@ -1,8 +1,8 @@
-import Image from "next/image";
 import { Cog, MessageCircle, Ruler, User } from "lucide-react";
 import { Product } from "@/data/products";
 import { brands } from "@/data/brands";
 import { whatsappLink } from "@/lib/config";
+import ZoomableProductImage from "./ZoomableProductImage";
 
 const currency = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
@@ -12,12 +12,7 @@ export default function ProductCard({ product }: { product: Product }) {
   return (
     <div className="group flex flex-col overflow-hidden rounded-xl border border-white/10 bg-arkano-graphite transition hover:border-arkano-gold/40">
       <div className="relative aspect-square w-full overflow-hidden bg-black">
-        <Image
-          src={product.image}
-          alt={product.name}
-          fill
-          className="object-cover transition duration-300 group-hover:scale-105"
-        />
+        <ZoomableProductImage src={product.image} alt={product.name} />
         <span
           className={`absolute left-3 top-3 rounded-full px-3 py-1 text-[11px] font-medium ${
             product.stock === "em-estoque"
