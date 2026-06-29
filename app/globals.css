@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0a;
+}
+
+/* Slider de preço: trilho e thumb no padrão dourado da marca */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  background: #3a3a3a;
+  border-radius: 999px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #c9a24b;
+  cursor: pointer;
+  border: 2px solid #0a0a0a;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #c9a24b;
+  cursor: pointer;
+  border: 2px solid #0a0a0a;
+}
+
+/* Botão Arkano Founders: degradê animado + brilho pulsante, pra chamar atenção */
+.founders-glow {
+  background: linear-gradient(110deg, #c9a24b, #e4c878, #ece2cf, #c9a24b);
+  background-size: 300% 100%;
+  animation: founders-gradient 4s linear infinite, founders-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes founders-gradient {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+@keyframes founders-pulse {
+  0%, 100% { box-shadow: 0 0 6px 0 rgba(201, 162, 75, 0.5); }
+  50% { box-shadow: 0 0 18px 4px rgba(201, 162, 75, 0.85); }
+}
+
+/* Cadeado da área Arkano Founders: flutua só no eixo vertical */
+.founders-lock-float {
+  animation: founders-lock-float 3.2s ease-in-out infinite;
+}
+
+@keyframes founders-lock-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Texto "Área bloqueada" orbitando o cadeado, em rotação contínua */
+.founders-orbit {
+  animation: founders-orbit 16s linear infinite;
+}
+
+@keyframes founders-orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
