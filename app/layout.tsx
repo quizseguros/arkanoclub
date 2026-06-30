@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
+import ChatWidget from "@/components/ChatWidget";
 import { SearchProvider } from "@/lib/search-context";
 
 const montserrat = Montserrat({
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Header />
           <PageTransition>{children}</PageTransition>
           <Footer />
+          <ChatWidget />
         </SearchProvider>
       </body>
     </html>

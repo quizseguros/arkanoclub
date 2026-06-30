@@ -3,10 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { useRouter, usePathname } from "next/navigation";
-import { Menu, MessageCircle, Search, X } from "lucide-react";
+import { Menu, MessageCircle, X } from "lucide-react";
 import { whatsappLink } from "@/lib/config";
-import { useSearch } from "@/lib/search-context";
+import SearchAutocomplete from "./SearchAutocomplete";
 
 const navLinks = [
   { href: "/#catalogo", label: "Catálogo" },
@@ -18,17 +17,6 @@ const navLinks = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const { search, setSearch } = useSearch();
-  const router = useRouter();
-  const pathname = usePathname();
-
-  function goToCatalog() {
-    if (pathname === "/") {
-      document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      router.push("/#catalogo");
-    }
-  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-arkano-black/95 backdrop-blur">
@@ -54,22 +42,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden flex-1 items-center justify-end gap-3 lg:flex">
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              goToCatalog();
-            }}
-            className="flex w-44 items-center gap-2 rounded-full border border-white/10 bg-arkano-graphite px-3 py-2 transition focus-within:border-arkano-gold/50 xl:w-56"
-          >
-            <Search size={15} className="shrink-0 text-arkano-gold" />
-            <input
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Buscar relógio"
-              className="w-full bg-transparent text-xs text-arkano-champagne placeholder:text-arkano-champagne/40 focus:outline-none"
-            />
-          </form>
+          <SearchAutocomplete variant="desktop" />
           <a
             href={whatsappLink("Olá! Vim pelo site do Arkano Club e quero saber mais.")}
             target="_blank"
@@ -92,23 +65,9 @@ export default function Header() {
 
       {open && (
         <div className="border-t border-white/10 px-4 pb-6 pt-4 lg:hidden">
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              goToCatalog();
-              setOpen(false);
-            }}
-            className="mb-5 flex items-center gap-2 rounded-full border border-white/10 bg-arkano-graphite px-4 py-2.5"
-          >
-            <Search size={16} className="text-arkano-gold" />
-            <input
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Buscar relógio"
-              className="w-full bg-transparent text-sm text-arkano-champagne placeholder:text-arkano-champagne/40 focus:outline-none"
-            />
-          </form>
+          <div className="mb-5">
+            <SearchAutocomplete variant="mobile" onNavigate={() => setOpen(false)} />
+          </div>
 
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (

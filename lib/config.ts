@@ -4,6 +4,10 @@ export const WHATSAPP_NUMBER = "5533998202334";
 
 export const WHATSAPP_GRUPO_VIP = "https://bit.ly/GrupoDeOfertasArkanos";
 
+// Domínio público do site, usado pra montar links de compartilhamento e metadados.
+// Configurar NEXT_PUBLIC_SITE_URL na Vercel assim que o domínio final estiver definido.
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://arkanoclub.vercel.app";
+
 export const INSTAGRAM_URL = "https://instagram.com/arkano.club";
 
 export function whatsappLink(message: string) {
