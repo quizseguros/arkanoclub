@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import ChatWidget from "@/components/ChatWidget";
+import SplashScreen from "@/components/SplashScreen";
 import { SearchProvider } from "@/lib/search-context";
 
 const montserrat = Montserrat({
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR">
       <body className={`${montserrat.variable} font-sans bg-arkano-black text-arkano-champagne antialiased`}>
+        <SplashScreen />
         <SearchProvider>
           <Header />
           <PageTransition>{children}</PageTransition>

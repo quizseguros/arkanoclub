@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Instagram, MessageCircle } from "lucide-react";
 import { INSTAGRAM_URL, whatsappLink } from "@/lib/config";
+import SeoKeywordsPopup from "@/components/SeoKeywordsPopup";
 
 export default function Footer() {
   return (
@@ -79,8 +80,33 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10 px-4 py-5 text-center text-xs text-arkano-champagne/40 sm:px-6">
-        © {new Date().getFullYear()} Arkano Club, Comércio e Serviços. CNPJ 56.027.265/0001-38.
+      <div className="border-t border-white/10 px-4 py-5 sm:px-6">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row">
+          <p className="text-xs text-arkano-champagne/40">
+            © {new Date().getFullYear()} Arkano Club, Comércio e Serviços. CNPJ 56.027.265/0001-38.
+          </p>
+
+          <div className="flex items-center gap-5">
+            <SeoKeywordsPopup />
+
+            <a
+              href="https://gvdesiigner.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 opacity-40 hover:opacity-80 transition-opacity"
+              title="Site criado por gvdesiigner"
+            >
+              <span className="text-xs text-arkano-champagne/60 whitespace-nowrap">site criado por</span>
+              <Image
+                src="/img/gvdesiigner-logo.png"
+                alt="gvdesiigner"
+                width={80}
+                height={20}
+                style={{ objectFit: "contain" }}
+              />
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );
