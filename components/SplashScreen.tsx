@@ -5,14 +5,20 @@ import Image from "next/image";
 
 const WORDS = ["O", "tempo", "é", "seu", "maior", "ativo."];
 
+const PARTS = [
+  { src: "/img/splash/simbolo-A.png",     key: "A" },
+  { src: "/img/splash/arco-direito.png",  key: "R" },
+  { src: "/img/splash/arco-inferior.png", key: "B" },
+  { src: "/img/splash/arco-esquerdo.png", key: "L" },
+];
+
 export default function SplashScreen() {
-  const [visibleWords, setVisibleWords] = useState(0);
-  const [wordsOpacity, setWordsOpacity] = useState(1);
-  const [logoOpacity, setLogoOpacity]   = useState(0);
-  const [logoScale, setLogoScale]       = useState(0.85);
-  const [isZooming, setIsZooming]       = useState(false);
+  const [visibleWords, setVisibleWords]   = useState(0);
+  const [wordsOpacity, setWordsOpacity]   = useState(1);
+  const [partOpacity, setPartOpacity]     = useState([0, 0, 0, 0]);
+  const [isZooming, setIsZooming]         = useState(false);
   const [containerOpacity, setContainerOpacity] = useState(1);
-  const [done, setDone]                 = useState(false);
+  const [done, setDone]                   = useState(false);
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => {
@@ -26,31 +32,33 @@ export default function SplashScreen() {
     WORDS.forEach((_, i) => {
       add(() => setVisibleWords(i + 1), 400 + i * 260);
     });
-    // Última palavra: 400 + 5×260 = 1700ms
 
     // Palavras somem
     add(() => setWordsOpacity(0), 2200);
 
-    // Logo aparece com escala suave
-    add(() => {
-      setLogoOpacity(1);
-      setLogoScale(1);
-    }, 2500);
+    // A aparece
+    add(() => setPartOpacity([1, 0, 0, 0]), 2500);
 
-    // Logo avança (zoom em direção ao usuário)
-    add(() => {
-      setIsZooming(true);
-      setLogoScale(14);
-    }, 3500);
+    // Arco direito
+    add(() => setPartOpacity([1, 1, 0, 0]), 2850);
+
+    // Arco inferior
+    add(() => setPartOpacity([1, 1, 1, 0]), 3150);
+
+    // Arco esquerdo — logo completa
+    add(() => setPartOpacity([1, 1, 1, 1]), 3450);
+
+    // Zoom em direção ao usuário
+    add(() => setIsZooming(true), 3950);
 
     // Tela some revelando o site
-    add(() => setContainerOpacity(0), 3700);
+    add(() => setContainerOpacity(0), 4150);
 
     // Desmonta
     add(() => {
       document.body.style.overflow = "";
       setDone(true);
-    }, 4700);
+    }, 5100);
 
     return () => {
       timers.current.forEach(clearTimeout);
@@ -70,7 +78,7 @@ export default function SplashScreen() {
         display: "grid",
         placeItems: "center",
         opacity: containerOpacity,
-        transition: containerOpacity === 0 ? "opacity 1s ease" : "none",
+        transition: containerOpacity === 0 ? "opacity 0.9s ease-in" : "none",
         pointerEvents: containerOpacity === 0 ? "none" : "auto",
       }}
     >
@@ -106,27 +114,41 @@ export default function SplashScreen() {
         ))}
       </div>
 
-      {/* Símbolo — mesma célula, aparece e avança */}
+      {/* Símbolo em partes — mesma célula, sobreposto */}
       <div
         style={{
           gridArea: "1 / 1",
-          opacity: logoOpacity,
-          transform: `scale(${logoScale})`,
+          position: "relative",
+          width: 160,
+          height: 160,
+          transform: isZooming ? "scale(16)" : "scale(1)",
+          filter: isZooming ? "blur(10px)" : "blur(0px)",
           transition: isZooming
-            ? "transform 0.85s cubic-bezier(0.4, 0, 1, 1)"
-            : "opacity 0.7s ease, transform 0.7s ease",
+            ? "transform 0.75s cubic-bezier(0.4, 0, 1, 1), filter 0.75s ease"
+            : "none",
           transformOrigin: "center center",
-          willChange: "transform, opacity",
+          willChange: "transform, filter",
         }}
       >
-        <Image
-          src="/img/identidade/simbolo-dourado.png"
-          alt="Arkano Club"
-          width={80}
-          height={80}
-          style={{ objectFit: "contain", display: "block" }}
-          priority
-        />
+        {PARTS.map(({ src, key }, i) => (
+          <div
+            key={key}
+            style={{
+              position: "absolute",
+              inset: 0,
+              opacity: partOpacity[i],
+              transition: "opacity 0.35s ease",
+            }}
+          >
+            <Image
+              src={src}
+              alt=""
+              fill
+              style={{ objectFit: "contain" }}
+              priority
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
