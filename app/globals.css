@@ -71,6 +71,28 @@ input[type="range"]::-moz-range-thumb {
   50% { box-shadow: 0 0 18px 4px rgba(201, 162, 75, 0.85); }
 }
 
+/* Light sweep nos cards de categoria */
+.category-card-sweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    108deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.09) 50%,
+    transparent 70%
+  );
+  transform: translateX(-130%);
+  animation: category-sweep 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes category-sweep {
+  0%   { transform: translateX(-130%); }
+  55%  { transform: translateX(130%); }
+  100% { transform: translateX(130%); }
+}
+
 /* Cadeado da área Arkano Founders: flutua só no eixo vertical */
 .founders-lock-float {
   animation: founders-lock-float 3.2s ease-in-out infinite;

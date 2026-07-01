@@ -44,10 +44,7 @@ export default function HomeClient() {
         <FeaturedSection />
       </Reveal>
 
-      <CategoriesSection
-        selected={filters.styleCategory}
-        onSelect={(cat) => setFilters((f) => ({ ...f, styleCategory: cat }))}
-      />
+      <CategoriesSection />
 
       <Reveal>
         <CatalogSection

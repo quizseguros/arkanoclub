@@ -1,51 +1,79 @@
-"use client";
+import Image from "next/image";
+import Link from "next/link";
 
-import { StyleCategory } from "@/data/products";
-
-const CATEGORIES: { value: StyleCategory | "todos"; label: string; emoji: string }[] = [
-  { value: "todos",      label: "Todos",        emoji: "⌚" },
-  { value: "sport",      label: "Sport / Diver", emoji: "🤿" },
-  { value: "dress",      label: "Dress Watch",  emoji: "🎩" },
-  { value: "casual",     label: "Casual",       emoji: "☀️" },
-  { value: "cronógrafo", label: "Cronógrafo",   emoji: "⏱" },
-  { value: "vintage",    label: "Vintage",      emoji: "🕰" },
-  { value: "gmt",        label: "GMT",          emoji: "🌍" },
+const CATEGORIES = [
+  {
+    slug: "casual",
+    label: "Casual",
+    subtitle: "Para o dia a dia com estilo",
+    image: "/img/produtos/venezianico-nereide.webp",
+    delay: "0s",
+  },
+  {
+    slug: "dress",
+    label: "Dress Watch",
+    subtitle: "Elegância que se reconhece",
+    image: "/img/produtos/seiko-presage-cocktail.webp",
+    delay: "1.5s",
+  },
+  {
+    slug: "esportivo",
+    label: "Esportivo",
+    subtitle: "Construído para ir além",
+    image: "/img/produtos/tudor-black-bay-58.webp",
+    delay: "3s",
+  },
 ];
 
-type Props = {
-  selected: string;
-  onSelect: (cat: string) => void;
-};
-
-export default function CategoriesSection({ selected, onSelect }: Props) {
+export default function CategoriesSection() {
   return (
-    <section className="border-b border-white/10 bg-arkano-black px-4 py-10 sm:px-6">
+    <section id="categorias" className="border-b border-white/10 bg-arkano-black px-4 py-14 sm:px-6">
       <div className="mx-auto max-w-7xl">
-        <h2 className="mb-6 text-sm uppercase tracking-widest2 text-arkano-gold/70">
-          Explorar por estilo
-        </h2>
+        <p className="mb-2 text-xs uppercase tracking-widest2 text-arkano-gold/70">Explorar</p>
+        <h2 className="mb-8 text-2xl font-light text-arkano-champagne">Categorias</h2>
 
-        <div className="flex flex-wrap gap-3">
-          {CATEGORIES.map((cat) => {
-            const active = selected === cat.value || (cat.value === "todos" && !selected);
-            return (
-              <button
-                key={cat.value}
-                onClick={() => {
-                  onSelect(cat.value === "todos" ? "" : cat.value);
-                  document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth", block: "start" });
-                }}
-                className={`flex items-center gap-2 rounded-full border px-4 py-2 text-sm transition-all ${
-                  active
-                    ? "border-arkano-gold bg-arkano-gold/10 text-arkano-gold"
-                    : "border-white/10 text-arkano-champagne/60 hover:border-arkano-gold/40 hover:text-arkano-gold"
-                }`}
-              >
-                <span>{cat.emoji}</span>
-                {cat.label}
-              </button>
-            );
-          })}
+        <div className="grid gap-4 sm:grid-cols-3">
+          {CATEGORIES.map((cat) => (
+            <Link
+              key={cat.slug}
+              href={`/categoria/${cat.slug}`}
+              className="group relative block aspect-[3/4] overflow-hidden rounded-2xl"
+            >
+              {/* Imagem de fundo */}
+              <Image
+                src={cat.image}
+                alt={cat.label}
+                fill
+                sizes="(max-width: 639px) 100vw, 33vw"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+
+              {/* Overlay escuro degradê */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10" />
+
+              {/* Borda dourada sutil */}
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-white/10 transition-all duration-300 group-hover:ring-arkano-gold/40" />
+
+              {/* Light sweep */}
+              <div
+                className="category-card-sweep absolute inset-0"
+                style={{ animationDelay: cat.delay }}
+              />
+
+              {/* Texto */}
+              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
+                <p className="mb-1 text-[11px] uppercase tracking-widest text-arkano-gold/70">
+                  {cat.subtitle}
+                </p>
+                <h3 className="text-xl font-light tracking-wide text-arkano-champagne sm:text-2xl">
+                  {cat.label}
+                </h3>
+                <span className="mt-3 inline-block text-xs uppercase tracking-widest text-arkano-champagne/40 transition-colors group-hover:text-arkano-gold">
+                  Ver coleção →
+                </span>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>
