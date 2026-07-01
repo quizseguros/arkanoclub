@@ -16,6 +16,7 @@ export default function BannerCarousel() {
   const [page, setPage] = useState(0);
   const [offset, setOffset] = useState(0);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const touchStartX = useRef<number | null>(null);
 
   function goTo(p: number) {
     setPage((p + pageCount) % pageCount);
@@ -47,7 +48,16 @@ export default function BannerCarousel() {
   return (
     <section className="bg-arkano-black py-8 sm:py-10">
       <div className="relative px-3 sm:px-4">
-        <div className="overflow-hidden">
+        <div
+          className="overflow-hidden"
+          onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX; }}
+          onTouchEnd={(e) => {
+            if (touchStartX.current === null) return;
+            const delta = touchStartX.current - e.changedTouches[0].clientX;
+            if (Math.abs(delta) > 40) goTo(delta > 0 ? page + 1 : page - 1);
+            touchStartX.current = null;
+          }}
+        >
           <div
             className="flex gap-4 ease-[cubic-bezier(0.22,1,0.36,1)] transition-transform duration-[900ms]"
             style={{ transform: `translateX(-${offset}px)` }}
