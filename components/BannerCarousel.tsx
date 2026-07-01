@@ -90,14 +90,14 @@ export default function BannerCarousel() {
         <button
           aria-label="Banner anterior"
           onClick={() => goTo(page - 1)}
-          className="absolute left-2 top-1/2 flex -translate-y-1/2 items-center justify-center rounded-full bg-black/60 p-2 text-arkano-champagne transition hover:bg-black/80"
+          className="absolute left-2 top-1/2 hidden -translate-y-1/2 items-center justify-center rounded-full bg-black/60 p-2 text-arkano-champagne transition hover:bg-black/80 sm:flex"
         >
           <ChevronLeft size={22} />
         </button>
         <button
           aria-label="Próximo banner"
           onClick={() => goTo(page + 1)}
-          className="absolute right-2 top-1/2 flex -translate-y-1/2 items-center justify-center rounded-full bg-black/60 p-2 text-arkano-champagne transition hover:bg-black/80"
+          className="absolute right-2 top-1/2 hidden -translate-y-1/2 items-center justify-center rounded-full bg-black/60 p-2 text-arkano-champagne transition hover:bg-black/80 sm:flex"
         >
           <ChevronRight size={22} />
         </button>

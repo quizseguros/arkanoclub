@@ -7,6 +7,7 @@ import { useSearch } from "@/lib/search-context";
 import BannerCarousel from "./BannerCarousel";
 import BrandLogoCarousel from "./BrandLogoCarousel";
 import FeaturedSection from "./FeaturedSection";
+import CategoriesSection from "./CategoriesSection";
 import CatalogSection from "./CatalogSection";
 import SobEncomendaSection from "./SobEncomendaSection";
 import TestimonialsSection from "./TestimonialsSection";
@@ -42,6 +43,11 @@ export default function HomeClient() {
       <Reveal>
         <FeaturedSection />
       </Reveal>
+
+      <CategoriesSection
+        selected={filters.styleCategory}
+        onSelect={(cat) => setFilters((f) => ({ ...f, styleCategory: cat }))}
+      />
 
       <Reveal>
         <CatalogSection

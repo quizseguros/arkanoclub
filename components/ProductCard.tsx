@@ -7,12 +7,16 @@ import ZoomableProductImage from "./ZoomableProductImage";
 
 const currency = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
-export default function ProductCard({ product }: { product: Product }) {
+export default function ProductCard({ product, glow }: { product: Product; glow?: boolean }) {
   const brand = brands.find((b) => b.slug === product.brand);
   const detailHref = `/relogio/${product.id}`;
 
   return (
-    <div className="group flex flex-col overflow-hidden rounded-xl border border-white/10 bg-arkano-graphite transition hover:border-arkano-gold/40">
+    <div className={`group flex flex-col overflow-hidden rounded-xl border bg-arkano-graphite transition ${
+      glow
+        ? "border-arkano-gold/50 shadow-[0_0_12px_2px_rgba(201,162,75,0.25)] hover:shadow-[0_0_20px_4px_rgba(201,162,75,0.4)] hover:border-arkano-gold"
+        : "border-white/10 hover:border-arkano-gold/40"
+    }`}>
       <div className="relative aspect-square w-full overflow-hidden bg-black">
         <ZoomableProductImage src={product.image} alt={product.name} />
         <span

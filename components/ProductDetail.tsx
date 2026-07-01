@@ -17,6 +17,7 @@ export type ProductDetailData = {
   movement: string;
   image: string;
   description: string;
+  history?: string;
   stockLabel: string;
   conditionLabel?: string;
   backHref: string;
@@ -71,6 +72,13 @@ export default function ProductDetail({ data }: { data: ProductDetailData }) {
             </div>
 
             <p className="text-sm leading-relaxed text-arkano-champagne/70">{data.description}</p>
+
+            {data.history && (
+              <div className="rounded-lg border border-white/10 bg-arkano-graphite p-4">
+                <p className="mb-1 text-[11px] uppercase tracking-widest text-arkano-gold/70">História</p>
+                <p className="text-sm leading-relaxed text-arkano-champagne/60">{data.history}</p>
+              </div>
+            )}
 
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-arkano-champagne/60">
               <span className="flex items-center gap-2">

@@ -1,21 +1,21 @@
-// DADOS DE EXEMPLO: placeholder pra validar a estrutura do site.
-// Guilherme substitui por catálogo real (fotos, preços, specs) antes de publicar.
-
 export type Stock = "em-estoque" | "sob-encomenda";
 export type Category = "masculino" | "unissex";
 export type Movement = "automático" | "quartzo" | "manual";
+export type StyleCategory = "casual" | "sport" | "dress" | "gmt" | "vintage" | "cronógrafo";
 
 export type Product = {
   id: string;
   name: string;
-  brand: string; // slug, ver data/brands.ts
+  brand: string;
   category: Category;
   price: number;
-  caseDiameter: number; // mm
+  caseDiameter: number;
   movement: Movement;
   stock: Stock;
   image: string;
   description: string;
+  history?: string;
+  styleCategory?: StyleCategory;
   featured?: boolean;
   bestseller?: boolean;
 };
@@ -31,7 +31,9 @@ export const products: Product[] = [
     movement: "automático",
     stock: "em-estoque",
     image: "/img/produtos/seiko-presage-cocktail.webp",
-    description: "Mostrador acetinado, caixa em aço inoxidável, movimento automático visível pelo fundo de vidro.",
+    description: "Mostrador acetinado inspirado na cultura de cocktails japonesa, caixa em aço inoxidável e movimento automático visível pelo fundo de vidro. Uma das entradas mais elegantes no universo dos automáticos.",
+    history: "Lançado em 2014, o Presage é a linha premium de entrada da Seiko — cada mostrador é inspirado num drinque artesanal específico. O movimento automático 4R35 oferece 41 horas de reserva de marcha com rotor bidirecional.",
+    styleCategory: "dress",
     featured: true,
   },
   {
@@ -44,7 +46,9 @@ export const products: Product[] = [
     movement: "quartzo",
     stock: "em-estoque",
     image: "/img/produtos/citizen-promaster-diver.webp",
-    description: "Resistente a 200m, movimento Eco-Drive a energia solar, mostrador de alto contraste.",
+    description: "Resistente a 200m, certificação ISO 6425 para mergulho profissional e tecnologia Eco-Drive que converte luz em energia — sem bateria. Mostrador de alto contraste com leitura luminosa excepcional.",
+    history: "A linha Promaster existe desde 1989 e é o braço profissional da Citizen. O Eco-Drive, tecnologia exclusiva da marca desde 1995, elimina a necessidade de troca de bateria ao usar qualquer fonte de luz como energia.",
+    styleCategory: "sport",
     bestseller: true,
   },
   {
@@ -57,7 +61,9 @@ export const products: Product[] = [
     movement: "automático",
     stock: "sob-encomenda",
     image: "/img/produtos/tag-heuer-carrera.webp",
-    description: "Cronógrafo icônico da TAG Heuer, caixa em aço polido e acabamento escovado.",
+    description: "Cronógrafo icônico em aço polido e escovado, mostrador limpo com sub-dials precisos. Um dos designs de cronógrafo mais reconhecidos da história, equilibrando esporte e elegância.",
+    history: "Criado em 1963 por Jack Heuer, o Carrera homenageia a Carrera Panamericana — uma das corridas mais perigosas do século XX. A versão atual usa o Calibre Heuer 02, movimento manufatura com 80 horas de reserva de marcha.",
+    styleCategory: "cronógrafo",
     featured: true,
   },
   {
@@ -70,7 +76,9 @@ export const products: Product[] = [
     movement: "automático",
     stock: "sob-encomenda",
     image: "/img/produtos/tudor-black-bay-58.webp",
-    description: "Reedição fiel ao design de 1958, movimento manufatura com 70h de autonomia.",
+    description: "Reedição fiel ao design vintage de 1958, caixa de 39mm com coroa de mergulho oversized e movimento manufatura com 70 horas de reserva. O diver vintage mais procurado do mercado atual.",
+    history: "Lançado em 2018, o Black Bay 58 revisita a referência 7923 da Tudor de 1958 — o primeiro relógio de mergulho da marca. O tamanho reduzido de 39mm o distingue do Black Bay principal e o torna ideal para pulsos menores.",
+    styleCategory: "sport",
     featured: true,
   },
   {
@@ -83,7 +91,9 @@ export const products: Product[] = [
     movement: "automático",
     stock: "em-estoque",
     image: "/img/produtos/longines-hydroconquest.jpeg",
-    description: "Resistente a 300m, bezel cerâmico unidirecional, acabamento robusto e elegante.",
+    description: "Resistente a 300m, bezel cerâmico unidirecional e acabamento que combina superfícies polidas e escovadas. Movimento automático com âncora em silício, resistente a campos magnéticos.",
+    history: "A família HydroConquest existe desde os anos 1960 e é o diver mais bem-sucedido da Longines. O calibre L888 com componentes em silício garante maior precisão e dispensa lubrificação frequente.",
+    styleCategory: "sport",
     bestseller: true,
   },
   {
@@ -96,7 +106,9 @@ export const products: Product[] = [
     movement: "automático",
     stock: "em-estoque",
     image: "/img/produtos/mido-ocean-star.webp",
-    description: "Caixa compacta de 36mm, mostrador madrepérola e pulseira ajustável.",
+    description: "Diver compacto de 36mm com mostrador em madrepérola — raro em relógios sport dessa categoria. Pulseira ajustável de aço e 200m de resistência à água com visual que vai do mergulho ao escritório.",
+    history: "Inspirado pelas formas orgânicas do oceano, o Ocean Star é a resposta da Mido ao mercado de divers compactos. O movimento automático Calibre 80 oferece 80 horas de reserva, acima da média da categoria.",
+    styleCategory: "sport",
     bestseller: true,
   },
   {
@@ -109,7 +121,9 @@ export const products: Product[] = [
     movement: "manual",
     stock: "sob-encomenda",
     image: "/img/produtos/baltic-bicompax.jpeg",
-    description: "Cronógrafo vintage de corda manual, caixa compacta e visor duplo contador.",
+    description: "Cronógrafo bi-compax de corda manual com dois sub-dials simétricos, caixa de aço de 38mm e cristal sintético. Layout clássico dos anos 1940 com produção contemporânea e preço acessível.",
+    history: "A Baltic é uma marca francesa independente fundada em 2017 em Paris com proposta vintage acessível. O Bicompax usa o movimento ETA 7753 de corda manual — o mesmo utilizado em cronógrafos clássicos das décadas anteriores.",
+    styleCategory: "vintage",
     bestseller: true,
   },
   {
@@ -122,7 +136,9 @@ export const products: Product[] = [
     movement: "automático",
     stock: "em-estoque",
     image: "/img/produtos/venezianico-nereide.webp",
-    description: "Caixa compacta inspirada no patrimônio veneziano, mostrador texturizado.",
+    description: "Caixa compacta de 33mm inspirada no patrimônio veneziano, mostrador texturizado com profundidade visual única. Versátil o suficiente para ir do casual ao semiformal sem perder personalidade.",
+    history: "A Venezianico nasceu em Veneza em 2017 com o objetivo de resgatar a tradição italiana na relojoaria. O nome Nereide vem das ninfas do mar da mitologia grega — referência ao laço histórico de Veneza com o Mediterrâneo.",
+    styleCategory: "casual",
     featured: true,
   },
   {
@@ -135,6 +151,8 @@ export const products: Product[] = [
     movement: "automático",
     stock: "sob-encomenda",
     image: "/img/produtos/christopher-ward-c63-sealander-gmt.jpeg",
-    description: "GMT suíço com mostrador azul-claro, pulseira de aço e função de segundo fuso horário.",
+    description: "GMT suíço com mostrador azul-claro e ponteiro de segundo fuso horário independente. Pulseira de aço integrada, 150m de resistência à água e acabamento premium a preço direto da marca.",
+    history: "A Christopher Ward foi fundada em 2004 no Reino Unido com o propósito de oferecer qualidade suíça sem o prêmio das grandes marcas. O calibre MHMC01, desenvolvido pela Synergies Horlogères, indica dois fusos horários simultaneamente com ponteiro GMT ajustável hora a hora.",
+    styleCategory: "gmt",
   },
 ];

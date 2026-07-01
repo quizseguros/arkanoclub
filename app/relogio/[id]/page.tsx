@@ -57,6 +57,7 @@ export default async function RelogioPage({ params }: Props) {
         movement: product.movement,
         image: product.image,
         description: product.description,
+        history: product.history,
         stockLabel: product.stock === "em-estoque" ? "Em estoque" : "Sob encomenda",
         backHref: "/#catalogo",
         backLabel: "Voltar pro catálogo",

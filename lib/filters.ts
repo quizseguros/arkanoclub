@@ -10,6 +10,7 @@ export type Filters = {
   movement: Set<Movement>;
   priceMax: number;
   diameterMax: number;
+  styleCategory: string; // "" = todos
 };
 
 export function defaultFilters(products: Product[]): Filters {
@@ -21,6 +22,7 @@ export function defaultFilters(products: Product[]): Filters {
     movement: new Set(),
     priceMax: Math.max(...products.map((p) => p.price)),
     diameterMax: Math.max(...products.map((p) => p.caseDiameter)),
+    styleCategory: "",
   };
 }
 
@@ -35,6 +37,7 @@ export function applyFilters(products: Product[], filters: Filters): Product[] {
     if (filters.movement.size > 0 && !filters.movement.has(p.movement)) return false;
     if (p.price > filters.priceMax) return false;
     if (p.caseDiameter > filters.diameterMax) return false;
+    if (filters.styleCategory && p.styleCategory !== filters.styleCategory) return false;
     return true;
   });
 }
