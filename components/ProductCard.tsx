@@ -58,7 +58,7 @@ export default function ProductCard({ product }: { product: Product }) {
 
         <Link
           href={detailHref}
-          className="mt-2 flex items-center justify-center gap-2 rounded-full bg-arkano-gold py-2.5 text-sm font-medium text-arkano-black transition hover:bg-arkano-gold-light sm:hidden"
+          className="mt-2 flex items-center justify-center gap-2 rounded-full bg-arkano-gold py-2.5 text-sm font-medium text-arkano-black transition hover:bg-arkano-gold-light"
         >
           Ver detalhes
           <ArrowRight size={15} />
@@ -68,10 +68,10 @@ export default function ProductCard({ product }: { product: Product }) {
           href={whatsappLink(`Olá! Tenho interesse no relógio ${product.name} (${brand?.name}) que vi no site.`)}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-2 hidden items-center justify-center gap-2 rounded-full bg-arkano-gold py-2.5 text-sm font-medium text-arkano-black transition hover:bg-arkano-gold-light sm:flex"
+          className="flex items-center justify-center gap-2 rounded-full border border-white/10 py-2 text-xs text-arkano-champagne/60 transition hover:border-arkano-gold/40 hover:text-arkano-gold"
         >
-          <MessageCircle size={16} />
-          Falar no WhatsApp
+          <MessageCircle size={14} />
+          WhatsApp
         </a>
       </div>
     </div>
