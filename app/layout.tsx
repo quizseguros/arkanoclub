@@ -18,6 +18,30 @@ export const metadata: Metadata = {
   title: "Arkano Club | Relógios originais com garantia",
   description:
     "Relógios originais e com garantia, de marcas como Seiko, Citizen, TAG Heuer, Tudor, Longines, Mido, Baltic e Venezianico. Envio para todo o Brasil.",
+  openGraph: {
+    title: "Arkano Club | Relógios originais com garantia",
+    description:
+      "Relógios originais e com garantia, de marcas como Seiko, Citizen, TAG Heuer, Tudor, Longines, Mido, Baltic e Venezianico. Envio para todo o Brasil.",
+    url: "https://arkanoclub.vercel.app",
+    siteName: "Arkano Club",
+    images: [
+      {
+        url: "https://arkanoclub.vercel.app/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Arkano Club — Relógios originais com garantia",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Arkano Club | Relógios originais com garantia",
+    description:
+      "Relógios originais e com garantia, de marcas como Seiko, Citizen, TAG Heuer, Tudor, Longines, Mido, Baltic e Venezianico. Envio para todo o Brasil.",
+    images: ["https://arkanoclub.vercel.app/opengraph-image.png"],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
