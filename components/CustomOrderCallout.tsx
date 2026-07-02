@@ -23,7 +23,7 @@ export default function CustomOrderCallout() {
 
         <Link
           href="/encomenda"
-          className="shrink-0 rounded-full border border-black/25 px-6 py-2.5 text-sm text-arkano-black transition hover:bg-black/10 hover:border-black/50"
+          className="shrink-0 rounded-full bg-arkano-black px-6 py-2.5 text-sm text-arkano-champagne transition hover:bg-black/80"
         >
           Fazer pedido sob encomenda
         </Link>
