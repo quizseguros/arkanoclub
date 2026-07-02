@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { productsSobEncomenda } from "@/data/products-sob-encomenda";
 import ImportedProductCard from "./ImportedProductCard";
 
@@ -21,7 +22,10 @@ export default function SobEncomendaSection() {
           <h2 className="text-2xl font-light text-arkano-champagne">Sob Encomenda</h2>
           <p className="max-w-2xl text-sm text-arkano-champagne/50">
             Outras marcas e modelos disponíveis por encomenda, sujeitos a confirmação de preço e prazo de
-            entrega. Fale no WhatsApp pra consultar disponibilidade.
+            entrega. Fale no WhatsApp pra consultar disponibilidade.{" "}
+            <Link href="/encomenda" className="text-arkano-gold underline-offset-2 hover:underline">
+              Não encontrou o que procura? Faça um pedido personalizado →
+            </Link>
           </p>
         </div>
 
