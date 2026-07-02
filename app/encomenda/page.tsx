@@ -43,33 +43,6 @@ export default function EncomendaPage() {
     if (file && file.type.startsWith("image/")) handleImage(file);
   }
 
-  // Converte qualquer formato (webp, png...) para JPEG antes de compartilhar.
-  // WhatsApp exibe JPEG como foto inline; outros formatos aparecem como arquivo.
-  async function toJpeg(file: File): Promise<File> {
-    return new Promise((resolve) => {
-      const img = new Image();
-      const url = URL.createObjectURL(file);
-      img.onload = () => {
-        const canvas = document.createElement("canvas");
-        canvas.width = img.naturalWidth;
-        canvas.height = img.naturalHeight;
-        const ctx = canvas.getContext("2d");
-        if (!ctx) { URL.revokeObjectURL(url); resolve(file); return; }
-        ctx.drawImage(img, 0, 0);
-        canvas.toBlob(
-          (blob) => {
-            URL.revokeObjectURL(url);
-            resolve(blob ? new File([blob], "referencia.jpg", { type: "image/jpeg" }) : file);
-          },
-          "image/jpeg",
-          0.92,
-        );
-      };
-      img.onerror = () => { URL.revokeObjectURL(url); resolve(file); };
-      img.src = url;
-    });
-  }
-
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
@@ -87,21 +60,8 @@ export default function EncomendaPage() {
       .filter(Boolean)
       .join("\n");
 
-    // Mobile com imagem: converte pra JPEG e usa Web Share API
-    // (JPEG exibe inline no WhatsApp; WebP/PNG chegam como arquivo)
-    if (imageFile && typeof navigator !== "undefined") {
-      try {
-        const jpeg = await toJpeg(imageFile);
-        if (navigator.canShare?.({ files: [jpeg] })) {
-          await navigator.share({ files: [jpeg], text: lines });
-          return;
-        }
-      } catch {
-        // cancelado ou não suportado — cai no fallback
-      }
-    }
-
-    // Fallback: abre WhatsApp com texto; se tiver imagem, mostra lembrete
+    // Abre direto no contato do Guilherme com o texto preenchido.
+    // Se tiver imagem, mostra o lembrete para enviar na mesma conversa.
     window.open(whatsappLink(lines), "_blank", "noopener,noreferrer");
     if (imageFile) setShowPhotoReminder(true);
   }
