@@ -93,6 +93,13 @@ input[type="range"]::-moz-range-thumb {
   100% { transform: translateX(130%); }
 }
 
+/* Gradiente animado como fundo de seção (sem o pulse/shadow do botão Founders) */
+.section-gold-gradient {
+  background: linear-gradient(110deg, #c9a24b, #e4c878, #ece2cf, #c9a24b);
+  background-size: 300% 100%;
+  animation: founders-gradient 4s linear infinite;
+}
+
 /* Borda rotativa dourada nos cards em destaque */
 @property --glow-angle {
   syntax: '<angle>';
