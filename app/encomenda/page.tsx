@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Camera, MessageCircle, X } from "lucide-react";
+import { ArrowLeft, Camera, Loader2, MessageCircle, X } from "lucide-react";
 import { whatsappLink } from "@/lib/config";
 
 const BUDGETS = [
@@ -14,15 +14,15 @@ const BUDGETS = [
 ];
 
 export default function EncomendaPage() {
-  const [name, setName]       = useState("");
-  const [phone, setPhone]     = useState("");
-  const [brand, setBrand]     = useState("");
-  const [model, setModel]     = useState("");
-  const [budget, setBudget]   = useState("");
-  const [note, setNote]       = useState("");
-  const [imageFile, setImageFile]     = useState<File | null>(null);
+  const [name, setName]     = useState("");
+  const [phone, setPhone]   = useState("");
+  const [brand, setBrand]   = useState("");
+  const [model, setModel]   = useState("");
+  const [budget, setBudget] = useState("");
+  const [note, setNote]     = useState("");
+  const [imageFile, setImageFile]       = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
-  const [showPhotoReminder, setShowPhotoReminder] = useState(false);
+  const [uploading, setUploading]       = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
   function handleImage(file: File) {
@@ -45,6 +45,21 @@ export default function EncomendaPage() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    setUploading(true);
+
+    // Se tiver imagem, faz upload e pega o link pra incluir na mensagem
+    let imageUrl: string | null = null;
+    if (imageFile) {
+      try {
+        const fd = new FormData();
+        fd.append("image", imageFile);
+        const res = await fetch("/api/upload-image", { method: "POST", body: fd });
+        const json = await res.json();
+        imageUrl = json.url ?? null;
+      } catch {
+        // Upload falhou — envia sem imagem
+      }
+    }
 
     const lines = [
       "🕐 *Pedido de Encomenda — Arkano Club*",
@@ -53,17 +68,15 @@ export default function EncomendaPage() {
       `*WhatsApp:* ${phone}`,
       `*Marca:* ${brand}`,
       `*Modelo / referência:* ${model}`,
-      budget ? `*Orçamento:* ${budget}` : null,
-      note ? `*Observações:* ${note}` : null,
-      imageFile ? "\n_(Foto de referência em anexo)_" : null,
+      budget   ? `*Orçamento:* ${budget}` : null,
+      note     ? `*Observações:* ${note}` : null,
+      imageUrl ? `\n*Foto de referência:* ${imageUrl}` : null,
     ]
       .filter(Boolean)
       .join("\n");
 
-    // Abre direto no contato do Guilherme com o texto preenchido.
-    // Se tiver imagem, mostra o lembrete para enviar na mesma conversa.
+    setUploading(false);
     window.open(whatsappLink(lines), "_blank", "noopener,noreferrer");
-    if (imageFile) setShowPhotoReminder(true);
   }
 
   const inputClass =
@@ -89,7 +102,6 @@ export default function EncomendaPage() {
         </p>
 
         <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-4">
-          {/* Dados pessoais */}
           <div className="flex flex-col gap-4 sm:flex-row">
             <input
               required
@@ -108,7 +120,6 @@ export default function EncomendaPage() {
             />
           </div>
 
-          {/* Relógio */}
           <div className="flex flex-col gap-4 sm:flex-row">
             <input
               required
@@ -126,7 +137,6 @@ export default function EncomendaPage() {
             />
           </div>
 
-          {/* Orçamento */}
           <select
             value={budget}
             onChange={(e) => setBudget(e.target.value)}
@@ -134,13 +144,10 @@ export default function EncomendaPage() {
           >
             <option value="">Orçamento estimado (opcional)</option>
             {BUDGETS.map((b) => (
-              <option key={b} value={b}>
-                {b}
-              </option>
+              <option key={b} value={b}>{b}</option>
             ))}
           </select>
 
-          {/* Observações */}
           <textarea
             value={note}
             onChange={(e) => setNote(e.target.value)}
@@ -152,7 +159,8 @@ export default function EncomendaPage() {
           {/* Foto de referência */}
           <div>
             <p className="mb-2 text-xs uppercase tracking-widest text-arkano-champagne/50">
-              Foto de referência <span className="normal-case text-arkano-champagne/30">(opcional)</span>
+              Foto de referência{" "}
+              <span className="normal-case text-arkano-champagne/30">(opcional)</span>
             </p>
 
             {imagePreview ? (
@@ -198,10 +206,20 @@ export default function EncomendaPage() {
 
           <button
             type="submit"
-            className="mt-2 flex items-center justify-center gap-2 rounded-full bg-arkano-gold py-3.5 text-sm font-medium text-arkano-black transition hover:bg-arkano-gold-light"
+            disabled={uploading}
+            className="mt-2 flex items-center justify-center gap-2 rounded-full bg-arkano-gold py-3.5 text-sm font-medium text-arkano-black transition hover:bg-arkano-gold-light disabled:opacity-60"
           >
-            <MessageCircle size={16} />
-            Enviar pedido pelo WhatsApp
+            {uploading ? (
+              <>
+                <Loader2 size={16} className="animate-spin" />
+                Enviando foto...
+              </>
+            ) : (
+              <>
+                <MessageCircle size={16} />
+                Enviar pedido pelo WhatsApp
+              </>
+            )}
           </button>
 
           <p className="text-center text-xs text-arkano-champagne/30">
@@ -209,40 +227,6 @@ export default function EncomendaPage() {
           </p>
         </form>
       </div>
-
-      {/* Lembrete de foto (desktop fallback) */}
-      {showPhotoReminder && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
-          <div className="relative w-full max-w-sm rounded-2xl bg-arkano-graphite p-6 text-center">
-            <button
-              onClick={() => setShowPhotoReminder(false)}
-              className="absolute right-4 top-4 text-arkano-champagne/40 transition hover:text-arkano-champagne"
-            >
-              <X size={20} />
-            </button>
-            <p className="text-xs uppercase tracking-widest text-arkano-gold/70">Quase lá!</p>
-            <p className="mt-2 text-base font-light text-arkano-champagne">
-              Pedido enviado. Agora manda também a foto de referência no WhatsApp:
-            </p>
-            {imagePreview && (
-              <img
-                src={imagePreview}
-                alt="Referência"
-                className="mx-auto mt-4 max-h-48 rounded-xl object-contain"
-              />
-            )}
-            <p className="mt-3 text-xs text-arkano-champagne/50">
-              Salve a imagem acima e envie pelo WhatsApp que acabou de abrir.
-            </p>
-            <button
-              onClick={() => setShowPhotoReminder(false)}
-              className="mt-5 w-full rounded-full bg-arkano-gold py-2.5 text-sm font-medium text-arkano-black transition hover:bg-arkano-gold-light"
-            >
-              Entendi
-            </button>
-          </div>
-        </div>
-      )}
     </main>
   );
 }
