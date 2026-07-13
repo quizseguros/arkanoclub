@@ -1,5 +1,4 @@
 import { products } from "@/data/products";
-import { productsSobEncomenda } from "@/data/products-sob-encomenda";
 import { brands } from "@/data/brands";
 
 export type SearchableProduct = {
@@ -20,16 +19,7 @@ const catalogIndex: SearchableProduct[] = products.map((p) => ({
   href: `/relogio/${p.id}`,
 }));
 
-const sobEncomendaIndex: SearchableProduct[] = productsSobEncomenda.map((p) => ({
-  id: p.id,
-  name: p.name,
-  brand: p.brand,
-  price: p.price,
-  image: p.image,
-  href: `/sob-encomenda/${p.id}`,
-}));
-
-export const searchIndex: SearchableProduct[] = [...catalogIndex, ...sobEncomendaIndex];
+export const searchIndex: SearchableProduct[] = [...catalogIndex];
 
 function normalize(value: string) {
   return value

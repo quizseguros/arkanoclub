@@ -86,7 +86,7 @@ export default function EncomendaPage() {
     <main className="min-h-screen bg-arkano-black px-4 py-12 sm:px-6">
       <div className="mx-auto max-w-xl">
         <Link
-          href="/#sob-encomenda"
+          href="/#catalogo"
           className="mb-8 inline-flex items-center gap-2 text-sm text-arkano-champagne/60 transition hover:text-arkano-gold"
         >
           <ArrowLeft size={16} />

@@ -20,7 +20,7 @@ const KEYWORDS = [
   "Citizen Promaster", "TAG Heuer Aquaracer", "Tudor Black Bay",
   "Longines Master Collection", "Mido Baroncelli",
   "relojoaria brasileira", "onde comprar relógio original",
-  "relógio seminovo", "relógio segunda mão", "vender relógio",
+  "vender relógio",
   "relógio de investimento", "relógio colecionável",
   "relógio de qualidade", "relógio Vargem Alegre",
 ];

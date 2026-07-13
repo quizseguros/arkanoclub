@@ -68,7 +68,6 @@ export default function ChatWidget() {
   function mainMenu(): QuickAction[] {
     return [
       { label: "Ver relógios em estoque", onClick: () => goToSection("catalogo", "Ver relógios em estoque") },
-      { label: "Ver sob encomenda", onClick: () => goToSection("sob-encomenda", "Ver sob encomenda") },
       {
         label: "Buscar um modelo",
         onClick: () => {

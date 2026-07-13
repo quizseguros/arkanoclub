@@ -9,7 +9,6 @@ import BrandLogoCarousel from "./BrandLogoCarousel";
 import FeaturedSection from "./FeaturedSection";
 import CategoriesSection from "./CategoriesSection";
 import CatalogSection from "./CatalogSection";
-import SobEncomendaSection from "./SobEncomendaSection";
 import CustomOrderCallout from "./CustomOrderCallout";
 import TestimonialsSection from "./TestimonialsSection";
 import InstagramSection from "./InstagramSection";
@@ -57,10 +56,6 @@ export default function HomeClient() {
       </Reveal>
 
       <CustomOrderCallout />
-
-      <Reveal>
-        <SobEncomendaSection />
-      </Reveal>
 
       <Reveal>
         <TestimonialsSection />

@@ -9,7 +9,6 @@ import SearchAutocomplete from "./SearchAutocomplete";
 
 const navLinks = [
   { href: "/#catalogo", label: "Catálogo" },
-  { href: "/#sob-encomenda", label: "Sob Encomenda" },
   { href: "/quem-somos", label: "Quem Somos" },
   { href: "/vender-relogio", label: "Vender seu relógio" },
   { href: "/grupo-vip", label: "Grupo VIP" },
