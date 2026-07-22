@@ -61,6 +61,7 @@ export default async function RelogioPage({ params }: Props) {
         stockLabel: product.stock === "em-estoque" ? "Em estoque" : "Sob encomenda",
         backHref: "/#catalogo",
         backLabel: "Voltar pro catálogo",
+        variants: product.variants,
       }}
     />
   );

@@ -4,9 +4,15 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ArrowLeft, Cog, MessageCircle, Ruler, Share2, User } from "lucide-react";
 import { whatsappLink } from "@/lib/config";
+import { colorToHex } from "@/lib/colors";
 import ZoomableProductImage from "./ZoomableProductImage";
 
 const currency = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
+
+export type ProductDetailVariant = {
+  color: string;
+  image: string;
+};
 
 export type ProductDetailData = {
   name: string;
@@ -22,10 +28,14 @@ export type ProductDetailData = {
   conditionLabel?: string;
   backHref: string;
   backLabel: string;
+  variants?: ProductDetailVariant[];
 };
 
 export default function ProductDetail({ data }: { data: ProductDetailData }) {
   const [pageUrl, setPageUrl] = useState("");
+  const [selected, setSelected] = useState(0);
+  const activeImage = data.variants?.[selected]?.image ?? data.image;
+  const activeColor = data.variants?.[selected]?.color;
 
   useEffect(() => {
     setPageUrl(window.location.href);
@@ -53,15 +63,39 @@ export default function ProductDetail({ data }: { data: ProductDetailData }) {
         </Link>
 
         <div className="grid gap-8 sm:grid-cols-2 sm:gap-12">
-          <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-black">
-            <ZoomableProductImage src={data.image} alt={data.name} />
-            <span className="pointer-events-none absolute left-3 top-3 rounded-full bg-black/70 px-3 py-1 text-[11px] font-medium text-arkano-champagne">
-              {data.stockLabel}
-            </span>
-            {data.conditionLabel && (
-              <span className="pointer-events-none absolute right-3 top-3 rounded-full bg-arkano-gold px-3 py-1 text-[11px] font-medium text-arkano-black">
-                {data.conditionLabel}
+          <div>
+            <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-black">
+              <ZoomableProductImage src={activeImage} alt={data.name} />
+              <span className="pointer-events-none absolute left-3 top-3 rounded-full bg-black/70 px-3 py-1 text-[11px] font-medium text-arkano-champagne">
+                {data.stockLabel}
               </span>
+              {data.conditionLabel && (
+                <span className="pointer-events-none absolute right-3 top-3 rounded-full bg-arkano-gold px-3 py-1 text-[11px] font-medium text-arkano-black">
+                  {data.conditionLabel}
+                </span>
+              )}
+            </div>
+
+            {data.variants && data.variants.length > 1 && (
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                <span className="text-xs text-arkano-champagne/50">Cor{activeColor ? `: ${activeColor}` : ""}</span>
+                <div className="flex flex-wrap gap-2">
+                  {data.variants.map((v, i) => (
+                    <button
+                      key={`${v.color}-${i}`}
+                      type="button"
+                      onClick={() => setSelected(i)}
+                      title={v.color}
+                      aria-label={v.color}
+                      aria-pressed={selected === i}
+                      className={`h-7 w-7 rounded-full border-2 transition ${
+                        selected === i ? "border-arkano-gold" : "border-white/20 hover:border-arkano-gold/50"
+                      }`}
+                      style={{ backgroundColor: colorToHex(v.color) }}
+                    />
+                  ))}
+                </div>
+              </div>
             )}
           </div>
 
