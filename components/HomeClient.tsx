@@ -44,6 +44,8 @@ export default function HomeClient() {
         <FeaturedSection />
       </Reveal>
 
+      <CustomOrderCallout />
+
       <CategoriesSection />
 
       <Reveal>
@@ -54,8 +56,6 @@ export default function HomeClient() {
           diameterBounds={diameterBounds}
         />
       </Reveal>
-
-      <CustomOrderCallout />
 
       <Reveal>
         <TestimonialsSection />
