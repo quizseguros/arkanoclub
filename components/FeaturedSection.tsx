@@ -8,7 +8,7 @@ import ProductCard from "./ProductCard";
 type Row = { id: string; title: string; items: Product[] };
 
 const rows: Row[] = [
-  { id: "destaque", title: "Relógios em destaque", items: products.filter((p) => p.featured) },
+  { id: "destaque", title: "Pronta entrega", items: products.filter((p) => p.stock === "em-estoque") },
   { id: "mais-vendidos", title: "Mais vendidos", items: products.filter((p) => p.bestseller) },
 ];
 

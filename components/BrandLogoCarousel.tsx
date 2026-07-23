@@ -8,10 +8,25 @@ type Props = {
   onSelectBrand: (slug: string) => void;
 };
 
+// carrossel mostra só as marcas do catálogo original (pré-ampliação de 23/07/2026) —
+// as marcas novas continuam disponíveis pra filtro/busca, só não aparecem nessa vitrine
+const MARCAS_CARROSSEL = [
+  "seiko",
+  "citizen",
+  "tag-heuer",
+  "tudor",
+  "longines",
+  "mido",
+  "baltic",
+  "venezianico",
+  "christopher-ward",
+];
+
 export default function BrandLogoCarousel({ activeBrand, onSelectBrand }: Props) {
+  const marcasExibidas = brands.filter((b) => MARCAS_CARROSSEL.includes(b.slug));
   // 4 cópias: garante que o trilho seja bem mais largo que qualquer viewport,
   // então o loop (translateX 0 -> -25%, ou seja 1 cópia) nunca expõe espaço vazio.
-  const track = [...brands, ...brands, ...brands, ...brands];
+  const track = [...marcasExibidas, ...marcasExibidas, ...marcasExibidas, ...marcasExibidas];
 
   function handleClick(slug: string) {
     onSelectBrand(slug);
