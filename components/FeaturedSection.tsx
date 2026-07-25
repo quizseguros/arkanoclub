@@ -7,10 +7,17 @@ import ProductCard from "./ProductCard";
 
 type Row = { id: string; title: string; items: Product[] };
 
-const rows: Row[] = [
-  { id: "destaque", title: "Pronta entrega", items: products.filter((p) => p.stock === "em-estoque") },
-  { id: "mais-vendidos", title: "Mais vendidos", items: products.filter((p) => p.bestseller) },
-];
+const prontaEntregaRow: Row = {
+  id: "destaque",
+  title: "Pronta entrega",
+  items: products.filter((p) => p.stock === "em-estoque"),
+};
+
+const maisVendidosRow: Row = {
+  id: "mais-vendidos",
+  title: "Mais vendidos",
+  items: products.filter((p) => p.bestseller),
+};
 
 function ProductRow({ row }: { row: Row }) {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -61,13 +68,23 @@ function ProductRow({ row }: { row: Row }) {
   );
 }
 
-export default function FeaturedSection() {
+export function ProntaEntregaSection() {
+  if (prontaEntregaRow.items.length === 0) return null;
   return (
-    <section className="border-b border-white/10 bg-arkano-black px-4 py-16 sm:px-6">
-      <div className="mx-auto flex max-w-7xl flex-col gap-10">
-        {rows.map((row) => (
-          <ProductRow key={row.id} row={row} />
-        ))}
+    <section className="bg-arkano-black px-4 pb-16 pt-16 sm:px-6">
+      <div className="mx-auto max-w-7xl">
+        <ProductRow row={prontaEntregaRow} />
+      </div>
+    </section>
+  );
+}
+
+export function MaisVendidosSection() {
+  if (maisVendidosRow.items.length === 0) return null;
+  return (
+    <section className="border-b border-white/10 bg-arkano-black px-4 pb-16 sm:px-6">
+      <div className="mx-auto max-w-7xl">
+        <ProductRow row={maisVendidosRow} />
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ import { defaultFilters } from "@/lib/filters";
 import { useSearch } from "@/lib/search-context";
 import BannerCarousel from "./BannerCarousel";
 import BrandLogoCarousel from "./BrandLogoCarousel";
-import FeaturedSection from "./FeaturedSection";
+import { ProntaEntregaSection, MaisVendidosSection } from "./FeaturedSection";
 import CategoriesSection from "./CategoriesSection";
 import CatalogSection from "./CatalogSection";
 import CustomOrderCallout from "./CustomOrderCallout";
@@ -41,10 +41,14 @@ export default function HomeClient() {
       />
 
       <Reveal>
-        <FeaturedSection />
+        <ProntaEntregaSection />
       </Reveal>
 
       <CustomOrderCallout />
+
+      <Reveal>
+        <MaisVendidosSection />
+      </Reveal>
 
       <CategoriesSection />
 
