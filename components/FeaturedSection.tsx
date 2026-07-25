@@ -71,7 +71,7 @@ function ProductRow({ row }: { row: Row }) {
 export function ProntaEntregaSection() {
   if (prontaEntregaRow.items.length === 0) return null;
   return (
-    <section className="bg-arkano-black px-4 pb-16 pt-16 sm:px-6">
+    <section id="pronta-entrega" className="scroll-mt-24 bg-arkano-black px-4 pb-16 pt-16 sm:px-6">
       <div className="mx-auto max-w-7xl">
         <ProductRow row={prontaEntregaRow} />
       </div>

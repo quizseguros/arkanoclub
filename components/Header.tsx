@@ -8,6 +8,7 @@ import { whatsappLink } from "@/lib/config";
 import SearchAutocomplete from "./SearchAutocomplete";
 
 const navLinks = [
+  { href: "/#pronta-entrega", label: "Pronta entrega" },
   { href: "/#catalogo", label: "Catálogo" },
   { href: "/quem-somos", label: "Quem Somos" },
   { href: "/vender-relogio", label: "Vender seu relógio" },
