@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Cog, MessageCircle, Ruler, User } from "lucide-react";
+import { ArrowRight, Cog, MessageCircle, Ruler, ShoppingBag, User } from "lucide-react";
 import { Product } from "@/data/products";
 import { brands } from "@/data/brands";
 import { whatsappLink } from "@/lib/config";
@@ -10,6 +10,7 @@ const currency = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "
 export default function ProductCard({ product, glow }: { product: Product; glow?: boolean }) {
   const brand = brands.find((b) => b.slug === product.brand);
   const detailHref = `/relogio/${product.id}`;
+  const hasDetailPage = !product.live;
 
   const inner = (
     <div
@@ -36,9 +37,13 @@ export default function ProductCard({ product, glow }: { product: Product; glow?
         <span className="hidden text-xs uppercase tracking-widest2 text-arkano-gold/80 sm:block">
           {brand?.name}
         </span>
-        <Link href={detailHref} className="font-sans text-sm text-arkano-champagne hover:text-arkano-gold sm:text-base">
-          {product.name}
-        </Link>
+        {hasDetailPage ? (
+          <Link href={detailHref} className="font-sans text-sm text-arkano-champagne hover:text-arkano-gold sm:text-base">
+            {product.name}
+          </Link>
+        ) : (
+          <span className="font-sans text-sm text-arkano-champagne sm:text-base">{product.name}</span>
+        )}
         <p className="hidden line-clamp-2 text-xs text-arkano-champagne/50 sm:block">{product.description}</p>
 
         <div className="mt-1 hidden flex-wrap gap-x-4 gap-y-1 text-xs text-arkano-champagne/50 sm:flex">
@@ -62,13 +67,25 @@ export default function ProductCard({ product, glow }: { product: Product; glow?
           </span>
         </div>
 
-        <Link
-          href={detailHref}
-          className="mt-2 flex items-center justify-center gap-2 rounded-full bg-arkano-gold py-2.5 text-sm font-medium text-arkano-black transition hover:bg-arkano-gold-light"
-        >
-          Ver detalhes
-          <ArrowRight size={15} />
-        </Link>
+        {hasDetailPage ? (
+          <Link
+            href={detailHref}
+            className="mt-2 flex items-center justify-center gap-2 rounded-full bg-arkano-gold py-2.5 text-sm font-medium text-arkano-black transition hover:bg-arkano-gold-light"
+          >
+            Ver detalhes
+            <ArrowRight size={15} />
+          </Link>
+        ) : product.buyLink ? (
+          <a
+            href={product.buyLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 flex items-center justify-center gap-2 rounded-full bg-arkano-gold py-2.5 text-sm font-medium text-arkano-black transition hover:bg-arkano-gold-light"
+          >
+            Comprar agora
+            <ShoppingBag size={15} />
+          </a>
+        ) : null}
 
         <a
           href={whatsappLink(`Olá! Tenho interesse no relógio ${product.name} (${brand?.name}) que vi no site.`)}

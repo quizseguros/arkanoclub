@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { products } from "@/data/products";
-import ProductCard from "@/components/ProductCard";
+import ProntaEntregaGrid from "@/components/ProntaEntregaGrid";
 import CustomOrderCallout from "@/components/CustomOrderCallout";
 
 export const metadata: Metadata = {
@@ -9,8 +8,6 @@ export const metadata: Metadata = {
 };
 
 export default function ProntaEntregaPage() {
-  const disponiveis = products.filter((p) => p.stock === "em-estoque");
-
   return (
     <>
       <section className="border-b border-white/10 bg-arkano-black px-4 py-16 sm:px-6">
@@ -22,17 +19,7 @@ export default function ProntaEntregaPage() {
             espera de importação. Original, com garantia.
           </p>
 
-          {disponiveis.length > 0 ? (
-            <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
-              {disponiveis.map((product) => (
-                <ProductCard key={product.id} product={product} glow />
-              ))}
-            </div>
-          ) : (
-            <p className="mt-10 text-sm text-arkano-champagne/50">
-              Nenhum relógio em pronta entrega no momento. Fala com a gente que buscamos o que você procura.
-            </p>
-          )}
+          <ProntaEntregaGrid />
         </div>
       </section>
 

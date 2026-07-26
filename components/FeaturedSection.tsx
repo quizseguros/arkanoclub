@@ -1,17 +1,14 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Product, products } from "@/data/products";
+import { fetchLiveWatches } from "@/lib/live-watches";
 import ProductCard from "./ProductCard";
 
 type Row = { id: string; title: string; items: Product[] };
 
-const prontaEntregaRow: Row = {
-  id: "destaque",
-  title: "Pronta entrega",
-  items: products.filter((p) => p.stock === "em-estoque"),
-};
+const staticProntaEntrega = products.filter((p) => p.stock === "em-estoque");
 
 const maisVendidosRow: Row = {
   id: "mais-vendidos",
@@ -69,11 +66,19 @@ function ProductRow({ row }: { row: Row }) {
 }
 
 export function ProntaEntregaSection() {
-  if (prontaEntregaRow.items.length === 0) return null;
+  const [items, setItems] = useState<Product[]>(staticProntaEntrega);
+
+  useEffect(() => {
+    fetchLiveWatches().then((live) => {
+      if (live.length > 0) setItems([...live, ...staticProntaEntrega]);
+    });
+  }, []);
+
+  if (items.length === 0) return null;
   return (
     <section id="pronta-entrega" className="scroll-mt-24 bg-arkano-black px-4 pb-16 pt-16 sm:px-6">
       <div className="mx-auto max-w-7xl">
-        <ProductRow row={prontaEntregaRow} />
+        <ProductRow row={{ id: "destaque", title: "Pronta entrega", items }} />
       </div>
     </section>
   );

@@ -25,6 +25,11 @@ export type Product = {
   featured?: boolean;
   bestseller?: boolean;
   variants?: ColorVariant[];
+  /** link externo de compra (ex: Mercado Pago) — quando presente, o botão do
+   *  card vira "Comprar agora" apontando pra esse link, em vez do WhatsApp */
+  buyLink?: string;
+  /** true pros relógios que vêm ao vivo do admin (sem página estática de detalhe) */
+  live?: boolean;
 };
 
 export const products: Product[] = [
