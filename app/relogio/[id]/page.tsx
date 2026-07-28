@@ -1,24 +1,39 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { products } from "@/data/products";
+import { Product, products } from "@/data/products";
 import { brands } from "@/data/brands";
 import { SITE_URL } from "@/lib/config";
+import { fetchLiveWatch, LIVE_ID_PREFIX } from "@/lib/live-watches";
 import ProductDetail from "@/components/ProductDetail";
 
 type Props = { params: Promise<{ id: string }> };
+
+// os relógios do catálogo saem prontos no build; os de pronta entrega (que o
+// Guilherme cadastra no painel) são montados na hora do acesso
+export const dynamicParams = true;
 
 export function generateStaticParams() {
   return products.map((p) => ({ id: p.id }));
 }
 
+/** Acha o relógio pelo id: primeiro no catálogo, depois no painel do Guilherme. */
+async function findProduct(id: string): Promise<Product | null> {
+  if (id.startsWith(LIVE_ID_PREFIX)) return fetchLiveWatch(id);
+  return products.find((p) => p.id === id) ?? null;
+}
+
+function brandNameOf(product: Product) {
+  return brands.find((b) => b.slug === product.brand)?.name ?? product.brandName ?? product.brand;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
-  const product = products.find((p) => p.id === id);
+  const product = await findProduct(id);
   if (!product) return {};
 
-  const brandName = brands.find((b) => b.slug === product.brand)?.name ?? product.brand;
+  const brandName = brandNameOf(product);
   const title = `${product.name} | Arkano Club`;
-  const imageUrl = `${SITE_URL}${product.image}`;
+  const imageUrl = product.image.startsWith("http") ? product.image : `${SITE_URL}${product.image}`;
 
   return {
     title,
@@ -41,27 +56,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function RelogioPage({ params }: Props) {
   const { id } = await params;
-  const product = products.find((p) => p.id === id);
+  const product = await findProduct(id);
   if (!product) notFound();
-
-  const brandName = brands.find((b) => b.slug === product.brand)?.name ?? product.brand;
 
   return (
     <ProductDetail
       data={{
         name: product.name,
-        brandName,
+        brandName: brandNameOf(product),
         category: product.category,
         price: product.price,
         caseDiameter: product.caseDiameter,
         movement: product.movement,
+        watchType: product.watchType,
         image: product.image,
+        images: product.images,
         description: product.description,
         history: product.history,
         stockLabel: product.stock === "em-estoque" ? "Em estoque" : "Sob encomenda",
-        backHref: "/#catalogo",
-        backLabel: "Voltar pro catálogo",
+        backHref: product.live ? "/pronta-entrega" : "/#catalogo",
+        backLabel: product.live ? "Voltar pra pronta entrega" : "Voltar pro catálogo",
         variants: product.variants,
+        buyLink: product.buyLink,
       }}
     />
   );

@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ArrowLeft, Cog, MessageCircle, Ruler, Share2, User } from "lucide-react";
+import { ArrowLeft, Cog, MessageCircle, Ruler, Share2, ShoppingBag, User, Watch } from "lucide-react";
 import { whatsappLink } from "@/lib/config";
+import { formatDiameter } from "@/lib/format";
 import { colorToHex } from "@/lib/colors";
-import ZoomableProductImage from "./ZoomableProductImage";
+import ProductGallery from "./ProductGallery";
 
 const currency = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
@@ -21,7 +22,10 @@ export type ProductDetailData = {
   price: number;
   caseDiameter: number;
   movement: string;
+  watchType?: string;
   image: string;
+  /** fotos extras do relógio — viram carrossel quando tem mais de uma */
+  images?: string[];
   description: string;
   history?: string;
   stockLabel: string;
@@ -29,13 +33,23 @@ export type ProductDetailData = {
   backHref: string;
   backLabel: string;
   variants?: ProductDetailVariant[];
+  buyLink?: string;
 };
 
 export default function ProductDetail({ data }: { data: ProductDetailData }) {
   const [pageUrl, setPageUrl] = useState("");
   const [selected, setSelected] = useState(0);
+  const hasVariants = Boolean(data.variants && data.variants.length > 1);
   const activeImage = data.variants?.[selected]?.image ?? data.image;
   const activeColor = data.variants?.[selected]?.color;
+
+  // com variantes de cor quem manda na foto é o seletor de cor; sem elas, o
+  // carrossel mostra todas as fotos cadastradas
+  const galleryImages = hasVariants
+    ? [activeImage]
+    : (data.images ?? []).filter(Boolean).length > 0
+      ? (data.images as string[]).filter(Boolean)
+      : [data.image];
 
   useEffect(() => {
     setPageUrl(window.location.href);
@@ -64,17 +78,22 @@ export default function ProductDetail({ data }: { data: ProductDetailData }) {
 
         <div className="grid gap-8 sm:grid-cols-2 sm:gap-12">
           <div>
-            <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-black">
-              <ZoomableProductImage src={activeImage} alt={data.name} />
-              <span className="pointer-events-none absolute left-3 top-3 rounded-full bg-black/70 px-3 py-1 text-[11px] font-medium text-arkano-champagne">
-                {data.stockLabel}
-              </span>
-              {data.conditionLabel && (
-                <span className="pointer-events-none absolute right-3 top-3 rounded-full bg-arkano-gold px-3 py-1 text-[11px] font-medium text-arkano-black">
-                  {data.conditionLabel}
-                </span>
-              )}
-            </div>
+            <ProductGallery
+              images={galleryImages}
+              alt={data.name}
+              overlay={
+                <>
+                  <span className="pointer-events-none absolute left-3 top-3 z-10 rounded-full bg-black/70 px-3 py-1 text-[11px] font-medium text-arkano-champagne">
+                    {data.stockLabel}
+                  </span>
+                  {data.conditionLabel && (
+                    <span className="pointer-events-none absolute right-3 top-3 z-10 rounded-full bg-arkano-gold px-3 py-1 text-[11px] font-medium text-arkano-black">
+                      {data.conditionLabel}
+                    </span>
+                  )}
+                </>
+              }
+            />
 
             {data.variants && data.variants.length > 1 && (
               <div className="mt-4 flex flex-wrap items-center gap-3">
@@ -117,12 +136,18 @@ export default function ProductDetail({ data }: { data: ProductDetailData }) {
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-arkano-champagne/60">
               <span className="flex items-center gap-2">
                 <Ruler size={15} className="text-arkano-gold/70" />
-                {data.caseDiameter}mm
+                {formatDiameter(data.caseDiameter)}
               </span>
               <span className="flex items-center gap-2 capitalize">
                 <Cog size={15} className="text-arkano-gold/70" />
                 {data.movement}
               </span>
+              {data.watchType && (
+                <span className="flex items-center gap-2 capitalize">
+                  <Watch size={15} className="text-arkano-gold/70" />
+                  {data.watchType}
+                </span>
+              )}
               {data.category && (
                 <span className="flex items-center gap-2 capitalize">
                   <User size={15} className="text-arkano-gold/70" />
@@ -133,6 +158,18 @@ export default function ProductDetail({ data }: { data: ProductDetailData }) {
 
             <span className="text-3xl font-light text-arkano-champagne">{currency.format(data.price)}</span>
 
+            {data.buyLink && (
+              <a
+                href={data.buyLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 flex items-center justify-center gap-2 rounded-full bg-arkano-gold py-3 text-sm font-medium text-arkano-black transition hover:bg-arkano-gold-light"
+              >
+                <ShoppingBag size={17} />
+                Comprar agora
+              </a>
+            )}
+
             <div className="mt-2 flex flex-col gap-3 sm:flex-row">
               <a
                 href={whatsappLink(
@@ -142,7 +179,11 @@ export default function ProductDetail({ data }: { data: ProductDetailData }) {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-1 items-center justify-center gap-2 rounded-full bg-arkano-gold py-3 text-sm font-medium text-arkano-black transition hover:bg-arkano-gold-light"
+                className={`flex flex-1 items-center justify-center gap-2 rounded-full py-3 text-sm font-medium transition ${
+                  data.buyLink
+                    ? "border border-arkano-gold/50 text-arkano-gold hover:bg-arkano-gold/10"
+                    : "bg-arkano-gold text-arkano-black hover:bg-arkano-gold-light"
+                }`}
               >
                 <MessageCircle size={17} />
                 Falar no WhatsApp

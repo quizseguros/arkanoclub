@@ -19,8 +19,12 @@ export type Product = {
   movement: Movement;
   stock: Stock;
   image: string;
+  /** fotos extras (carrossel da página de detalhes) — a primeira é a mesma de `image` */
+  images?: string[];
   description: string;
   history?: string;
+  /** tipo do relógio em texto livre (mergulho, dress, cronógrafo...) — vem do admin */
+  watchType?: string;
   styleCategory?: StyleCategory;
   featured?: boolean;
   bestseller?: boolean;
@@ -28,8 +32,10 @@ export type Product = {
   /** link externo de compra (ex: Mercado Pago) — quando presente, o botão do
    *  card vira "Comprar agora" apontando pra esse link, em vez do WhatsApp */
   buyLink?: string;
-  /** true pros relógios que vêm ao vivo do admin (sem página estática de detalhe) */
+  /** true pros relógios que vêm ao vivo do admin */
   live?: boolean;
+  /** nome da marca vindo do admin — usado quando o slug não existe em data/brands */
+  brandName?: string;
 };
 
 export const products: Product[] = [

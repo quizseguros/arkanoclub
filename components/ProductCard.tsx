@@ -3,14 +3,18 @@ import { ArrowRight, Cog, MessageCircle, Ruler, ShoppingBag, User } from "lucide
 import { Product } from "@/data/products";
 import { brands } from "@/data/brands";
 import { whatsappLink } from "@/lib/config";
+import { formatDiameter } from "@/lib/format";
 import ZoomableProductImage from "./ZoomableProductImage";
 
 const currency = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
 export default function ProductCard({ product, glow }: { product: Product; glow?: boolean }) {
   const brand = brands.find((b) => b.slug === product.brand);
+  const brandName = brand?.name ?? product.brandName ?? product.brand;
   const detailHref = `/relogio/${product.id}`;
-  const hasDetailPage = !product.live;
+  // quando tem link de compra, o botão dourado é o de comprar e "Ver detalhes"
+  // desce pra linha de baixo, ao lado do WhatsApp
+  const showBuyFirst = Boolean(product.buyLink);
 
   const inner = (
     <div
@@ -35,21 +39,17 @@ export default function ProductCard({ product, glow }: { product: Product; glow?
 
       <div className="flex flex-1 flex-col gap-2 p-3 sm:p-4">
         <span className="hidden text-xs uppercase tracking-widest2 text-arkano-gold/80 sm:block">
-          {brand?.name}
+          {brandName}
         </span>
-        {hasDetailPage ? (
-          <Link href={detailHref} className="font-sans text-sm text-arkano-champagne hover:text-arkano-gold sm:text-base">
-            {product.name}
-          </Link>
-        ) : (
-          <span className="font-sans text-sm text-arkano-champagne sm:text-base">{product.name}</span>
-        )}
+        <Link href={detailHref} className="font-sans text-sm text-arkano-champagne hover:text-arkano-gold sm:text-base">
+          {product.name}
+        </Link>
         <p className="hidden line-clamp-2 text-xs text-arkano-champagne/50 sm:block">{product.description}</p>
 
         <div className="mt-1 hidden flex-wrap gap-x-4 gap-y-1 text-xs text-arkano-champagne/50 sm:flex">
           <span className="flex items-center gap-1.5">
             <Ruler size={13} className="text-arkano-gold/70" />
-            {product.caseDiameter}mm
+            {formatDiameter(product.caseDiameter)}
           </span>
           <span className="flex items-center gap-1.5 capitalize">
             <Cog size={13} className="text-arkano-gold/70" />
@@ -67,15 +67,7 @@ export default function ProductCard({ product, glow }: { product: Product; glow?
           </span>
         </div>
 
-        {hasDetailPage ? (
-          <Link
-            href={detailHref}
-            className="mt-2 flex items-center justify-center gap-2 rounded-full bg-arkano-gold py-2.5 text-sm font-medium text-arkano-black transition hover:bg-arkano-gold-light"
-          >
-            Ver detalhes
-            <ArrowRight size={15} />
-          </Link>
-        ) : product.buyLink ? (
+        {showBuyFirst ? (
           <a
             href={product.buyLink}
             target="_blank"
@@ -85,17 +77,37 @@ export default function ProductCard({ product, glow }: { product: Product; glow?
             Comprar agora
             <ShoppingBag size={15} />
           </a>
-        ) : null}
+        ) : (
+          <Link
+            href={detailHref}
+            className="mt-2 flex items-center justify-center gap-2 rounded-full bg-arkano-gold py-2.5 text-sm font-medium text-arkano-black transition hover:bg-arkano-gold-light"
+          >
+            Ver detalhes
+            <ArrowRight size={15} />
+          </Link>
+        )}
 
-        <a
-          href={whatsappLink(`Olá! Tenho interesse no relógio ${product.name} (${brand?.name}) que vi no site.`)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 rounded-full border border-white/10 py-2 text-xs text-arkano-champagne/60 transition hover:border-arkano-gold/40 hover:text-arkano-gold"
-        >
-          <MessageCircle size={14} />
-          WhatsApp
-        </a>
+        {/* no celular os cards ficam estreitos demais pra dois botões lado a lado */}
+        <div className="flex flex-col gap-2 sm:flex-row">
+          {showBuyFirst && (
+            <Link
+              href={detailHref}
+              className="flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-full border border-white/10 py-2 text-xs text-arkano-champagne/60 transition hover:border-arkano-gold/40 hover:text-arkano-gold"
+            >
+              Ver detalhes
+              <ArrowRight size={13} />
+            </Link>
+          )}
+          <a
+            href={whatsappLink(`Olá! Tenho interesse no relógio ${product.name} (${brandName}) que vi no site.`)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-full border border-white/10 py-2 text-xs text-arkano-champagne/60 transition hover:border-arkano-gold/40 hover:text-arkano-gold"
+          >
+            <MessageCircle size={14} />
+            WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   );
