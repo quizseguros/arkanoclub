@@ -6,6 +6,10 @@ import { brands } from "@/data/brands";
 type Props = {
   activeBrand: string | null;
   onSelectBrand: (slug: string) => void;
+  /** seção pra onde a página rola ao clicar numa marca (na home é o catálogo) */
+  scrollToId?: string;
+  /** marcas a exibir; sem isso usa a vitrine fixa da home */
+  brandSlugs?: string[];
 };
 
 // carrossel mostra só as marcas do catálogo original (pré-ampliação de 23/07/2026) —
@@ -22,15 +26,32 @@ const MARCAS_CARROSSEL = [
   "christopher-ward",
 ];
 
-export default function BrandLogoCarousel({ activeBrand, onSelectBrand }: Props) {
-  const marcasExibidas = brands.filter((b) => MARCAS_CARROSSEL.includes(b.slug));
+// cada logo ocupa ~200px (w-40 + gap-10); com menos de 8 numa cópia, o trilho
+// fica estreito demais e o loop expõe espaço vazio em tela grande
+const MIN_POR_COPIA = 8;
+
+export default function BrandLogoCarousel({
+  activeBrand,
+  onSelectBrand,
+  scrollToId = "catalogo",
+  brandSlugs,
+}: Props) {
+  const slugs = brandSlugs ?? MARCAS_CARROSSEL;
+  const marcasExibidas = brands.filter((b) => slugs.includes(b.slug));
+
+  // com uma marca só não é carrossel, é um logo repetido — melhor não mostrar
+  if (marcasExibidas.length < 2) return null;
+
+  const copia: typeof marcasExibidas = [];
+  while (copia.length < MIN_POR_COPIA) copia.push(...marcasExibidas);
+
   // 4 cópias: garante que o trilho seja bem mais largo que qualquer viewport,
   // então o loop (translateX 0 -> -25%, ou seja 1 cópia) nunca expõe espaço vazio.
-  const track = [...marcasExibidas, ...marcasExibidas, ...marcasExibidas, ...marcasExibidas];
+  const track = [...copia, ...copia, ...copia, ...copia];
 
   function handleClick(slug: string) {
     onSelectBrand(slug);
-    document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(scrollToId)?.scrollIntoView({ behavior: "smooth" });
   }
 
   return (
