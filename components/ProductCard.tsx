@@ -4,6 +4,7 @@ import { Product } from "@/data/products";
 import { brands } from "@/data/brands";
 import { whatsappLink } from "@/lib/config";
 import { formatDiameter } from "@/lib/format";
+import { detailHref } from "@/lib/live-watches";
 import ZoomableProductImage from "./ZoomableProductImage";
 
 const currency = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
@@ -11,7 +12,7 @@ const currency = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "
 export default function ProductCard({ product, glow }: { product: Product; glow?: boolean }) {
   const brand = brands.find((b) => b.slug === product.brand);
   const brandName = brand?.name ?? product.brandName ?? product.brand;
-  const detailHref = `/relogio/${product.id}`;
+  const href = detailHref(product);
   // quando tem link de compra, o botão dourado é o de comprar e "Ver detalhes"
   // desce pra linha de baixo, ao lado do WhatsApp
   const showBuyFirst = Boolean(product.buyLink);
@@ -41,7 +42,7 @@ export default function ProductCard({ product, glow }: { product: Product; glow?
         <span className="hidden text-xs uppercase tracking-widest2 text-arkano-gold/80 sm:block">
           {brandName}
         </span>
-        <Link href={detailHref} className="font-sans text-sm text-arkano-champagne hover:text-arkano-gold sm:text-base">
+        <Link href={href} className="font-sans text-sm text-arkano-champagne hover:text-arkano-gold sm:text-base">
           {product.name}
         </Link>
         <p className="hidden line-clamp-2 text-xs text-arkano-champagne/50 sm:block">{product.description}</p>
@@ -79,7 +80,7 @@ export default function ProductCard({ product, glow }: { product: Product; glow?
           </a>
         ) : (
           <Link
-            href={detailHref}
+            href={href}
             className="mt-2 flex items-center justify-center gap-2 rounded-full bg-arkano-gold py-2.5 text-sm font-medium text-arkano-black transition hover:bg-arkano-gold-light"
           >
             Ver detalhes
@@ -91,7 +92,7 @@ export default function ProductCard({ product, glow }: { product: Product; glow?
         <div className="flex flex-col gap-2 sm:flex-row">
           {showBuyFirst && (
             <Link
-              href={detailHref}
+              href={href}
               className="flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-full border border-white/10 py-2 text-xs text-arkano-champagne/60 transition hover:border-arkano-gold/40 hover:text-arkano-gold"
             >
               Ver detalhes

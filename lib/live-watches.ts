@@ -78,11 +78,17 @@ export async function fetchLiveWatches(): Promise<Product[]> {
   }
 }
 
-/** Busca um relógio do admin pelo id da página de detalhes (`admin-<id>`).
- *  Roda no servidor, na hora do acesso — por isso a página de um relógio de
- *  pronta entrega sempre reflete o que está cadastrado agora. */
-export async function fetchLiveWatch(detailId: string): Promise<Product | null> {
-  if (!detailId.startsWith(LIVE_ID_PREFIX)) return null;
+/** Busca um relógio do admin pelo id dele (sem prefixo). Roda no servidor, na
+ *  hora do acesso — por isso a página de um relógio de pronta entrega sempre
+ *  reflete o que está cadastrado agora. */
+export async function fetchLiveWatch(id: string): Promise<Product | null> {
   const all = await fetchLiveWatches();
-  return all.find((p) => p.id === detailId) ?? null;
+  return all.find((p) => p.id === `${LIVE_ID_PREFIX}${id}`) ?? null;
+}
+
+/** Endereço da página de detalhes de um relógio (catálogo ou pronta entrega). */
+export function detailHref(product: Product): string {
+  return product.live
+    ? `/pronta-entrega/${product.id.slice(LIVE_ID_PREFIX.length)}`
+    : `/relogio/${product.id}`;
 }
