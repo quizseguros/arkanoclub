@@ -86,9 +86,11 @@ export async function fetchLiveWatch(id: string): Promise<Product | null> {
   return all.find((p) => p.id === `${LIVE_ID_PREFIX}${id}`) ?? null;
 }
 
-/** Endereço da página de detalhes de um relógio (catálogo ou pronta entrega). */
+/** Endereço da página de detalhes de um relógio (catálogo ou pronta entrega).
+ *  Os do painel vão por query (?id=) porque a página deles é um arquivo
+ *  estático único — não dá pra gerar uma página por relógio no build. */
 export function detailHref(product: Product): string {
   return product.live
-    ? `/pronta-entrega/${product.id.slice(LIVE_ID_PREFIX.length)}`
+    ? `/pronta-entrega/detalhes?id=${product.id.slice(LIVE_ID_PREFIX.length)}`
     : `/relogio/${product.id}`;
 }
