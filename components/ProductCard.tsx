@@ -6,6 +6,7 @@ import { whatsappLink } from "@/lib/config";
 import { formatDiameter } from "@/lib/format";
 import { detailHref } from "@/lib/live-watches";
 import { precoPromocional } from "@/lib/promo";
+import { usePrecoAoVivo } from "@/lib/precos-ao-vivo";
 import ProductPrice from "./ProductPrice";
 import ZoomableProductImage from "./ZoomableProductImage";
 
@@ -27,6 +28,8 @@ export default function ProductCard({
   // quando tem link de compra, o botão dourado é o de comprar e "Ver detalhes"
   // desce pra linha de baixo, ao lado do WhatsApp
   const showBuyFirst = Boolean(product.buyLink);
+  // relógio da pronta entrega já vem com o preço do painel; o resto pode ter ajuste
+  const valores = usePrecoAoVivo(product.live ? undefined : product.id, product.price, product.installmentPrice);
 
   const inner = (
     <div
@@ -84,10 +87,10 @@ export default function ProductCard({
             isso os botões desalinhavam entre os cards da mesma linha */}
         <div className="mt-auto flex items-center justify-between pt-1 sm:pt-3">
           <ProductPrice
-            price={product.price}
+            price={valores.price}
             promoPrice={product.promoPrice}
             installments={product.installments}
-            installmentPrice={product.installmentPrice}
+            installmentPrice={valores.installmentPrice}
             promoAtiva={promoAtiva}
           />
         </div>

@@ -49,6 +49,7 @@ export default async function RelogioPage({ params }: Props) {
   return (
     <ProductDetail
       data={{
+        id: product.id,
         name: product.name,
         brandName,
         category: product.category,

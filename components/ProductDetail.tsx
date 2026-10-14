@@ -7,6 +7,7 @@ import { whatsappLink } from "@/lib/config";
 import { formatDiameter } from "@/lib/format";
 import { colorToHex } from "@/lib/colors";
 import { usePromoAtiva } from "@/lib/use-promo";
+import { usePrecoAoVivo } from "@/lib/precos-ao-vivo";
 import ProductGallery from "./ProductGallery";
 import ProductPrice from "./ProductPrice";
 
@@ -16,6 +17,8 @@ export type ProductDetailVariant = {
 };
 
 export type ProductDetailData = {
+  /** id do relógio no site — com ele o preço ajustado no painel substitui o do build */
+  id?: string;
   name: string;
   brandName: string;
   category?: string;
@@ -44,6 +47,7 @@ export default function ProductDetail({ data }: { data: ProductDetailData }) {
   const [pageUrl, setPageUrl] = useState("");
   const [selected, setSelected] = useState(0);
   const promoAtiva = usePromoAtiva();
+  const valores = usePrecoAoVivo(data.id, data.price, data.installmentPrice);
   const hasVariants = Boolean(data.variants && data.variants.length > 1);
   const activeImage = data.variants?.[selected]?.image ?? data.image;
   const activeColor = data.variants?.[selected]?.color;
@@ -162,10 +166,10 @@ export default function ProductDetail({ data }: { data: ProductDetailData }) {
             </div>
 
             <ProductPrice
-              price={data.price}
+              price={valores.price}
               promoPrice={data.promoPrice}
               installments={data.installments}
-              installmentPrice={data.installmentPrice}
+              installmentPrice={valores.installmentPrice}
               promoAtiva={promoAtiva}
               size="lg"
             />
