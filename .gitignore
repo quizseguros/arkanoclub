@@ -29,3 +29,6 @@ _imagens-originais/
 # pacote pra subir na Hostinger, gerado a partir de out/
 arkanoclub-site.zip
 arkanoclub-site/
+
+# registro do que já foi enviado pro arkanoclub.com (scripts/publicar-hostinger.mjs)
+.ultimo-envio-hostinger.json
