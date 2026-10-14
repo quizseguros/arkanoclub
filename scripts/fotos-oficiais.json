@@ -1,6 +1,16 @@
 {
-  "fonte": "baltic-watches.com (fotos frontais oficiais, 14/10/2026)",
+  "fonte": "Fotos oficiais das marcas: baltic-watches.com (Baltic), seikowatches.com, hamiltonwatch.com e tissotwatches.com (relógios sem foto na Memora). 14/10/2026",
   "relogios": {
+    "45": {
+      "nome": "Tissot Le Locle Branco",
+      "principal": "https://www.tissotwatches.com/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw5a850c8f/product-pictures/2c472ef0-ed0f-435d-b047-2aa567465433_T006-407-16-033-00_shadow.png",
+      "pulseiras": []
+    },
+    "167": {
+      "nome": "Seiko Speedtimer Pink",
+      "principal": "https://www.seikowatches.com/global-en/-/media/Images/Product--Image/All/Seiko/2025/12/19/21/06/SSC963P1/SSC963P1.png",
+      "pulseiras": []
+    },
     "233": {
       "nome": "Baltic Hermétique Summer Pink",
       "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Hermetique_Summer_Pink_Face_d28e6fb0-ac47-4ba1-a6a8-2a949bc27806.png",
@@ -289,6 +299,31 @@
       "pulseiras": [
         "https://cdn.shopify.com/s/files/1/0012/9299/2583/products/tricompax-reverse-panda-face-bor.png"
       ]
+    },
+    "311": {
+      "nome": "Seiko Samurai Black Shogu-Rai",
+      "principal": "https://www.seikowatches.com/global-en/-/media/Images/Product--Image/All/Seiko/2024/05/14/21/12/SRPL15K1/SRPL15K1.png",
+      "pulseiras": []
+    },
+    "323": {
+      "nome": "Seiko Alpinist Azul",
+      "principal": "https://www.seikowatches.com/global-en/-/media/Images/Product--Image/All/Seiko/2025/09/03/21/04/SPB503J1/SPB503J1.png",
+      "pulseiras": []
+    },
+    "326": {
+      "nome": "Hamilton Khaki King Champagne",
+      "principal": "https://www.hamiltonwatch.com/media/catalog/product/h/6/h64455523.png",
+      "pulseiras": []
+    },
+    "327": {
+      "nome": "Seiko Presage Bluemoon",
+      "principal": "https://www.seikowatches.com/jp-ja/-/media/Images/Product--Image/All/Seiko/2022/02/19/10/41/SARY123/SARY123.png",
+      "pulseiras": []
+    },
+    "328": {
+      "nome": "Seiko Presage Rose",
+      "principal": "https://www.seikowatches.com/jp-ja/-/media/Images/Product--Image/All/Seiko/2022/02/19/10/42/SARY132/SARY132.png",
+      "pulseiras": []
     },
     "356": {
       "nome": "Baltic Aquascaphe GMT MKII Blue",

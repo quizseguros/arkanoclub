@@ -29,7 +29,8 @@ const SAIDA = path.join(process.cwd(), "data", "sob-encomenda.json");
 const SEM_FOTO = `${URL_FOTOS}/sem-foto.webp`;
 
 // Fotos oficiais da marca pros relógios em que a foto da Memora corta a
-// pulseira (todos os Baltic, 14/10/2026). Chave = id do relógio na Memora.
+// pulseira (todos os Baltic) ou não tem foto nenhuma (7 relógios), 14/10/2026.
+// Chave = id do relógio na Memora.
 const fotosOficiais = JSON.parse(
   await readFile(path.join(process.cwd(), "scripts", "fotos-oficiais.json"), "utf8")
 ).relogios;
