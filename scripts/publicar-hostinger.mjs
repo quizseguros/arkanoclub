@@ -112,10 +112,16 @@ async function main() {
 
   let feitos = 0;
   const registro = { ...anterior };
+  const pastasProntas = new Set();
   for (const rel of enviar) {
-    const remoto = `${destino === "/" ? "" : destino}/${rel}`;
-    await cliente.ensureDir(path.posix.dirname(remoto));
-    await cliente.cd("/");
+    const remoto = `/${destino === "/" ? "" : destino + "/"}${rel}`;
+    const pasta = path.posix.dirname(remoto);
+    // cria (ou confere) cada pasta uma vez só; fazer isso por arquivo deixava o
+    // envio muito lento
+    if (!pastasProntas.has(pasta)) {
+      await cliente.ensureDir(pasta);
+      pastasProntas.add(pasta);
+    }
     await cliente.uploadFrom(path.join(OUT, rel), remoto);
     registro[rel] = atual[rel];
     feitos++;
