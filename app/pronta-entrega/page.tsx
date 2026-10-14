@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import BannerCarousel from "@/components/BannerCarousel";
+import PromoCountdown from "@/components/PromoCountdown";
 import ProntaEntregaClient from "@/components/ProntaEntregaClient";
 import CustomOrderCallout from "@/components/CustomOrderCallout";
 
@@ -14,6 +15,8 @@ export default function ProntaEntregaPage() {
   return (
     <>
       <BannerCarousel />
+
+      <PromoCountdown />
 
       <ProntaEntregaClient />
 

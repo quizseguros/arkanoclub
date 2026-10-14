@@ -5,6 +5,7 @@ import { X } from "lucide-react";
 import { Product, products } from "@/data/products";
 import { brands } from "@/data/brands";
 import { fetchLiveWatches } from "@/lib/live-watches";
+import { usePromoAtiva } from "@/lib/use-promo";
 import BrandLogoCarousel from "./BrandLogoCarousel";
 import ProntaEntregaGrid from "./ProntaEntregaGrid";
 
@@ -15,6 +16,7 @@ const staticDisponiveis = products.filter((p) => p.stock === "em-estoque");
 export default function ProntaEntregaClient() {
   const [items, setItems] = useState<Product[]>(staticDisponiveis);
   const [activeBrand, setActiveBrand] = useState<string | null>(null);
+  const promoAtiva = usePromoAtiva();
 
   useEffect(() => {
     fetchLiveWatches().then((live) => {
@@ -39,9 +41,32 @@ export default function ProntaEntregaClient() {
         brandSlugs={marcasNaSecao}
       />
 
-      <section id="pronta-entrega" className="border-b border-white/10 bg-arkano-black px-4 py-16 sm:px-6">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-xs uppercase tracking-widest2 text-arkano-gold">Disponível agora</p>
+      <section
+        id="pronta-entrega"
+        className="relative overflow-hidden border-b border-white/10 bg-arkano-black px-4 py-16 sm:px-6"
+      >
+        {/* durante a campanha, um brilho azul escuro desce do topo da seção */}
+        {promoAtiva && (
+          <>
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-arkano-navy-light/45 to-transparent"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute left-1/2 top-0 h-56 w-[700px] max-w-[150%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-arkano-blue/25 blur-[110px]"
+            />
+          </>
+        )}
+
+        <div className="relative mx-auto max-w-7xl">
+          <p
+            className={`text-xs uppercase tracking-widest2 ${
+              promoAtiva ? "text-arkano-blue-light" : "text-arkano-gold"
+            }`}
+          >
+            {promoAtiva ? "Preços de Dia dos Pais" : "Disponível agora"}
+          </p>
           <h1 className="mt-2 text-3xl font-light text-arkano-champagne sm:text-4xl">Pronta entrega</h1>
           <p className="mt-3 max-w-2xl text-sm text-arkano-champagne/60 sm:text-base">
             Esses relógios já estão com a gente, prontos pra enviar assim que o pedido é fechado — sem

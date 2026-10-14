@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { products } from "@/data/products";
 import { defaultFilters } from "@/lib/filters";
 import { useSearch } from "@/lib/search-context";
+import { ABA_CATALOGO } from "@/lib/config";
 import BannerCarousel from "./BannerCarousel";
 import BrandLogoCarousel from "./BrandLogoCarousel";
 import { ProntaEntregaSection, MaisVendidosSection } from "./FeaturedSection";
@@ -30,6 +31,8 @@ export default function HomeClient() {
     <>
       <BannerCarousel />
 
+      {/* esteira, mais vendidos, categorias e catálogo saem juntos: a esteira filtra o catálogo */}
+      {ABA_CATALOGO && (
       <BrandLogoCarousel
         activeBrand={filters.brands.size === 1 ? Array.from(filters.brands)[0] : null}
         onSelectBrand={(slug) =>
@@ -39,6 +42,7 @@ export default function HomeClient() {
           })
         }
       />
+      )}
 
       <Reveal>
         <ProntaEntregaSection />
@@ -46,20 +50,24 @@ export default function HomeClient() {
 
       <CustomOrderCallout />
 
-      <Reveal>
-        <MaisVendidosSection />
-      </Reveal>
+      {ABA_CATALOGO && (
+        <>
+          <Reveal>
+            <MaisVendidosSection />
+          </Reveal>
 
-      <CategoriesSection />
+          <CategoriesSection />
 
-      <Reveal>
-        <CatalogSection
-          filters={filters}
-          onChange={setFilters}
-          priceBounds={priceBounds}
-          diameterBounds={diameterBounds}
-        />
-      </Reveal>
+          <Reveal>
+            <CatalogSection
+              filters={filters}
+              onChange={setFilters}
+              priceBounds={priceBounds}
+              diameterBounds={diameterBounds}
+            />
+          </Reveal>
+        </>
+      )}
 
       <Reveal>
         <TestimonialsSection />

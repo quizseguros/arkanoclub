@@ -5,14 +5,25 @@ import { brands } from "@/data/brands";
 import { whatsappLink } from "@/lib/config";
 import { formatDiameter } from "@/lib/format";
 import { detailHref } from "@/lib/live-watches";
+import { precoPromocional } from "@/lib/promo";
+import ProductPrice from "./ProductPrice";
 import ZoomableProductImage from "./ZoomableProductImage";
 
-const currency = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
-
-export default function ProductCard({ product, glow }: { product: Product; glow?: boolean }) {
+/** `promoAtiva` só é passado pelas listas de pronta entrega, que sabem no
+ *  navegador se a campanha de Dia dos Pais ainda está valendo. */
+export default function ProductCard({
+  product,
+  glow,
+  promoAtiva,
+}: {
+  product: Product;
+  glow?: boolean;
+  promoAtiva?: boolean;
+}) {
   const brand = brands.find((b) => b.slug === product.brand);
   const brandName = brand?.name ?? product.brandName ?? product.brand;
   const href = detailHref(product);
+  const emPromocao = Boolean(promoAtiva) && precoPromocional(product) !== null;
   // quando tem link de compra, o botão dourado é o de comprar e "Ver detalhes"
   // desce pra linha de baixo, ao lado do WhatsApp
   const showBuyFirst = Boolean(product.buyLink);
@@ -36,6 +47,13 @@ export default function ProductCard({ product, glow }: { product: Product; glow?
         >
           {product.stock === "em-estoque" ? "Em estoque" : "Sob encomenda"}
         </span>
+        {/* embaixo, e não no canto oposto: no celular o card fica estreito e os
+            dois selos se sobrepunham na mesma linha */}
+        {emPromocao && (
+          <span className="absolute bottom-3 left-3 rounded-full bg-arkano-blue px-3 py-1 text-[11px] font-medium text-white shadow-[0_0_18px_rgba(47,111,208,0.65)]">
+            Dia dos Pais
+          </span>
+        )}
       </div>
 
       <div className="flex flex-1 flex-col gap-2 p-3 sm:p-4">
@@ -62,10 +80,16 @@ export default function ProductCard({ product, glow }: { product: Product; glow?
           </span>
         </div>
 
-        <div className="mt-1 flex items-center justify-between sm:mt-3">
-          <span className="text-base font-light text-arkano-champagne sm:text-lg">
-            {currency.format(product.price)}
-          </span>
+        {/* mt-auto: o preço promocional é mais alto que o preço simples, e sem
+            isso os botões desalinhavam entre os cards da mesma linha */}
+        <div className="mt-auto flex items-center justify-between pt-1 sm:pt-3">
+          <ProductPrice
+            price={product.price}
+            promoPrice={product.promoPrice}
+            installments={product.installments}
+            installmentPrice={product.installmentPrice}
+            promoAtiva={promoAtiva}
+          />
         </div>
 
         {showBuyFirst ? (
@@ -114,8 +138,10 @@ export default function ProductCard({ product, glow }: { product: Product; glow?
   );
 
   if (glow) {
+    // na campanha a borda giratória troca o dourado pelo azul, pra promoção
+    // se ler de longe já na grade
     return (
-      <div className="product-glow-border rounded-xl p-px">
+      <div className={`${emPromocao ? "promo-glow-border" : "product-glow-border"} rounded-xl p-px`}>
         {inner}
       </div>
     );

@@ -21,3 +21,7 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Originais em PNG das imagens que viraram WebP em public/img.
+# Guardados como fonte; nao vao pro site (ver scripts/otimizar-imagens.mjs).
+_imagens-originais/

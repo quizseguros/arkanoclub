@@ -11,6 +11,12 @@ const config: Config = {
           gold: "#c9a24b",
           "gold-light": "#e4c878",
           champagne: "#ece2cf",
+          // azuis da campanha de Dia dos Pais — usados só na pronta entrega,
+          // pra separar a promoção do dourado que é a cor permanente da marca
+          navy: "#071633",
+          "navy-light": "#0f2a5c",
+          blue: "#2f6fd0",
+          "blue-light": "#7db8ff",
         },
       },
       fontFamily: {

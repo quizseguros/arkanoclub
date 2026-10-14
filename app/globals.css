@@ -123,6 +123,95 @@ input[type="range"]::-moz-range-thumb {
   to { --glow-angle: 360deg; }
 }
 
+/* ---- Campanha de Dia dos Pais (só na pronta entrega) ---- */
+
+/* Mesma borda rotativa dos cards, na versão azul da promoção */
+.promo-glow-border {
+  background: conic-gradient(
+    from var(--glow-angle),
+    transparent 25%,
+    rgba(47, 111, 208, 0.45) 40%,
+    #7db8ff 50%,
+    rgba(47, 111, 208, 0.45) 60%,
+    transparent 75%
+  );
+  animation: product-border-spin 3s linear infinite;
+}
+
+/* Brilho que atravessa o painel do contador de tempos em tempos */
+.promo-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    transparent 30%,
+    rgba(125, 184, 255, 0.1) 45%,
+    rgba(236, 226, 207, 0.16) 50%,
+    rgba(125, 184, 255, 0.1) 55%,
+    transparent 70%
+  );
+  background-size: 220% 100%;
+  animation: promo-shine 5s ease-in-out infinite;
+}
+
+@keyframes promo-shine {
+  0% { background-position: 180% 0; }
+  60%, 100% { background-position: -80% 0; }
+}
+
+/* Preço promocional: degradê azul correndo dentro das letras.
+   O texto fica transparente e quem aparece é o gradiente recortado nele, então
+   o brilho tem que vir de `drop-shadow` (filtro sobre o resultado pintado) e
+   não de `text-shadow`, que desenharia a sombra por baixo do vazado. */
+.promo-price-shine {
+  background: linear-gradient(
+    100deg,
+    #2f6fd0 0%,
+    #7db8ff 20%,
+    #ffffff 32%,
+    #7db8ff 44%,
+    #2f6fd0 65%,
+    #7db8ff 100%
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 14px rgba(125, 184, 255, 0.5));
+  animation: promo-price-shine 3.5s linear infinite;
+}
+
+@keyframes promo-price-shine {
+  from { background-position: 150% 0; }
+  to { background-position: -150% 0; }
+}
+
+/* Batida discreta no bloco dos segundos, pra leitura de urgência */
+.promo-tick {
+  animation: promo-tick 1s ease-in-out infinite;
+}
+
+@keyframes promo-tick {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.72; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promo-shine::after,
+  .promo-tick,
+  .promo-glow-border,
+  .promo-price-shine {
+    animation: none;
+  }
+
+  /* sem animação o gradiente para num ponto qualquer; trava num azul legível */
+  .promo-price-shine {
+    background-position: 50% 0;
+  }
+}
+
 /* Cadeado da área Arkano Founders: flutua só no eixo vertical */
 .founders-lock-float {
   animation: founders-lock-float 3.2s ease-in-out infinite;

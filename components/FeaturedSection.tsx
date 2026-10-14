@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Product, products } from "@/data/products";
 import { fetchLiveWatches } from "@/lib/live-watches";
+import { usePromoAtiva } from "@/lib/use-promo";
 import ProductCard from "./ProductCard";
 
 type Row = { id: string; title: string; items: Product[] };
@@ -16,7 +17,7 @@ const maisVendidosRow: Row = {
   items: products.filter((p) => p.bestseller),
 };
 
-function ProductRow({ row }: { row: Row }) {
+function ProductRow({ row, promoAtiva }: { row: Row; promoAtiva?: boolean }) {
   const trackRef = useRef<HTMLDivElement>(null);
 
   function scrollByCard(dir: 1 | -1) {
@@ -57,7 +58,11 @@ function ProductRow({ row }: { row: Row }) {
       >
         {row.items.map((product) => (
           <div key={product.id} className="w-64 shrink-0 snap-start sm:w-72">
-            <ProductCard product={product} glow={row.id === "destaque"} />
+            <ProductCard
+              product={product}
+              glow={row.id === "destaque"}
+              promoAtiva={promoAtiva}
+            />
           </div>
         ))}
       </div>
@@ -67,6 +72,8 @@ function ProductRow({ row }: { row: Row }) {
 
 export function ProntaEntregaSection() {
   const [items, setItems] = useState<Product[]>(staticProntaEntrega);
+  // mesmos relógios da página /pronta-entrega — o preço tem que bater nos dois
+  const promoAtiva = usePromoAtiva();
 
   useEffect(() => {
     fetchLiveWatches().then((live) => {
@@ -78,7 +85,10 @@ export function ProntaEntregaSection() {
   return (
     <section id="pronta-entrega" className="scroll-mt-24 bg-arkano-black px-4 pb-16 pt-16 sm:px-6">
       <div className="mx-auto max-w-7xl">
-        <ProductRow row={{ id: "destaque", title: "Pronta entrega", items }} />
+        <ProductRow
+          row={{ id: "destaque", title: "Pronta entrega", items }}
+          promoAtiva={promoAtiva}
+        />
       </div>
     </section>
   );

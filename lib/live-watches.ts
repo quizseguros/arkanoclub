@@ -14,6 +14,9 @@ type LiveWatch = {
   category: string;
   categoryName?: string;
   price: number;
+  promoPrice?: number | null;
+  installments?: number | null;
+  installmentPrice?: number | null;
   diameter: string;
   movement: string;
   watchType?: string;
@@ -51,6 +54,9 @@ function mapLiveWatch(w: LiveWatch): Product {
     brandName: w.brand,
     category: normalizeCategory(w.category),
     price: w.price,
+    promoPrice: w.promoPrice ?? undefined,
+    installments: w.installments ?? undefined,
+    installmentPrice: w.installmentPrice ?? undefined,
     caseDiameter: parseDiameter(w.diameter),
     movement: normalizeMovement(w.movement),
     watchType: w.watchType?.trim() || undefined,

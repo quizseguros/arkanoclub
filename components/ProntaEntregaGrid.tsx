@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { Product } from "@/data/products";
 import { brands } from "@/data/brands";
+import { usePromoAtiva } from "@/lib/use-promo";
+import { ABA_CATALOGO } from "@/lib/config";
 import ProductCard from "./ProductCard";
 
 export default function ProntaEntregaGrid({
@@ -12,6 +14,8 @@ export default function ProntaEntregaGrid({
   items: Product[];
   brandFilter?: string | null;
 }) {
+  const promoAtiva = usePromoAtiva();
+
   if (items.length === 0) {
     return (
       <p className="mt-10 text-sm text-arkano-champagne/50">
@@ -27,10 +31,16 @@ export default function ProntaEntregaGrid({
     return (
       <p className="mt-10 text-sm text-arkano-champagne/50">
         Nenhum relógio {marca ? `da ${marca}` : "dessa marca"} em pronta entrega agora.{" "}
-        <Link href="/#catalogo" className="text-arkano-gold underline-offset-4 hover:underline">
-          Ver no catálogo completo
-        </Link>{" "}
-        ou clicar de novo na marca pra mostrar todos.
+        {ABA_CATALOGO ? (
+          <>
+            <Link href="/#catalogo" className="text-arkano-gold underline-offset-4 hover:underline">
+              Ver no catálogo completo
+            </Link>{" "}
+            ou clicar de novo na marca pra mostrar todos.
+          </>
+        ) : (
+          "Clique de novo na marca pra mostrar todos."
+        )}
       </p>
     );
   }
@@ -38,7 +48,7 @@ export default function ProntaEntregaGrid({
   return (
     <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
       {visiveis.map((product) => (
-        <ProductCard key={product.id} product={product} glow />
+        <ProductCard key={product.id} product={product} glow promoAtiva={promoAtiva} />
       ))}
     </div>
   );

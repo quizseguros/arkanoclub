@@ -6,9 +6,9 @@ import { ArrowLeft, Cog, MessageCircle, Ruler, Share2, ShoppingBag, User, Watch 
 import { whatsappLink } from "@/lib/config";
 import { formatDiameter } from "@/lib/format";
 import { colorToHex } from "@/lib/colors";
+import { usePromoAtiva } from "@/lib/use-promo";
 import ProductGallery from "./ProductGallery";
-
-const currency = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
+import ProductPrice from "./ProductPrice";
 
 export type ProductDetailVariant = {
   color: string;
@@ -20,6 +20,10 @@ export type ProductDetailData = {
   brandName: string;
   category?: string;
   price: number;
+  /** preço de campanha do painel — só os de pronta entrega mandam esse campo */
+  promoPrice?: number;
+  installments?: number;
+  installmentPrice?: number;
   caseDiameter: number;
   movement: string;
   watchType?: string;
@@ -39,6 +43,7 @@ export type ProductDetailData = {
 export default function ProductDetail({ data }: { data: ProductDetailData }) {
   const [pageUrl, setPageUrl] = useState("");
   const [selected, setSelected] = useState(0);
+  const promoAtiva = usePromoAtiva();
   const hasVariants = Boolean(data.variants && data.variants.length > 1);
   const activeImage = data.variants?.[selected]?.image ?? data.image;
   const activeColor = data.variants?.[selected]?.color;
@@ -156,7 +161,14 @@ export default function ProductDetail({ data }: { data: ProductDetailData }) {
               )}
             </div>
 
-            <span className="text-3xl font-light text-arkano-champagne">{currency.format(data.price)}</span>
+            <ProductPrice
+              price={data.price}
+              promoPrice={data.promoPrice}
+              installments={data.installments}
+              installmentPrice={data.installmentPrice}
+              promoAtiva={promoAtiva}
+              size="lg"
+            />
 
             {data.buyLink && (
               <a

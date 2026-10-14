@@ -41,7 +41,7 @@ export default function FoundersLocked() {
 
           <div className="founders-lock-float relative h-24 w-24 sm:h-28 sm:w-28">
             <Image
-              src="/img/founders/cadeado-arkano.png"
+              src="/img/founders/cadeado-arkano.webp"
               alt="Área bloqueada"
               fill
               priority

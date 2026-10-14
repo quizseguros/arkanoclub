@@ -3,7 +3,8 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { banners } from "@/data/banners";
+import { banners as todos } from "@/data/banners";
+import { usePromoAtiva } from "@/lib/use-promo";
 
 function getPerPage() {
   if (typeof window === "undefined") return 2;
@@ -12,6 +13,11 @@ function getPerPage() {
 
 export default function BannerCarousel() {
   const [perPage, setPerPage] = useState(2);
+  const promoAtiva = usePromoAtiva();
+  // durante a campanha fica só o banner de Dia dos Pais; fora dela, os de sempre
+  const banners = todos.filter((b) => (promoAtiva ? !b.ocultoNaPromo : !b.promoOnly));
+  // com um banner só não há o que paginar: ele ocupa a largura toda e as setas somem
+  const sozinho = banners.length === 1;
   const pageCount = Math.ceil(banners.length / perPage);
   const [page, setPage] = useState(0);
   const [offset, setOffset] = useState(0);
@@ -84,46 +90,61 @@ export default function BannerCarousel() {
                   )}
                 </div>
               );
-              const widthClasses = "w-full sm:w-[calc(50%-0.5rem)] shrink-0";
+              const widthClasses = sozinho
+                ? "w-full shrink-0"
+                : "w-full sm:w-[calc(50%-0.5rem)] shrink-0";
 
-              return banner.link ? (
-                <a key={banner.id} href={banner.link} target="_blank" rel="noopener noreferrer" className={widthClasses}>
+              if (!banner.link) {
+                return <div key={banner.id} className={widthClasses}>{card}</div>;
+              }
+
+              // página do próprio site abre na mesma aba; WhatsApp e afins, em aba nova
+              const interno = banner.link.startsWith("/");
+              return (
+                <a
+                  key={banner.id}
+                  href={banner.link}
+                  className={widthClasses}
+                  {...(interno ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+                >
                   {card}
                 </a>
-              ) : (
-                <div key={banner.id} className={widthClasses}>{card}</div>
               );
             })}
           </div>
         </div>
 
-        <button
-          aria-label="Banner anterior"
-          onClick={() => goTo(page - 1)}
-          className="absolute left-2 top-1/2 hidden -translate-y-1/2 items-center justify-center rounded-full bg-black/60 p-2 text-arkano-champagne transition hover:bg-black/80 sm:flex"
-        >
-          <ChevronLeft size={22} />
-        </button>
-        <button
-          aria-label="Próximo banner"
-          onClick={() => goTo(page + 1)}
-          className="absolute right-2 top-1/2 hidden -translate-y-1/2 items-center justify-center rounded-full bg-black/60 p-2 text-arkano-champagne transition hover:bg-black/80 sm:flex"
-        >
-          <ChevronRight size={22} />
-        </button>
-
-        <div className="mt-4 flex justify-center gap-2">
-          {Array.from({ length: pageCount }).map((_, i) => (
+        {!sozinho && (
+          <>
             <button
-              key={i}
-              aria-label={`Ir pra página ${i + 1}`}
-              onClick={() => goTo(i)}
-              className={`h-1.5 w-6 rounded-full transition ${
-                i === page ? "bg-arkano-gold" : "bg-white/20"
-              }`}
-            />
-          ))}
-        </div>
+              aria-label="Banner anterior"
+              onClick={() => goTo(page - 1)}
+              className="absolute left-2 top-1/2 hidden -translate-y-1/2 items-center justify-center rounded-full bg-black/60 p-2 text-arkano-champagne transition hover:bg-black/80 sm:flex"
+            >
+              <ChevronLeft size={22} />
+            </button>
+            <button
+              aria-label="Próximo banner"
+              onClick={() => goTo(page + 1)}
+              className="absolute right-2 top-1/2 hidden -translate-y-1/2 items-center justify-center rounded-full bg-black/60 p-2 text-arkano-champagne transition hover:bg-black/80 sm:flex"
+            >
+              <ChevronRight size={22} />
+            </button>
+
+            <div className="mt-4 flex justify-center gap-2">
+              {Array.from({ length: pageCount }).map((_, i) => (
+                <button
+                  key={i}
+                  aria-label={`Ir pra página ${i + 1}`}
+                  onClick={() => goTo(i)}
+                  className={`h-1.5 w-6 rounded-full transition ${
+                    i === page ? "bg-arkano-gold" : "bg-white/20"
+                  }`}
+                />
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </section>
   );

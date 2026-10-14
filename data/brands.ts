@@ -42,4 +42,5 @@ export const brands: Brand[] = [
   { slug: "beaubleu", name: "Beaubleu", logo: "", hasLogo: false },
   { slug: "studio-underdog", name: "Studio Underd0g", logo: "", hasLogo: false },
   { slug: "hoffman", name: "Hoffman", logo: "", hasLogo: false },
+  { slug: "nivada-grenchen", name: "Nivada Grenchen", logo: "", hasLogo: false },
 ];

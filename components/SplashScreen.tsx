@@ -6,10 +6,10 @@ import Image from "next/image";
 const WORDS = ["O", "tempo", "é", "seu", "maior", "ativo."];
 
 const PARTS = [
-  { src: "/img/splash/simbolo-A.png",     key: "A" },
-  { src: "/img/splash/arco-direito.png",  key: "R" },
-  { src: "/img/splash/arco-inferior.png", key: "B" },
-  { src: "/img/splash/arco-esquerdo.png", key: "L" },
+  { src: "/img/splash/simbolo-A.webp",     key: "A" },
+  { src: "/img/splash/arco-direito.webp",  key: "R" },
+  { src: "/img/splash/arco-inferior.webp", key: "B" },
+  { src: "/img/splash/arco-esquerdo.webp", key: "L" },
 ];
 
 export default function SplashScreen() {

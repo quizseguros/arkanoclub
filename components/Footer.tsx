@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Instagram, MessageCircle } from "lucide-react";
-import { INSTAGRAM_URL, whatsappLink } from "@/lib/config";
+import { INSTAGRAM_URL, whatsappLink, ABA_CATALOGO, ABA_FOUNDERS, ABA_VENDER_RELOGIO } from "@/lib/config";
 import SeoKeywordsPopup from "@/components/SeoKeywordsPopup";
 
 export default function Footer() {
@@ -21,11 +21,12 @@ export default function Footer() {
         <div>
           <h4 className="mb-4 text-sm font-medium tracking-wide text-arkano-champagne">Navegação</h4>
           <ul className="space-y-2 text-sm text-arkano-champagne/60">
-            <li><Link href="/#catalogo" className="hover:text-arkano-gold">Catálogo</Link></li>
+            <li><Link href="/pronta-entrega" className="hover:text-arkano-gold">Pronta entrega</Link></li>
+            {ABA_CATALOGO && <li><Link href="/#catalogo" className="hover:text-arkano-gold">Catálogo</Link></li>}
             <li><Link href="/quem-somos" className="hover:text-arkano-gold">Quem somos</Link></li>
-            <li><Link href="/vender-relogio" className="hover:text-arkano-gold">Vender seu relógio</Link></li>
+            {ABA_VENDER_RELOGIO && <li><Link href="/vender-relogio" className="hover:text-arkano-gold">Vender seu relógio</Link></li>}
             <li><Link href="/grupo-vip" className="hover:text-arkano-gold">Grupo VIP</Link></li>
-            <li><Link href="/founders" className="hover:text-arkano-gold">Arkano Founders</Link></li>
+            {ABA_FOUNDERS && <li><Link href="/founders" className="hover:text-arkano-gold">Arkano Founders</Link></li>}
           </ul>
         </div>
 
@@ -67,7 +68,7 @@ export default function Footer() {
           <h4 className="mb-4 text-sm font-medium tracking-wide text-arkano-champagne">Garantia</h4>
           <div className="flex items-center gap-3">
             <Image
-              src="/img/identidade/selo-autenticacao.png"
+              src="/img/identidade/selo-autenticacao.webp"
               alt="Selo de Autenticação Arkano Club, produto 100% original"
               width={64}
               height={64}

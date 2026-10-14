@@ -59,7 +59,7 @@ export default function GrupoVipPopup() {
           onClick={close}
         >
           <Image
-            src="/img/pop-up-grupovip.png"
+            src="/img/pop-up-grupovip.webp"
             alt="Grupo VIP Arkano Club — ofertas exclusivas no WhatsApp"
             width={480}
             height={480}

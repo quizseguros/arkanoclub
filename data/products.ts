@@ -15,6 +15,12 @@ export type Product = {
   brand: string;
   category: Category;
   price: number;
+  /** preço de campanha vindo do painel — quando presente e menor que `price`,
+   *  o card risca o preço cheio e destaca esse (ver `lib/promo.ts`) */
+  promoPrice?: number;
+  /** parcelamento definido à mão no painel: quantidade e valor de cada parcela */
+  installments?: number;
+  installmentPrice?: number;
   caseDiameter: number;
   movement: Movement;
   stock: Stock;
@@ -2104,7 +2110,7 @@ export const products: Product[] = [
     caseDiameter: 22.2,
     movement: "quartzo",
     stock: "sob-encomenda",
-    image: "/img/produtos/seiko-essentials-tank.png",
+    image: "/img/produtos/seiko-essentials-tank.webp",
     description: "Caixa retangular de 22.2mm em aço inoxidável, mostrador branco com algarismos romanos e pulseira de couro preta com costura em crocodilo. Visual clássico de vestir, disponível pra pronta entrega.",
     history: "O formato tank (retangular, cantos levemente arredondados) é uma releitura direta dos relógios de vestir dos anos 1920-30 — a Seiko traz essa mesma linguagem clássica pra linha Essentials, num movimento de quartzo moderno.",
     styleCategory: "dress",
@@ -2146,7 +2152,7 @@ export const products: Product[] = [
     caseDiameter: 38.5,
     movement: "manual",
     stock: "sob-encomenda",
-    image: "/img/produtos/studio-underdog-goofy-panda.png",
+    image: "/img/produtos/studio-underdog-goofy-panda.webp",
     description: "Cronógrafo de corda manual com dial \"panda\" em duas camadas texturizadas, caixa de 38.5mm e fundo transparente. Movimento exclusivo Seagull ST-1901B, desenvolvido em parceria com a Studio Underd0g e regulado no Reino Unido.",
     history: "A Studio Underd0g é uma microbrand britânica conhecida por reinterpretar cronógrafos vintage com bom humor no nome dos modelos. O calibre ST-1901B foi criado sob medida pra marca, com um nova regulagem de precisão exclusiva dessa parceria.",
     styleCategory: "cronógrafo",
@@ -2160,7 +2166,7 @@ export const products: Product[] = [
     caseDiameter: 40,
     movement: "quartzo",
     stock: "sob-encomenda",
-    image: "/img/produtos/hoffman-racing-sb03.png",
+    image: "/img/produtos/hoffman-racing-sb03.webp",
     description: "Cronógrafo mechaquartz em edição limitada a 250 peças, com dial em duas camadas em tons vibrantes inspirados no verão mediterrâneo. Caixa de 40mm em aço com cristal de safira.",
     history: "A Hoffman é uma microbrand independente especializada em cronógrafos de inspiração racing dos anos 1960-70. O SB03 foi a primeira edição limitada de verão da marca, fugindo do clássico dial \"panda\" monocromático pras cores quentes dessa referência.",
     styleCategory: "cronógrafo",
@@ -2174,7 +2180,7 @@ export const products: Product[] = [
     caseDiameter: 40,
     movement: "quartzo",
     stock: "sob-encomenda",
-    image: "/img/produtos/hoffman-reverse-panda.png",
+    image: "/img/produtos/hoffman-reverse-panda.webp",
     description: "Cronógrafo racing com dial em duas camadas preto e branco invertido (\"reverse panda\"), bisel preto com escala taquimétrica e caixa de 40mm em aço. Pulseira de couro preta semi-fosca.",
     history: "O esquema \"reverse panda\" (fundo escuro com contadores claros) é o inverso do \"panda\" clássico (fundo claro com contadores escuros) — uma variação valorizada pelos colecionadores de cronógrafos vintage justamente por inverter a lógica usual de contraste.",
     styleCategory: "cronógrafo",

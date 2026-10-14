@@ -4,16 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, MessageCircle, X } from "lucide-react";
-import { whatsappLink } from "@/lib/config";
+import { whatsappLink, ABA_CATALOGO, ABA_FOUNDERS, ABA_VENDER_RELOGIO } from "@/lib/config";
 import SearchAutocomplete from "./SearchAutocomplete";
 
 const navLinks = [
-  { href: "/pronta-entrega", label: "Pronta entrega" },
-  { href: "/#catalogo", label: "Catálogo" },
-  { href: "/quem-somos", label: "Quem Somos" },
-  { href: "/vender-relogio", label: "Vender seu relógio" },
-  { href: "/grupo-vip", label: "Grupo VIP" },
-];
+  { href: "/pronta-entrega", label: "Pronta entrega", ativo: true },
+  { href: "/#catalogo", label: "Catálogo", ativo: ABA_CATALOGO },
+  { href: "/quem-somos", label: "Quem Somos", ativo: true },
+  { href: "/vender-relogio", label: "Vender seu relógio", ativo: ABA_VENDER_RELOGIO },
+  { href: "/grupo-vip", label: "Grupo VIP", ativo: true },
+].filter((link) => link.ativo);
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -35,14 +35,16 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
+          {ABA_FOUNDERS && (
           <Link href="/founders" className="founders-glow flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium tracking-wide text-arkano-black">
             <Image src="/img/identidade/simbolo-preto.png" alt="" width={13} height={13} />
             Arkano Founders
           </Link>
+          )}
         </nav>
 
         <div className="hidden flex-1 items-center justify-end gap-3 lg:flex">
-          <SearchAutocomplete variant="desktop" />
+          {ABA_CATALOGO && <SearchAutocomplete variant="desktop" />}
           <a
             href={whatsappLink("Olá! Vim pelo site do Arkano Club e quero saber mais.")}
             target="_blank"
@@ -65,9 +67,11 @@ export default function Header() {
 
       {open && (
         <div className="border-t border-white/10 px-4 pb-6 pt-4 lg:hidden">
-          <div className="mb-5">
-            <SearchAutocomplete variant="mobile" onNavigate={() => setOpen(false)} />
-          </div>
+          {ABA_CATALOGO && (
+            <div className="mb-5">
+              <SearchAutocomplete variant="mobile" onNavigate={() => setOpen(false)} />
+            </div>
+          )}
 
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
@@ -80,6 +84,7 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
+            {ABA_FOUNDERS && (
             <Link
               href="/founders"
               onClick={() => setOpen(false)}
@@ -88,6 +93,7 @@ export default function Header() {
               <Image src="/img/identidade/simbolo-preto.png" alt="" width={15} height={15} />
               Arkano Founders
             </Link>
+            )}
             <a
               href={whatsappLink("Olá! Vim pelo site do Arkano Club e quero saber mais.")}
               target="_blank"
