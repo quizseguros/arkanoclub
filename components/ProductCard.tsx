@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, Cog, MessageCircle, Ruler, ShoppingBag, User } from "lucide-react";
 import { Product } from "@/data/products";

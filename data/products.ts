@@ -2224,4 +2224,48 @@ const sobEncomenda: Product[] = memora.relogios.map((r) => ({
   pedidos: r.pedidos,
 }));
 
-export const products: Product[] = sobEncomenda;
+// Seikos que o Arkano já vendia (catálogo antigo), de volta no Sob encomenda a
+// pedido do Guilherme (15/10/2026): faltava Seiko no catálogo da Memora. Preço
+// é o do Arkano, sem a variação. Foto oficial da Seiko quando a antiga era
+// pequena, todas no mesmo enquadramento do resto (img/sob-encomenda/arkano-*).
+const SEIKOS_DE_VOLTA: Record<string, string> = {
+  "seiko-5-sports-bruce-wayne": "SSK001",
+  "seiko-presage-cocktail": "",
+  "seiko-5-sports-pepsi": "SRPD53",
+  "seiko-prospex-alpinist-verde": "SPB121",
+  "seiko-5-sports-gmt-batman": "SSK003",
+  "seiko-prospex-speedtimer-marfim": "SSC943",
+  "seiko-essentials-chronograph": "",
+  "seiko-5-sports-black": "SRPD55",
+  "seiko-prospex-save-the-ocean": "SRPE07",
+  "seiko-king-samurai-srpe37": "SRPE37",
+  "seiko-essentials-tank": "",
+};
+const seikosDeVolta: Product[] = Object.entries(SEIKOS_DE_VOLTA).map(([id, ref]) => {
+  const p = catalogoAntigo.find((c) => c.id === id)!;
+  const image = `/img/sob-encomenda/arkano-${id}.webp`;
+  const price = preco({ id, price: p.price });
+  return {
+    ...p,
+    ref: ref || undefined,
+    category: "unissex",
+    stock: "sob-encomenda",
+    image,
+    images: [image],
+    variants: undefined,
+    installments: 12,
+    installmentPrice: Math.round(((price * 1.14) / 12) * 100) / 100,
+    price,
+    pedidos: 0,
+  };
+});
+
+// um Seiko a cada 9 posições a partir da 5ª, pra eles aparecerem já nas
+// primeiras páginas em vez de ir tudo pro fim
+function intercalar(base: Product[], extras: Product[]) {
+  const saida = [...base];
+  extras.forEach((p, i) => saida.splice(4 + i * 9, 0, p));
+  return saida;
+}
+
+export const products: Product[] = intercalar(sobEncomenda, seikosDeVolta);
