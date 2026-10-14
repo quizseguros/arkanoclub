@@ -11,14 +11,11 @@ import ProductCard from "./ProductCard";
 // Layout pedido pelo Guilherme (14/10/2026):
 // - desktop: fileiras de 5 e de 4 intercaladas; 27 por página fecha 3 pares
 //   de fileiras sem sobrar relógio solto
-// - celular: um slider de 6 relógios, depois uma fileira de 2 só com os mais
-//   comprados, e repete; 24 por página = 3 desses blocos
+// - celular: grade simples de 2 por linha. O slider de 6 + fileira de 2 foi
+//   testado e ele não gostou (15/10/2026)
 const FILEIRAS_DESKTOP = [5, 4];
 const POR_PAGINA_DESKTOP = 27;
-const NO_SLIDER = 6;
-const NA_DUPLA = 2;
-const BLOCOS_POR_PAGINA_CELULAR = 3;
-const POR_PAGINA_CELULAR = BLOCOS_POR_PAGINA_CELULAR * (NO_SLIDER + NA_DUPLA);
+const POR_PAGINA_CELULAR = 24;
 
 const ORDENS = [
   { value: "pedidos", label: "Mais pedidos" },
@@ -78,41 +75,20 @@ export default function SobEncomendaClient({ titulo = "h1" }: { titulo?: "h1" | 
     return filtrada;
   }, [marca, ordem, busca]);
 
-  // celular: as fileiras de 2 levam os mais comprados da lista atual; os
-  // sliders, o resto na ordem escolhida
-  const blocosCelular = useMemo(() => {
-    const totalBlocos = Math.ceil(lista.length / (NO_SLIDER + NA_DUPLA));
-    const maisComprados = [...lista]
-      .sort((a, b) => (b.pedidos ?? 0) - (a.pedidos ?? 0))
-      .slice(0, totalBlocos * NA_DUPLA);
-    const separados = new Set(maisComprados.map((p) => p.id));
-    const resto = lista.filter((p) => !separados.has(p.id));
-    return Array.from({ length: totalBlocos }, (_, i) => ({
-      slider: resto.slice(i * NO_SLIDER, (i + 1) * NO_SLIDER),
-      dupla: maisComprados.slice(i * NA_DUPLA, (i + 1) * NA_DUPLA),
-    })).filter((b) => b.slider.length || b.dupla.length);
-  }, [lista]);
 
-  const totalPaginas = desktop
-    ? Math.max(1, Math.ceil(lista.length / POR_PAGINA_DESKTOP))
-    : Math.max(1, Math.ceil(blocosCelular.length / BLOCOS_POR_PAGINA_CELULAR));
+  const porPagina = desktop ? POR_PAGINA_DESKTOP : POR_PAGINA_CELULAR;
+  const totalPaginas = Math.max(1, Math.ceil(lista.length / porPagina));
   const atual = Math.min(pagina, totalPaginas);
 
-  const inicio = (atual - 1) * POR_PAGINA_DESKTOP;
-  const itensDesktop = lista.slice(inicio, inicio + POR_PAGINA_DESKTOP);
+  const inicio = (atual - 1) * porPagina;
+  const itensDaPagina = lista.slice(inicio, inicio + porPagina);
   const fileirasDesktop: Product[][] = [];
-  for (let i = 0, f = 0; i < itensDesktop.length; f++) {
+  for (let i = 0, f = 0; i < itensDaPagina.length; f++) {
     const tamanho = FILEIRAS_DESKTOP[f % FILEIRAS_DESKTOP.length];
-    fileirasDesktop.push(itensDesktop.slice(i, i + tamanho));
+    fileirasDesktop.push(itensDaPagina.slice(i, i + tamanho));
     i += tamanho;
   }
-  const blocosDaPagina = blocosCelular.slice(
-    (atual - 1) * BLOCOS_POR_PAGINA_CELULAR,
-    atual * BLOCOS_POR_PAGINA_CELULAR
-  );
-  const mostrados = desktop
-    ? itensDesktop.length
-    : blocosDaPagina.reduce((n, b) => n + b.slider.length + b.dupla.length, 0);
+  const mostrados = itensDaPagina.length;
 
   function irPara(n: number) {
     setPagina(n);
@@ -229,27 +205,9 @@ export default function SobEncomendaClient({ titulo = "h1" }: { titulo?: "h1" | 
               ))}
             </div>
           ) : (
-            <div className="mt-8 flex flex-col gap-6">
-              {blocosDaPagina.map((bloco, i) => (
-                <div key={i} className="flex flex-col gap-6">
-                  {bloco.slider.length > 0 && (
-                    <div className="-mx-4 flex snap-x snap-mandatory scroll-px-4 gap-3 overflow-x-auto px-4 pb-2 [scrollbar-width:none] sm:-mx-6 sm:scroll-px-6 sm:px-6">
-                      {bloco.slider.map((product) => (
-                        // [&>div]:h-full: todos os cards do slider na mesma altura
-                        <div key={product.id} className="w-[46%] shrink-0 snap-start sm:w-[31%] [&>div]:h-full">
-                          <ProductCard product={product} />
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                  {bloco.dupla.length > 0 && (
-                    <div className="grid grid-cols-2 gap-3">
-                      {bloco.dupla.map((product) => (
-                        <ProductCard key={product.id} product={product} />
-                      ))}
-                    </div>
-                  )}
-                </div>
+            <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-6">
+              {itensDaPagina.map((product) => (
+                <ProductCard key={product.id} product={product} />
               ))}
             </div>
           )}
