@@ -102,9 +102,42 @@ function parcela12(preco) {
   return Math.round(((preco * (1 + ACRESCIMO_PARCELADO)) / 12) * 100) / 100;
 }
 
+// Preço não pode ser idêntico ao da Memora (pedido do Guilherme, 14/10/2026):
+// cada relógio ganha uma diferença fixa entre -R$ 100 e +R$ 100, em passos de
+// R$ 10. A diferença sai do id do relógio, então não muda a cada importação.
+const PASSOS_VARIACAO = 10; // de -100 a +100 em passos de 10
+/** número pseudoaleatório, mas sempre o mesmo pra cada relógio e semente */
+function sorteioFixo(memoraId, semente = 1) {
+  let h = Math.imul(Number(memoraId) ^ Math.imul(semente, 0x27d4eb2d) ^ 0x5bd1e995, 0x9e3779b1);
+  h ^= h >>> 15;
+  h = Math.imul(h, 0x85ebca6b);
+  h ^= h >>> 13;
+  return h >>> 0;
+}
+
+function variacaoDePreco(memoraId) {
+  const indice = sorteioFixo(memoraId) % (2 * PASSOS_VARIACAO + 1);
+  return (indice - PASSOS_VARIACAO) * 10;
+}
+
+/** Reordena o mínimo possível pra não ter duas peças da mesma marca seguidas:
+ *  quando a próxima repete a marca, puxa a primeira de outra marca que vier
+ *  depois. Se só sobrou uma marca, deixa como está. */
+function semMarcaRepetida(lista, marcaDe) {
+  const resto = [...lista];
+  const saida = [];
+  while (resto.length) {
+    const anterior = saida.length ? marcaDe(saida[saida.length - 1]) : null;
+    let i = resto.findIndex((w) => marcaDe(w) !== anterior);
+    if (i === -1) i = 0;
+    saida.push(resto.splice(i, 1)[0]);
+  }
+  return saida;
+}
+
 const moeda = (v) => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
-function descricao(w) {
+function descricao(w, variacao = 0) {
   const specs = [
     w.ref && `Ref. ${w.ref}`,
     w.medida && `caixa de ${w.medida}`,
@@ -121,12 +154,12 @@ function descricao(w) {
 
   if (w.straps?.length) {
     const base = w.strapBaseName ? `pulseira ${w.strapBaseName}` : "pulseira original";
-    const outras = w.straps.map((s) => `${s.nome} (${moeda(s.price)})`).join(", ");
+    const outras = w.straps.map((s) => `${s.nome} (${moeda(s.price + variacao)})`).join(", ");
     texto += ` Preço com ${base}. Também disponível com ${outras}.`;
   }
   if (w.sizes?.length) {
     const outros = w.sizes
-      .map((s) => `${s.medida}${s.price ? ` (${moeda(s.price)})` : ""}`)
+      .map((s) => `${s.medida}${s.price ? ` (${moeda(s.price + variacao)})` : ""}`)
       .join(", ");
     texto += ` Também disponível em ${outros}.`;
   }
@@ -331,13 +364,16 @@ async function main() {
     return nossa ? nossa.slug : slugify(nome);
   }
 
-  // mesma ordem da vitrine deles ("Mais pedidos"): sort estável por pedidos,
-  // empate fica na ordem do arquivo
-  const visiveis = catalogo
+  // Ordem própria, diferente da vitrine da Memora (pedido do Gabriel,
+  // 14/10/2026): os mais pedidos continuam na frente, mas com um empurrão fixo
+  // por relógio que embaralha o topo e os empates, e sem duas peças da mesma
+  // marca coladas. Fixo = não muda a cada importação.
+  const ordenados = catalogo
     .filter((w) => !FORA_DO_AR.test(w.status || ""))
-    .map((w, ordem) => ({ w, ordem }))
-    .sort((a, b) => (b.w.orderCount || 0) - (a.w.orderCount || 0) || a.ordem - b.ordem)
+    .map((w) => ({ w, nota: (w.orderCount || 0) + (sorteioFixo(w.id, 7) % 1000) / 100 }))
+    .sort((a, b) => b.nota - a.nota)
     .map(({ w }) => (w.movimento ? w : { ...w, movimento: MOVIMENTO_POR_REF[w.ref] }));
+  const visiveis = semMarcaRepetida(ordenados, marcaDe);
 
   const semMovimento = visiveis.filter((w) => !w.movimento);
   if (semMovimento.length) {
@@ -406,13 +442,15 @@ async function main() {
       caseDiameter: diametro(w.medida),
       movement: tipoMovimento(w.movimento),
       movementLabel: w.movimento || "",
-      price: w.price,
+      price: w.price + variacaoDePreco(w.id),
+      precoMemora: w.price,
+      pedidos: w.orderCount || 0,
       installments: 12,
-      installmentPrice: parcela12(w.price),
+      installmentPrice: parcela12(w.price + variacaoDePreco(w.id)),
       bestseller: (w.orderCount || 0) > LIMIAR_MAIS_PEDIDO,
       image: fotos[0] ?? SEM_FOTO,
       images: fotos.length ? fotos : [SEM_FOTO],
-      description: descricao(w),
+      description: descricao(w, variacaoDePreco(w.id)),
     };
   });
 

@@ -25,3 +25,6 @@ yarn-error.log*
 # Originais em PNG das imagens que viraram WebP em public/img.
 # Guardados como fonte; nao vao pro site (ver scripts/otimizar-imagens.mjs).
 _imagens-originais/
+
+# pacote pra subir na Hostinger, gerado a partir de out/
+arkanoclub-site.zip

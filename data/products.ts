@@ -14,6 +14,8 @@ export type ColorVariant = {
 export type Product = {
   /** referência do fabricante, mostrada na página do relógio */
   ref?: string;
+  /** unidades vendidas (Sob encomenda) — define os "mais comprados" do layout mobile */
+  pedidos?: number;
   id: string;
   name: string;
   brand: string;
@@ -2213,6 +2215,7 @@ const sobEncomenda: Product[] = memora.relogios.map((r) => ({
   images: r.images,
   description: r.description,
   bestseller: r.bestseller,
+  pedidos: r.pedidos,
 }));
 
 export const products: Product[] = sobEncomenda;
