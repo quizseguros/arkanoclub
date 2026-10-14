@@ -11,6 +11,12 @@ const exportEstatico = process.env.EXPORT_ESTATICO === "1";
 
 const nextConfig = {
   ...(exportEstatico ? { output: "export", trailingSlash: true } : {}),
+  // links de compartilhamento e prévia (WhatsApp, Instagram) apontam pro
+  // domínio onde a versão está publicada
+  env: {
+    NEXT_PUBLIC_SITE_URL:
+      process.env.NEXT_PUBLIC_SITE_URL || (exportEstatico ? "https://arkanoclub.com" : "https://arkanoclub.vercel.app"),
+  },
   images: {
     unoptimized: true,
   },

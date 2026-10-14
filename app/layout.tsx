@@ -8,6 +8,7 @@ import ChatWidget from "@/components/ChatWidget";
 import SplashScreen from "@/components/SplashScreen";
 import GrupoVipPopup from "@/components/GrupoVipPopup";
 import { SearchProvider } from "@/lib/search-context";
+import { SITE_URL } from "@/lib/config";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -16,6 +17,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  // sem isso o export estático (arkanoclub.com) saía com a imagem de prévia
+  // apontando pra localhost e o WhatsApp não mostrava nada
+  metadataBase: new URL(SITE_URL),
   title: "Arkano Club | Relógios originais com garantia",
   description:
     "Relógios originais com garantia — Seiko, Citizen, TAG Heuer, Tudor, Longines e mais. Envio para todo o Brasil.",
@@ -23,11 +27,11 @@ export const metadata: Metadata = {
     title: "Arkano Club | Relógios originais com garantia",
     description:
       "Relógios originais com garantia — Seiko, Citizen, TAG Heuer, Tudor, Longines e mais. Envio para todo o Brasil.",
-    url: "https://arkanoclub.vercel.app",
+    url: SITE_URL,
     siteName: "Arkano Club",
     images: [
       {
-        url: "https://arkanoclub.vercel.app/opengraph-image.png",
+        url: `${SITE_URL}/opengraph-image.png`,
         width: 1200,
         height: 630,
         alt: "Arkano Club — Relógios originais com garantia",
@@ -41,7 +45,7 @@ export const metadata: Metadata = {
     title: "Arkano Club | Relógios originais com garantia",
     description:
       "Relógios originais com garantia — Seiko, Citizen, TAG Heuer, Tudor, Longines e mais. Envio para todo o Brasil.",
-    images: ["https://arkanoclub.vercel.app/opengraph-image.png"],
+    images: [`${SITE_URL}/opengraph-image.png`],
   },
 };
 
