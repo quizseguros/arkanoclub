@@ -207,10 +207,15 @@ async function enquadrar(buf) {
     }
   if (maxX < 0) return simples();
 
-  const largura = maxX - minX + 1;
+  // Centro horizontal = eixo de simetria do relógio, e não o meio da área
+  // ocupada: sombra de um lado e coroa do outro empurravam o relógio pra
+  // esquerda (Tissot PRX 35, 14/10/2026).
+  const eixo = await eixoDeSimetria(base, W, H, minX, maxX);
+  const meiaLargura = Math.max(eixo - minX, maxX - eixo) + 1;
   const altura = maxY - minY + 1;
   const util = Math.round(LADO * (1 - 2 * FOLGA));
-  const escala = Math.min(util / largura, util / altura);
+  const escala = Math.min(util / (2 * meiaLargura), util / altura);
+  const largura = maxX - minX + 1;
   const novaL = Math.round(largura * escala);
   const novaA = Math.round(altura * escala);
 
@@ -225,10 +230,52 @@ async function enquadrar(buf) {
     buffer: await sharp({
       create: { width: LADO, height: LADO, channels: 3, background: { r: fundo[0], g: fundo[1], b: fundo[2] } },
     })
-      .composite([{ input: relogio, left: Math.round((LADO - novaL) / 2), top: Math.round((LADO - novaA) / 2) }])
+      .composite([
+        {
+          input: relogio,
+          left: Math.round(LADO / 2 - (eixo - minX) * escala),
+          top: Math.round((LADO - novaA) / 2),
+        },
+      ])
       .png()
       .toBuffer(),
   };
+}
+
+/** Acha a coluna em que o relógio é mais simétrico (espelho esquerda/direita),
+ *  numa cópia reduzida e em tons de cinza. Pixel claro (sombra, reflexo) não
+ *  conta, pra sombra não puxar o eixo. Devolve a coluna na escala original. */
+async function eixoDeSimetria(base, W, H, minX, maxX) {
+  const PEQ = 240;
+  const fator = PEQ / W;
+  const altura = Math.max(1, Math.round(H * fator));
+  const g = await base.clone().resize(PEQ, altura, { fit: "fill" }).toColourspace("b-w").raw().toBuffer();
+  const canais = g.length / (PEQ * altura);
+  const escuro = (x, y) => {
+    if (x < 0 || x >= PEQ) return 0;
+    const v = 255 - g[(y * PEQ + x) * canais];
+    return v > 45 ? v : 0;
+  };
+
+  const a = Math.floor(minX * fator);
+  const b = Math.ceil(maxX * fator);
+  let melhor = (a + b) / 2;
+  let melhorNota = -1;
+  // o eixo fica no miolo da área ocupada; procura em meio pixel
+  for (let c2 = Math.round((a + (b - a) * 0.3) * 2); c2 <= Math.round((a + (b - a) * 0.7) * 2); c2++) {
+    const c = c2 / 2;
+    let nota = 0;
+    for (let k = 0.5; k <= (b - a); k += 1) {
+      const xe = Math.round(c - k);
+      const xd = Math.round(c + k);
+      for (let y = 0; y < altura; y += 2) nota += Math.min(escuro(xe, y), escuro(xd, y));
+    }
+    if (nota > melhorNota) {
+      melhorNota = nota;
+      melhor = c;
+    }
+  }
+  return Math.round(melhor / fator);
 }
 
 /** roda as tarefas com no máximo `n` ao mesmo tempo, pra não martelar o CDN */
