@@ -1,4 +1,14 @@
 {
   "_como_usar": "Preço definido pelo Guilherme, por id do relógio (o final do link /relogio/<id>). Vale sobre o preço importado da Memora; a parcela de 12x com 14% é recalculada sozinha.",
-  "precos": {}
+  "precos": {
+    "furlan-marri-castagna": 7200,
+    "venezianico-redentore-ultrablack-36-1121510": 4790,
+    "tissot-prx-titanium-azul-t137-807-44-041-00": 5900,
+    "tissot-prx-35-ice-blue-t137-207-11-351-00": 5180,
+    "tissot-gentleman-silicium-azul-t127-407-11-041-00": 5650,
+    "tissot-gentleman-silicium-ice-blue-t127-407-11-351-00": 5650,
+    "tissot-pr516-branco-t149-407-11-031-00": 4980,
+    "tissot-pr516-preto-t149-407-11-051-00": 4980,
+    "venezianico-nereide-ultrablack-3921510": 4800
+  }
 }
