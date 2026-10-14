@@ -1,5 +1,5 @@
 {
-  "importado_em": "2026-10-14T13:40:00.958Z",
+  "importado_em": "2026-10-14T14:03:20.758Z",
   "fonte": "https://raw.githubusercontent.com/memorawatches/memorawatches.github.io/main",
   "relogios": [
     {
@@ -15,7 +15,7 @@
       "movementLabel": "Automático",
       "price": 7190,
       "installments": 12,
-      "installmentPrice": 683,
+      "installmentPrice": 683.05,
       "bestseller": true,
       "image": "/img/sob-encomenda/90-0.webp",
       "images": [
@@ -36,7 +36,7 @@
       "movementLabel": "Solar (cronógrafo)",
       "price": 4690,
       "installments": 12,
-      "installmentPrice": 446,
+      "installmentPrice": 445.55,
       "bestseller": true,
       "image": "/img/sob-encomenda/165-0.webp",
       "images": [
@@ -57,7 +57,7 @@
       "movementLabel": "Automático",
       "price": 7190,
       "installments": 12,
-      "installmentPrice": 683,
+      "installmentPrice": 683.05,
       "bestseller": true,
       "image": "/img/sob-encomenda/89-0.webp",
       "images": [
@@ -78,7 +78,7 @@
       "movementLabel": "Automático",
       "price": 5990,
       "installments": 12,
-      "installmentPrice": 569,
+      "installmentPrice": 569.05,
       "bestseller": true,
       "image": "/img/sob-encomenda/15-0.webp",
       "images": [
@@ -99,7 +99,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": true,
       "image": "/img/sob-encomenda/188-0.webp",
       "images": [
@@ -125,7 +125,7 @@
       "movementLabel": "Meca-quartzo",
       "price": 7590,
       "installments": 12,
-      "installmentPrice": 721,
+      "installmentPrice": 721.05,
       "bestseller": true,
       "image": "/img/sob-encomenda/257-0.webp",
       "images": [
@@ -147,7 +147,7 @@
       "movementLabel": "Automático",
       "price": 5190,
       "installments": 12,
-      "installmentPrice": 493,
+      "installmentPrice": 493.05,
       "bestseller": true,
       "image": "/img/sob-encomenda/27-0.webp",
       "images": [
@@ -168,7 +168,7 @@
       "movementLabel": "Automático",
       "price": 7190,
       "installments": 12,
-      "installmentPrice": 683,
+      "installmentPrice": 683.05,
       "bestseller": true,
       "image": "/img/sob-encomenda/88-0.webp",
       "images": [
@@ -189,7 +189,7 @@
       "movementLabel": "Automático",
       "price": 8490,
       "installments": 12,
-      "installmentPrice": 806,
+      "installmentPrice": 806.55,
       "bestseller": true,
       "image": "/img/sob-encomenda/92-0.webp",
       "images": [
@@ -210,7 +210,7 @@
       "movementLabel": "Automático",
       "price": 5990,
       "installments": 12,
-      "installmentPrice": 569,
+      "installmentPrice": 569.05,
       "bestseller": true,
       "image": "/img/sob-encomenda/16-0.webp",
       "images": [
@@ -231,7 +231,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": true,
       "image": "/img/sob-encomenda/20-0.webp",
       "images": [
@@ -252,7 +252,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": true,
       "image": "/img/sob-encomenda/21-0.webp",
       "images": [
@@ -273,7 +273,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": true,
       "image": "/img/sob-encomenda/22-0.webp",
       "images": [
@@ -294,7 +294,7 @@
       "movementLabel": "Quartzo (GMT)",
       "price": 3890,
       "installments": 12,
-      "installmentPrice": 370,
+      "installmentPrice": 369.55,
       "bestseller": true,
       "image": "/img/sob-encomenda/35-0.webp",
       "images": [
@@ -319,7 +319,7 @@
       "movementLabel": "Automático",
       "price": 6690,
       "installments": 12,
-      "installmentPrice": 635,
+      "installmentPrice": 635.55,
       "bestseller": true,
       "image": "/img/sob-encomenda/226-0.webp",
       "images": [
@@ -345,7 +345,7 @@
       "movementLabel": "Automático",
       "price": 3290,
       "installments": 12,
-      "installmentPrice": 313,
+      "installmentPrice": 312.55,
       "bestseller": true,
       "image": "/img/sob-encomenda/310-0.webp",
       "images": [
@@ -370,7 +370,7 @@
       "movementLabel": "Automático",
       "price": 13490,
       "installments": 12,
-      "installmentPrice": 1281,
+      "installmentPrice": 1281.55,
       "bestseller": true,
       "image": "/img/sob-encomenda/365-0.webp",
       "images": [
@@ -392,7 +392,7 @@
       "movementLabel": "Automático",
       "price": 6490,
       "installments": 12,
-      "installmentPrice": 616,
+      "installmentPrice": 616.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/3-0.webp",
       "images": [
@@ -413,7 +413,7 @@
       "movementLabel": "Automático",
       "price": 6990,
       "installments": 12,
-      "installmentPrice": 664,
+      "installmentPrice": 664.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/11-0.webp",
       "images": [
@@ -434,7 +434,7 @@
       "movementLabel": "Automático",
       "price": 7690,
       "installments": 12,
-      "installmentPrice": 730,
+      "installmentPrice": 730.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/13-0.webp",
       "images": [
@@ -455,7 +455,7 @@
       "movementLabel": "Automático",
       "price": 7890,
       "installments": 12,
-      "installmentPrice": 749,
+      "installmentPrice": 749.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/14-0.webp",
       "images": [
@@ -476,7 +476,7 @@
       "movementLabel": "Automático",
       "price": 4890,
       "installments": 12,
-      "installmentPrice": 465,
+      "installmentPrice": 464.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/42-0.webp",
       "images": [
@@ -497,7 +497,7 @@
       "movementLabel": "Automático",
       "price": 5890,
       "installments": 12,
-      "installmentPrice": 559,
+      "installmentPrice": 559.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/50-0.webp",
       "images": [
@@ -518,7 +518,7 @@
       "movementLabel": "Automático",
       "price": 5890,
       "installments": 12,
-      "installmentPrice": 559,
+      "installmentPrice": 559.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/51-0.webp",
       "images": [
@@ -539,7 +539,7 @@
       "movementLabel": "Automático",
       "price": 5690,
       "installments": 12,
-      "installmentPrice": 540,
+      "installmentPrice": 540.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/59-0.webp",
       "images": [
@@ -560,7 +560,7 @@
       "movementLabel": "Automático",
       "price": 5290,
       "installments": 12,
-      "installmentPrice": 503,
+      "installmentPrice": 502.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/62-0.webp",
       "images": [
@@ -581,7 +581,7 @@
       "movementLabel": "Automático",
       "price": 6490,
       "installments": 12,
-      "installmentPrice": 616,
+      "installmentPrice": 616.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/80-0.webp",
       "images": [
@@ -602,7 +602,7 @@
       "movementLabel": "Automático",
       "price": 7190,
       "installments": 12,
-      "installmentPrice": 683,
+      "installmentPrice": 683.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/87-0.webp",
       "images": [
@@ -623,7 +623,7 @@
       "movementLabel": "Automático",
       "price": 4290,
       "installments": 12,
-      "installmentPrice": 408,
+      "installmentPrice": 407.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/196-0.webp",
       "images": [
@@ -650,7 +650,7 @@
       "movementLabel": "Automático",
       "price": 17490,
       "installments": 12,
-      "installmentPrice": 1660,
+      "installmentPrice": 1661.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/262-0.webp",
       "images": [
@@ -673,7 +673,7 @@
       "movementLabel": "Automático",
       "price": 4290,
       "installments": 12,
-      "installmentPrice": 408,
+      "installmentPrice": 407.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/274-0.webp",
       "images": [
@@ -697,7 +697,7 @@
       "movementLabel": "Automático",
       "price": 5290,
       "installments": 12,
-      "installmentPrice": 503,
+      "installmentPrice": 502.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/282-0.webp",
       "images": [
@@ -718,7 +718,7 @@
       "movementLabel": "Quartzo (cronógrafo)",
       "price": 2990,
       "installments": 12,
-      "installmentPrice": 284,
+      "installmentPrice": 284.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/313-0.webp",
       "images": [
@@ -739,7 +739,7 @@
       "movementLabel": "Automático",
       "price": 15490,
       "installments": 12,
-      "installmentPrice": 1471,
+      "installmentPrice": 1471.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/374-0.webp",
       "images": [
@@ -762,7 +762,7 @@
       "movementLabel": "Automático",
       "price": 5990,
       "installments": 12,
-      "installmentPrice": 569,
+      "installmentPrice": 569.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/1-0.webp",
       "images": [
@@ -783,7 +783,7 @@
       "movementLabel": "Automático",
       "price": 6490,
       "installments": 12,
-      "installmentPrice": 616,
+      "installmentPrice": 616.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/2-0.webp",
       "images": [
@@ -804,7 +804,7 @@
       "movementLabel": "Automático",
       "price": 6590,
       "installments": 12,
-      "installmentPrice": 626,
+      "installmentPrice": 626.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/6-0.webp",
       "images": [
@@ -825,7 +825,7 @@
       "movementLabel": "Automático",
       "price": 6990,
       "installments": 12,
-      "installmentPrice": 664,
+      "installmentPrice": 664.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/12-0.webp",
       "images": [
@@ -846,7 +846,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/18-0.webp",
       "images": [
@@ -867,7 +867,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/23-0.webp",
       "images": [
@@ -893,7 +893,7 @@
       "movementLabel": "Automático",
       "price": 5690,
       "installments": 12,
-      "installmentPrice": 540,
+      "installmentPrice": 540.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/28-0.webp",
       "images": [
@@ -914,7 +914,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/30-0.webp",
       "images": [
@@ -935,7 +935,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/32-0.webp",
       "images": [
@@ -956,7 +956,7 @@
       "movementLabel": "Automático",
       "price": 5490,
       "installments": 12,
-      "installmentPrice": 522,
+      "installmentPrice": 521.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/52-0.webp",
       "images": [
@@ -977,7 +977,7 @@
       "movementLabel": "Quartzo (cronógrafo)",
       "price": 3990,
       "installments": 12,
-      "installmentPrice": 379,
+      "installmentPrice": 379.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/55-0.webp",
       "images": [
@@ -998,7 +998,7 @@
       "movementLabel": "Quartzo (cronógrafo)",
       "price": 3990,
       "installments": 12,
-      "installmentPrice": 379,
+      "installmentPrice": 379.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/56-0.webp",
       "images": [
@@ -1019,7 +1019,7 @@
       "movementLabel": "Automático",
       "price": 5690,
       "installments": 12,
-      "installmentPrice": 540,
+      "installmentPrice": 540.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/58-0.webp",
       "images": [
@@ -1040,7 +1040,7 @@
       "movementLabel": "Automático",
       "price": 5690,
       "installments": 12,
-      "installmentPrice": 540,
+      "installmentPrice": 540.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/60-0.webp",
       "images": [
@@ -1061,7 +1061,7 @@
       "movementLabel": "Corda manual",
       "price": 4490,
       "installments": 12,
-      "installmentPrice": 427,
+      "installmentPrice": 426.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/68-0.webp",
       "images": [
@@ -1082,7 +1082,7 @@
       "movementLabel": "Corda manual",
       "price": 4890,
       "installments": 12,
-      "installmentPrice": 465,
+      "installmentPrice": 464.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/73-0.webp",
       "images": [
@@ -1103,7 +1103,7 @@
       "movementLabel": "Automático",
       "price": 6990,
       "installments": 12,
-      "installmentPrice": 664,
+      "installmentPrice": 664.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/77-0.webp",
       "images": [
@@ -1124,7 +1124,7 @@
       "movementLabel": "Automático",
       "price": 6990,
       "installments": 12,
-      "installmentPrice": 664,
+      "installmentPrice": 664.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/78-0.webp",
       "images": [
@@ -1145,7 +1145,7 @@
       "movementLabel": "Automático",
       "price": 7690,
       "installments": 12,
-      "installmentPrice": 730,
+      "installmentPrice": 730.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/84-0.webp",
       "images": [
@@ -1166,7 +1166,7 @@
       "movementLabel": "Solar (cronógrafo)",
       "price": 4690,
       "installments": 12,
-      "installmentPrice": 446,
+      "installmentPrice": 445.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/sem-foto.webp",
       "images": [
@@ -1187,7 +1187,7 @@
       "movementLabel": "Automático",
       "price": 6890,
       "installments": 12,
-      "installmentPrice": 654,
+      "installmentPrice": 654.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/189-0.webp",
       "images": [
@@ -1214,7 +1214,7 @@
       "movementLabel": "Automático",
       "price": 7490,
       "installments": 12,
-      "installmentPrice": 711,
+      "installmentPrice": 711.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/201-0.webp",
       "images": [
@@ -1235,7 +1235,7 @@
       "movementLabel": "Automático",
       "price": 8490,
       "installments": 12,
-      "installmentPrice": 806,
+      "installmentPrice": 806.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/207-0.webp",
       "images": [
@@ -1256,7 +1256,7 @@
       "movementLabel": "Automático",
       "price": 6890,
       "installments": 12,
-      "installmentPrice": 654,
+      "installmentPrice": 654.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/210-0.webp",
       "images": [
@@ -1277,7 +1277,7 @@
       "movementLabel": "Automático",
       "price": 8490,
       "installments": 12,
-      "installmentPrice": 806,
+      "installmentPrice": 806.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/213-0.webp",
       "images": [
@@ -1298,7 +1298,7 @@
       "movementLabel": "Automático",
       "price": 6490,
       "installments": 12,
-      "installmentPrice": 616,
+      "installmentPrice": 616.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/217-0.webp",
       "images": [
@@ -1319,7 +1319,7 @@
       "movementLabel": "Automático",
       "price": 6490,
       "installments": 12,
-      "installmentPrice": 616,
+      "installmentPrice": 616.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/218-0.webp",
       "images": [
@@ -1340,7 +1340,7 @@
       "movementLabel": "Automático",
       "price": 6690,
       "installments": 12,
-      "installmentPrice": 635,
+      "installmentPrice": 635.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/227-0.webp",
       "images": [
@@ -1366,7 +1366,7 @@
       "movementLabel": "Automático",
       "price": 5990,
       "installments": 12,
-      "installmentPrice": 569,
+      "installmentPrice": 569.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/235-0.webp",
       "images": [
@@ -1390,7 +1390,7 @@
       "movementLabel": "Meca-quartzo",
       "price": 7590,
       "installments": 12,
-      "installmentPrice": 721,
+      "installmentPrice": 721.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/254-0.webp",
       "images": [
@@ -1412,7 +1412,7 @@
       "movementLabel": "Automático",
       "price": 5490,
       "installments": 12,
-      "installmentPrice": 522,
+      "installmentPrice": 521.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/281-0.webp",
       "images": [
@@ -1433,7 +1433,7 @@
       "movementLabel": "Automático",
       "price": 3890,
       "installments": 12,
-      "installmentPrice": 370,
+      "installmentPrice": 369.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/sem-foto.webp",
       "images": [
@@ -1454,7 +1454,7 @@
       "movementLabel": "Automático",
       "price": 10990,
       "installments": 12,
-      "installmentPrice": 1043,
+      "installmentPrice": 1044.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/312-0.webp",
       "images": [
@@ -1475,7 +1475,7 @@
       "movementLabel": "Quartzo (cronógrafo)",
       "price": 2990,
       "installments": 12,
-      "installmentPrice": 284,
+      "installmentPrice": 284.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/314-0.webp",
       "images": [
@@ -1496,7 +1496,7 @@
       "movementLabel": "Automático",
       "price": 8990,
       "installments": 12,
-      "installmentPrice": 854,
+      "installmentPrice": 854.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/315-0.webp",
       "images": [
@@ -1517,7 +1517,7 @@
       "movementLabel": "Automático",
       "price": 2790,
       "installments": 12,
-      "installmentPrice": 265,
+      "installmentPrice": 265.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/319-0.webp",
       "images": [
@@ -1538,7 +1538,7 @@
       "movementLabel": "Automático",
       "price": 15990,
       "installments": 12,
-      "installmentPrice": 1518,
+      "installmentPrice": 1519.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/321-0.webp",
       "images": [
@@ -1559,7 +1559,7 @@
       "movementLabel": "Automático",
       "price": 5290,
       "installments": 12,
-      "installmentPrice": 503,
+      "installmentPrice": 502.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/sem-foto.webp",
       "images": [
@@ -1580,7 +1580,7 @@
       "movementLabel": "Solar (cronógrafo)",
       "price": 4690,
       "installments": 12,
-      "installmentPrice": 446,
+      "installmentPrice": 445.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/329-0.webp",
       "images": [
@@ -1601,7 +1601,7 @@
       "movementLabel": "Automático",
       "price": 17490,
       "installments": 12,
-      "installmentPrice": 1660,
+      "installmentPrice": 1661.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/363-0.webp",
       "images": [
@@ -1624,7 +1624,7 @@
       "movementLabel": "Automático",
       "price": 13490,
       "installments": 12,
-      "installmentPrice": 1281,
+      "installmentPrice": 1281.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/366-0.webp",
       "images": [
@@ -1646,7 +1646,7 @@
       "movementLabel": "Automático",
       "price": 15490,
       "installments": 12,
-      "installmentPrice": 1471,
+      "installmentPrice": 1471.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/377-0.webp",
       "images": [
@@ -1667,7 +1667,7 @@
       "movementLabel": "Automático (GMT)",
       "price": 21900,
       "installments": 12,
-      "installmentPrice": 2079,
+      "installmentPrice": 2080.5,
       "bestseller": false,
       "image": "/img/sob-encomenda/384-0.webp",
       "images": [
@@ -1690,7 +1690,7 @@
       "movementLabel": "Automático",
       "price": 6490,
       "installments": 12,
-      "installmentPrice": 616,
+      "installmentPrice": 616.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/4-0.webp",
       "images": [
@@ -1711,7 +1711,7 @@
       "movementLabel": "Automático",
       "price": 6590,
       "installments": 12,
-      "installmentPrice": 626,
+      "installmentPrice": 626.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/5-0.webp",
       "images": [
@@ -1732,7 +1732,7 @@
       "movementLabel": "Automático",
       "price": 6590,
       "installments": 12,
-      "installmentPrice": 626,
+      "installmentPrice": 626.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/7-0.webp",
       "images": [
@@ -1753,7 +1753,7 @@
       "movementLabel": "Automático",
       "price": 6490,
       "installments": 12,
-      "installmentPrice": 616,
+      "installmentPrice": 616.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/8-0.webp",
       "images": [
@@ -1774,7 +1774,7 @@
       "movementLabel": "Automático",
       "price": 6490,
       "installments": 12,
-      "installmentPrice": 616,
+      "installmentPrice": 616.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/9-0.webp",
       "images": [
@@ -1795,7 +1795,7 @@
       "movementLabel": "Automático",
       "price": 6990,
       "installments": 12,
-      "installmentPrice": 664,
+      "installmentPrice": 664.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/10-0.webp",
       "images": [
@@ -1816,7 +1816,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/17-0.webp",
       "images": [
@@ -1837,7 +1837,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/19-0.webp",
       "images": [
@@ -1858,7 +1858,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/24-0.webp",
       "images": [
@@ -1879,7 +1879,7 @@
       "movementLabel": "Automático",
       "price": 5490,
       "installments": 12,
-      "installmentPrice": 522,
+      "installmentPrice": 521.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/25-0.webp",
       "images": [
@@ -1900,7 +1900,7 @@
       "movementLabel": "Automático",
       "price": 5490,
       "installments": 12,
-      "installmentPrice": 522,
+      "installmentPrice": 521.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/26-0.webp",
       "images": [
@@ -1921,7 +1921,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/29-0.webp",
       "images": [
@@ -1942,7 +1942,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/31-0.webp",
       "images": [
@@ -1963,7 +1963,7 @@
       "movementLabel": "Automático",
       "price": 5290,
       "installments": 12,
-      "installmentPrice": 503,
+      "installmentPrice": 502.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/33-0.webp",
       "images": [
@@ -1984,7 +1984,7 @@
       "movementLabel": "Automático",
       "price": 5690,
       "installments": 12,
-      "installmentPrice": 540,
+      "installmentPrice": 540.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/34-0.webp",
       "images": [
@@ -2005,7 +2005,7 @@
       "movementLabel": "Quartzo (GMT)",
       "price": 4190,
       "installments": 12,
-      "installmentPrice": 398,
+      "installmentPrice": 398.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/36-0.webp",
       "images": [
@@ -2026,7 +2026,7 @@
       "movementLabel": "Quartzo",
       "price": 3890,
       "installments": 12,
-      "installmentPrice": 370,
+      "installmentPrice": 369.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/37-0.webp",
       "images": [
@@ -2047,7 +2047,7 @@
       "movementLabel": "Quartzo",
       "price": 4190,
       "installments": 12,
-      "installmentPrice": 398,
+      "installmentPrice": 398.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/38-0.webp",
       "images": [
@@ -2068,7 +2068,7 @@
       "movementLabel": "Quartzo",
       "price": 3890,
       "installments": 12,
-      "installmentPrice": 370,
+      "installmentPrice": 369.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/39-0.webp",
       "images": [
@@ -2094,7 +2094,7 @@
       "movementLabel": "Quartzo",
       "price": 3890,
       "installments": 12,
-      "installmentPrice": 370,
+      "installmentPrice": 369.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/40-0.webp",
       "images": [
@@ -2115,7 +2115,7 @@
       "movementLabel": "Automático",
       "price": 4890,
       "installments": 12,
-      "installmentPrice": 465,
+      "installmentPrice": 464.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/41-0.webp",
       "images": [
@@ -2136,7 +2136,7 @@
       "movementLabel": "Automático",
       "price": 4890,
       "installments": 12,
-      "installmentPrice": 465,
+      "installmentPrice": 464.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/43-0.webp",
       "images": [
@@ -2157,7 +2157,7 @@
       "movementLabel": "Automático",
       "price": 4890,
       "installments": 12,
-      "installmentPrice": 465,
+      "installmentPrice": 464.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/44-0.webp",
       "images": [
@@ -2178,7 +2178,7 @@
       "movementLabel": "Automático",
       "price": 4890,
       "installments": 12,
-      "installmentPrice": 465,
+      "installmentPrice": 464.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/sem-foto.webp",
       "images": [
@@ -2199,7 +2199,7 @@
       "movementLabel": "Automático",
       "price": 4890,
       "installments": 12,
-      "installmentPrice": 465,
+      "installmentPrice": 464.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/46-0.webp",
       "images": [
@@ -2220,7 +2220,7 @@
       "movementLabel": "Automático",
       "price": 5990,
       "installments": 12,
-      "installmentPrice": 569,
+      "installmentPrice": 569.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/47-0.webp",
       "images": [
@@ -2241,7 +2241,7 @@
       "movementLabel": "Automático",
       "price": 5790,
       "installments": 12,
-      "installmentPrice": 550,
+      "installmentPrice": 550.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/48-0.webp",
       "images": [
@@ -2262,7 +2262,7 @@
       "movementLabel": "Automático",
       "price": 5790,
       "installments": 12,
-      "installmentPrice": 550,
+      "installmentPrice": 550.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/49-0.webp",
       "images": [
@@ -2283,7 +2283,7 @@
       "movementLabel": "Automático",
       "price": 5890,
       "installments": 12,
-      "installmentPrice": 559,
+      "installmentPrice": 559.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/53-0.webp",
       "images": [
@@ -2304,7 +2304,7 @@
       "movementLabel": "Quartzo (cronógrafo)",
       "price": 3990,
       "installments": 12,
-      "installmentPrice": 379,
+      "installmentPrice": 379.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/54-0.webp",
       "images": [
@@ -2325,7 +2325,7 @@
       "movementLabel": "Quartzo (cronógrafo)",
       "price": 3990,
       "installments": 12,
-      "installmentPrice": 379,
+      "installmentPrice": 379.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/57-0.webp",
       "images": [
@@ -2346,7 +2346,7 @@
       "movementLabel": "Automático",
       "price": 5290,
       "installments": 12,
-      "installmentPrice": 503,
+      "installmentPrice": 502.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/61-0.webp",
       "images": [
@@ -2367,7 +2367,7 @@
       "movementLabel": "Automático",
       "price": 5290,
       "installments": 12,
-      "installmentPrice": 503,
+      "installmentPrice": 502.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/63-0.webp",
       "images": [
@@ -2388,7 +2388,7 @@
       "movementLabel": "Automático",
       "price": 5290,
       "installments": 12,
-      "installmentPrice": 503,
+      "installmentPrice": 502.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/64-0.webp",
       "images": [
@@ -2409,7 +2409,7 @@
       "movementLabel": "Automático",
       "price": 7490,
       "installments": 12,
-      "installmentPrice": 711,
+      "installmentPrice": 711.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/65-0.webp",
       "images": [
@@ -2430,7 +2430,7 @@
       "movementLabel": "Automático",
       "price": 7490,
       "installments": 12,
-      "installmentPrice": 711,
+      "installmentPrice": 711.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/66-0.webp",
       "images": [
@@ -2451,7 +2451,7 @@
       "movementLabel": "Corda manual",
       "price": 4890,
       "installments": 12,
-      "installmentPrice": 465,
+      "installmentPrice": 464.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/67-0.webp",
       "images": [
@@ -2472,7 +2472,7 @@
       "movementLabel": "Corda manual",
       "price": 4490,
       "installments": 12,
-      "installmentPrice": 427,
+      "installmentPrice": 426.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/69-0.webp",
       "images": [
@@ -2493,7 +2493,7 @@
       "movementLabel": "Corda manual",
       "price": 4490,
       "installments": 12,
-      "installmentPrice": 427,
+      "installmentPrice": 426.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/70-0.webp",
       "images": [
@@ -2514,7 +2514,7 @@
       "movementLabel": "Corda manual",
       "price": 4490,
       "installments": 12,
-      "installmentPrice": 427,
+      "installmentPrice": 426.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/71-0.webp",
       "images": [
@@ -2535,7 +2535,7 @@
       "movementLabel": "Corda manual",
       "price": 4890,
       "installments": 12,
-      "installmentPrice": 465,
+      "installmentPrice": 464.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/72-0.webp",
       "images": [
@@ -2556,7 +2556,7 @@
       "movementLabel": "Corda manual",
       "price": 6190,
       "installments": 12,
-      "installmentPrice": 588,
+      "installmentPrice": 588.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/74-0.webp",
       "images": [
@@ -2577,7 +2577,7 @@
       "movementLabel": "Corda manual",
       "price": 6190,
       "installments": 12,
-      "installmentPrice": 588,
+      "installmentPrice": 588.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/75-0.webp",
       "images": [
@@ -2598,7 +2598,7 @@
       "movementLabel": "Corda manual",
       "price": 6190,
       "installments": 12,
-      "installmentPrice": 588,
+      "installmentPrice": 588.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/76-0.webp",
       "images": [
@@ -2619,7 +2619,7 @@
       "movementLabel": "Automático",
       "price": 6490,
       "installments": 12,
-      "installmentPrice": 616,
+      "installmentPrice": 616.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/79-0.webp",
       "images": [
@@ -2640,7 +2640,7 @@
       "movementLabel": "Automático",
       "price": 7490,
       "installments": 12,
-      "installmentPrice": 711,
+      "installmentPrice": 711.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/81-0.webp",
       "images": [
@@ -2661,7 +2661,7 @@
       "movementLabel": "Automático",
       "price": 7890,
       "installments": 12,
-      "installmentPrice": 749,
+      "installmentPrice": 749.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/82-0.webp",
       "images": [
@@ -2682,7 +2682,7 @@
       "movementLabel": "Corda manual",
       "price": 6690,
       "installments": 12,
-      "installmentPrice": 635,
+      "installmentPrice": 635.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/83-0.webp",
       "images": [
@@ -2703,7 +2703,7 @@
       "movementLabel": "Corda manual",
       "price": 6690,
       "installments": 12,
-      "installmentPrice": 635,
+      "installmentPrice": 635.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/85-0.webp",
       "images": [
@@ -2724,7 +2724,7 @@
       "movementLabel": "Quartzo",
       "price": 6490,
       "installments": 12,
-      "installmentPrice": 616,
+      "installmentPrice": 616.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/86-0.webp",
       "images": [
@@ -2745,7 +2745,7 @@
       "movementLabel": "Automático",
       "price": 6290,
       "installments": 12,
-      "installmentPrice": 597,
+      "installmentPrice": 597.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/91-0.webp",
       "images": [
@@ -2766,7 +2766,7 @@
       "movementLabel": "Automático",
       "price": 7990,
       "installments": 12,
-      "installmentPrice": 759,
+      "installmentPrice": 759.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/93-0.webp",
       "images": [
@@ -2787,7 +2787,7 @@
       "movementLabel": "Automático",
       "price": 7990,
       "installments": 12,
-      "installmentPrice": 759,
+      "installmentPrice": 759.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/94-0.webp",
       "images": [
@@ -2808,7 +2808,7 @@
       "movementLabel": "Automático",
       "price": 7990,
       "installments": 12,
-      "installmentPrice": 759,
+      "installmentPrice": 759.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/95-0.webp",
       "images": [
@@ -2829,7 +2829,7 @@
       "movementLabel": "Automático",
       "price": 7990,
       "installments": 12,
-      "installmentPrice": 759,
+      "installmentPrice": 759.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/96-0.webp",
       "images": [
@@ -2850,7 +2850,7 @@
       "movementLabel": "Automático",
       "price": 7990,
       "installments": 12,
-      "installmentPrice": 759,
+      "installmentPrice": 759.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/97-0.webp",
       "images": [
@@ -2871,7 +2871,7 @@
       "movementLabel": "Automático",
       "price": 8990,
       "installments": 12,
-      "installmentPrice": 854,
+      "installmentPrice": 854.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/99-0.webp",
       "images": [
@@ -2892,7 +2892,7 @@
       "movementLabel": "Corda manual",
       "price": 6390,
       "installments": 12,
-      "installmentPrice": 607,
+      "installmentPrice": 607.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/105-0.webp",
       "images": [
@@ -2913,7 +2913,7 @@
       "movementLabel": "Automático",
       "price": 5990,
       "installments": 12,
-      "installmentPrice": 569,
+      "installmentPrice": 569.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/107-0.webp",
       "images": [
@@ -2934,7 +2934,7 @@
       "movementLabel": "Automático",
       "price": 5490,
       "installments": 12,
-      "installmentPrice": 522,
+      "installmentPrice": 521.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/108-0.webp",
       "images": [
@@ -2955,7 +2955,7 @@
       "movementLabel": "Automático (cronógrafo)",
       "price": 14900,
       "installments": 12,
-      "installmentPrice": 1415,
+      "installmentPrice": 1415.5,
       "bestseller": false,
       "image": "/img/sob-encomenda/109-0.webp",
       "images": [
@@ -2976,7 +2976,7 @@
       "movementLabel": "Automático",
       "price": 6990,
       "installments": 12,
-      "installmentPrice": 664,
+      "installmentPrice": 664.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/110-0.webp",
       "images": [
@@ -2997,7 +2997,7 @@
       "movementLabel": "Automático",
       "price": 5990,
       "installments": 12,
-      "installmentPrice": 569,
+      "installmentPrice": 569.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/113-0.webp",
       "images": [
@@ -3018,7 +3018,7 @@
       "movementLabel": "Automático",
       "price": 8790,
       "installments": 12,
-      "installmentPrice": 835,
+      "installmentPrice": 835.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/119-0.webp",
       "images": [
@@ -3039,7 +3039,7 @@
       "movementLabel": "Automático",
       "price": 8390,
       "installments": 12,
-      "installmentPrice": 797,
+      "installmentPrice": 797.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/120-0.webp",
       "images": [
@@ -3060,7 +3060,7 @@
       "movementLabel": "Automático",
       "price": 8990,
       "installments": 12,
-      "installmentPrice": 854,
+      "installmentPrice": 854.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/121-0.webp",
       "images": [
@@ -3081,7 +3081,7 @@
       "movementLabel": "Automático",
       "price": 9290,
       "installments": 12,
-      "installmentPrice": 882,
+      "installmentPrice": 882.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/122-0.webp",
       "images": [
@@ -3102,7 +3102,7 @@
       "movementLabel": "Automático",
       "price": 8490,
       "installments": 12,
-      "installmentPrice": 806,
+      "installmentPrice": 806.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/123-0.webp",
       "images": [
@@ -3123,7 +3123,7 @@
       "movementLabel": "Automático",
       "price": 9990,
       "installments": 12,
-      "installmentPrice": 949,
+      "installmentPrice": 949.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/124-0.webp",
       "images": [
@@ -3144,7 +3144,7 @@
       "movementLabel": "Automático",
       "price": 8490,
       "installments": 12,
-      "installmentPrice": 806,
+      "installmentPrice": 806.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/125-0.webp",
       "images": [
@@ -3165,7 +3165,7 @@
       "movementLabel": "Automático",
       "price": 8490,
       "installments": 12,
-      "installmentPrice": 806,
+      "installmentPrice": 806.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/126-0.webp",
       "images": [
@@ -3186,7 +3186,7 @@
       "movementLabel": "Automático",
       "price": 7590,
       "installments": 12,
-      "installmentPrice": 721,
+      "installmentPrice": 721.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/127-0.webp",
       "images": [
@@ -3207,7 +3207,7 @@
       "movementLabel": "Automático",
       "price": 8390,
       "installments": 12,
-      "installmentPrice": 797,
+      "installmentPrice": 797.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/128-0.webp",
       "images": [
@@ -3228,7 +3228,7 @@
       "movementLabel": "Automático",
       "price": 7690,
       "installments": 12,
-      "installmentPrice": 730,
+      "installmentPrice": 730.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/129-0.webp",
       "images": [
@@ -3249,7 +3249,7 @@
       "movementLabel": "Automático",
       "price": 7690,
       "installments": 12,
-      "installmentPrice": 730,
+      "installmentPrice": 730.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/130-0.webp",
       "images": [
@@ -3270,7 +3270,7 @@
       "movementLabel": "Automático",
       "price": 10690,
       "installments": 12,
-      "installmentPrice": 1015,
+      "installmentPrice": 1015.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/131-0.webp",
       "images": [
@@ -3291,7 +3291,7 @@
       "movementLabel": "Automático",
       "price": 9390,
       "installments": 12,
-      "installmentPrice": 892,
+      "installmentPrice": 892.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/132-0.webp",
       "images": [
@@ -3312,7 +3312,7 @@
       "movementLabel": "Automático",
       "price": 7690,
       "installments": 12,
-      "installmentPrice": 730,
+      "installmentPrice": 730.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/133-0.webp",
       "images": [
@@ -3333,7 +3333,7 @@
       "movementLabel": "Automático",
       "price": 7290,
       "installments": 12,
-      "installmentPrice": 692,
+      "installmentPrice": 692.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/134-0.webp",
       "images": [
@@ -3354,7 +3354,7 @@
       "movementLabel": "Automático",
       "price": 8590,
       "installments": 12,
-      "installmentPrice": 816,
+      "installmentPrice": 816.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/135-0.webp",
       "images": [
@@ -3375,7 +3375,7 @@
       "movementLabel": "Automático",
       "price": 8290,
       "installments": 12,
-      "installmentPrice": 787,
+      "installmentPrice": 787.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/136-0.webp",
       "images": [
@@ -3396,7 +3396,7 @@
       "movementLabel": "Automático",
       "price": 5890,
       "installments": 12,
-      "installmentPrice": 559,
+      "installmentPrice": 559.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/190-0.webp",
       "images": [
@@ -3417,7 +3417,7 @@
       "movementLabel": "Automático",
       "price": 5890,
       "installments": 12,
-      "installmentPrice": 559,
+      "installmentPrice": 559.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/191-0.webp",
       "images": [
@@ -3438,7 +3438,7 @@
       "movementLabel": "Automático",
       "price": 5890,
       "installments": 12,
-      "installmentPrice": 559,
+      "installmentPrice": 559.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/192-0.webp",
       "images": [
@@ -3459,7 +3459,7 @@
       "movementLabel": "Automático",
       "price": 6390,
       "installments": 12,
-      "installmentPrice": 607,
+      "installmentPrice": 607.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/193-0.webp",
       "images": [
@@ -3486,7 +3486,7 @@
       "movementLabel": "Automático",
       "price": 6390,
       "installments": 12,
-      "installmentPrice": 607,
+      "installmentPrice": 607.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/194-0.webp",
       "images": [
@@ -3507,7 +3507,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/195-0.webp",
       "images": [
@@ -3533,7 +3533,7 @@
       "movementLabel": "Automático",
       "price": 4290,
       "installments": 12,
-      "installmentPrice": 408,
+      "installmentPrice": 407.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/197-0.webp",
       "images": [
@@ -3554,7 +3554,7 @@
       "movementLabel": "Automático",
       "price": 4290,
       "installments": 12,
-      "installmentPrice": 408,
+      "installmentPrice": 407.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/198-0.webp",
       "images": [
@@ -3575,7 +3575,7 @@
       "movementLabel": "Automático",
       "price": 7990,
       "installments": 12,
-      "installmentPrice": 759,
+      "installmentPrice": 759.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/199-0.webp",
       "images": [
@@ -3596,7 +3596,7 @@
       "movementLabel": "Automático",
       "price": 9990,
       "installments": 12,
-      "installmentPrice": 949,
+      "installmentPrice": 949.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/200-0.webp",
       "images": [
@@ -3617,7 +3617,7 @@
       "movementLabel": "Automático",
       "price": 9490,
       "installments": 12,
-      "installmentPrice": 901,
+      "installmentPrice": 901.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/202-0.webp",
       "images": [
@@ -3638,7 +3638,7 @@
       "movementLabel": "Automático",
       "price": 9990,
       "installments": 12,
-      "installmentPrice": 949,
+      "installmentPrice": 949.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/203-0.webp",
       "images": [
@@ -3659,7 +3659,7 @@
       "movementLabel": "Automático",
       "price": 10490,
       "installments": 12,
-      "installmentPrice": 996,
+      "installmentPrice": 996.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/204-0.webp",
       "images": [
@@ -3680,7 +3680,7 @@
       "movementLabel": "Automático",
       "price": 8990,
       "installments": 12,
-      "installmentPrice": 854,
+      "installmentPrice": 854.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/205-0.webp",
       "images": [
@@ -3701,7 +3701,7 @@
       "movementLabel": "Automático",
       "price": 8490,
       "installments": 12,
-      "installmentPrice": 806,
+      "installmentPrice": 806.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/206-0.webp",
       "images": [
@@ -3722,7 +3722,7 @@
       "movementLabel": "Automático",
       "price": 8990,
       "installments": 12,
-      "installmentPrice": 854,
+      "installmentPrice": 854.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/208-0.webp",
       "images": [
@@ -3743,7 +3743,7 @@
       "movementLabel": "Automático",
       "price": 6890,
       "installments": 12,
-      "installmentPrice": 654,
+      "installmentPrice": 654.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/209-0.webp",
       "images": [
@@ -3764,7 +3764,7 @@
       "movementLabel": "Automático",
       "price": 8490,
       "installments": 12,
-      "installmentPrice": 806,
+      "installmentPrice": 806.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/211-0.webp",
       "images": [
@@ -3785,7 +3785,7 @@
       "movementLabel": "Automático",
       "price": 9490,
       "installments": 12,
-      "installmentPrice": 901,
+      "installmentPrice": 901.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/212-0.webp",
       "images": [
@@ -3806,7 +3806,7 @@
       "movementLabel": "Automático",
       "price": 8490,
       "installments": 12,
-      "installmentPrice": 806,
+      "installmentPrice": 806.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/214-0.webp",
       "images": [
@@ -3827,7 +3827,7 @@
       "movementLabel": "Automático",
       "price": 9490,
       "installments": 12,
-      "installmentPrice": 901,
+      "installmentPrice": 901.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/215-0.webp",
       "images": [
@@ -3848,7 +3848,7 @@
       "movementLabel": "Automático",
       "price": 6490,
       "installments": 12,
-      "installmentPrice": 616,
+      "installmentPrice": 616.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/216-0.webp",
       "images": [
@@ -3869,7 +3869,7 @@
       "movementLabel": "Automático",
       "price": 6490,
       "installments": 12,
-      "installmentPrice": 616,
+      "installmentPrice": 616.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/219-0.webp",
       "images": [
@@ -3890,7 +3890,7 @@
       "movementLabel": "Automático",
       "price": 6490,
       "installments": 12,
-      "installmentPrice": 616,
+      "installmentPrice": 616.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/220-0.webp",
       "images": [
@@ -3911,7 +3911,7 @@
       "movementLabel": "Automático",
       "price": 5690,
       "installments": 12,
-      "installmentPrice": 540,
+      "installmentPrice": 540.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/221-0.webp",
       "images": [
@@ -3935,7 +3935,7 @@
       "movementLabel": "Automático",
       "price": 7490,
       "installments": 12,
-      "installmentPrice": 711,
+      "installmentPrice": 711.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/222-0.webp",
       "images": [
@@ -3956,7 +3956,7 @@
       "movementLabel": "Automático",
       "price": 6990,
       "installments": 12,
-      "installmentPrice": 664,
+      "installmentPrice": 664.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/223-0.webp",
       "images": [
@@ -3977,7 +3977,7 @@
       "movementLabel": "Automático",
       "price": 6990,
       "installments": 12,
-      "installmentPrice": 664,
+      "installmentPrice": 664.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/224-0.webp",
       "images": [
@@ -3998,7 +3998,7 @@
       "movementLabel": "Automático",
       "price": 8990,
       "installments": 12,
-      "installmentPrice": 854,
+      "installmentPrice": 854.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/225-0.webp",
       "images": [
@@ -4019,7 +4019,7 @@
       "movementLabel": "Automático",
       "price": 7390,
       "installments": 12,
-      "installmentPrice": 702,
+      "installmentPrice": 702.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/228-0.webp",
       "images": [
@@ -4040,7 +4040,7 @@
       "movementLabel": "Automático",
       "price": 10990,
       "installments": 12,
-      "installmentPrice": 1043,
+      "installmentPrice": 1044.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/229-0.webp",
       "images": [
@@ -4061,7 +4061,7 @@
       "movementLabel": "Automático",
       "price": 6690,
       "installments": 12,
-      "installmentPrice": 635,
+      "installmentPrice": 635.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/230-0.webp",
       "images": [
@@ -4082,7 +4082,7 @@
       "movementLabel": "Automático",
       "price": 6690,
       "installments": 12,
-      "installmentPrice": 635,
+      "installmentPrice": 635.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/231-0.webp",
       "images": [
@@ -4103,7 +4103,7 @@
       "movementLabel": "Automático",
       "price": 6690,
       "installments": 12,
-      "installmentPrice": 635,
+      "installmentPrice": 635.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/232-0.webp",
       "images": [
@@ -4124,7 +4124,7 @@
       "movementLabel": "Automático",
       "price": 5990,
       "installments": 12,
-      "installmentPrice": 569,
+      "installmentPrice": 569.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/233-0.webp",
       "images": [
@@ -4148,7 +4148,7 @@
       "movementLabel": "Automático",
       "price": 5990,
       "installments": 12,
-      "installmentPrice": 569,
+      "installmentPrice": 569.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/234-0.webp",
       "images": [
@@ -4172,7 +4172,7 @@
       "movementLabel": "Automático",
       "price": 5990,
       "installments": 12,
-      "installmentPrice": 569,
+      "installmentPrice": 569.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/236-0.webp",
       "images": [
@@ -4196,7 +4196,7 @@
       "movementLabel": "Automático",
       "price": 5990,
       "installments": 12,
-      "installmentPrice": 569,
+      "installmentPrice": 569.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/237-0.webp",
       "images": [
@@ -4220,7 +4220,7 @@
       "movementLabel": "Automático",
       "price": 5990,
       "installments": 12,
-      "installmentPrice": 569,
+      "installmentPrice": 569.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/238-0.webp",
       "images": [
@@ -4244,7 +4244,7 @@
       "movementLabel": "Automático",
       "price": 5990,
       "installments": 12,
-      "installmentPrice": 569,
+      "installmentPrice": 569.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/239-0.webp",
       "images": [
@@ -4268,7 +4268,7 @@
       "movementLabel": "Automático",
       "price": 6290,
       "installments": 12,
-      "installmentPrice": 597,
+      "installmentPrice": 597.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/240-0.webp",
       "images": [
@@ -4290,7 +4290,7 @@
       "movementLabel": "Automático",
       "price": 6290,
       "installments": 12,
-      "installmentPrice": 597,
+      "installmentPrice": 597.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/241-0.webp",
       "images": [
@@ -4312,7 +4312,7 @@
       "movementLabel": "Automático",
       "price": 6290,
       "installments": 12,
-      "installmentPrice": 597,
+      "installmentPrice": 597.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/242-0.webp",
       "images": [
@@ -4334,7 +4334,7 @@
       "movementLabel": "Automático",
       "price": 6390,
       "installments": 12,
-      "installmentPrice": 607,
+      "installmentPrice": 607.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/243-0.webp",
       "images": [
@@ -4358,7 +4358,7 @@
       "movementLabel": "Automático",
       "price": 6390,
       "installments": 12,
-      "installmentPrice": 607,
+      "installmentPrice": 607.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/244-0.webp",
       "images": [
@@ -4382,7 +4382,7 @@
       "movementLabel": "Automático",
       "price": 6390,
       "installments": 12,
-      "installmentPrice": 607,
+      "installmentPrice": 607.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/245-0.webp",
       "images": [
@@ -4406,7 +4406,7 @@
       "movementLabel": "Automático",
       "price": 6390,
       "installments": 12,
-      "installmentPrice": 607,
+      "installmentPrice": 607.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/246-0.webp",
       "images": [
@@ -4430,7 +4430,7 @@
       "movementLabel": "Meca-quartzo",
       "price": 7590,
       "installments": 12,
-      "installmentPrice": 721,
+      "installmentPrice": 721.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/253-0.webp",
       "images": [
@@ -4452,7 +4452,7 @@
       "movementLabel": "Meca-quartzo",
       "price": 7590,
       "installments": 12,
-      "installmentPrice": 721,
+      "installmentPrice": 721.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/255-0.webp",
       "images": [
@@ -4474,7 +4474,7 @@
       "movementLabel": "Meca-quartzo",
       "price": 7590,
       "installments": 12,
-      "installmentPrice": 721,
+      "installmentPrice": 721.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/256-0.webp",
       "images": [
@@ -4496,7 +4496,7 @@
       "movementLabel": "Automático",
       "price": 15490,
       "installments": 12,
-      "installmentPrice": 1471,
+      "installmentPrice": 1471.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/258-0.webp",
       "images": [
@@ -4519,7 +4519,7 @@
       "movementLabel": "Automático",
       "price": 15490,
       "installments": 12,
-      "installmentPrice": 1471,
+      "installmentPrice": 1471.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/259-0.webp",
       "images": [
@@ -4542,7 +4542,7 @@
       "movementLabel": "Automático",
       "price": 15490,
       "installments": 12,
-      "installmentPrice": 1471,
+      "installmentPrice": 1471.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/260-0.webp",
       "images": [
@@ -4565,7 +4565,7 @@
       "movementLabel": "Automático",
       "price": 5990,
       "installments": 12,
-      "installmentPrice": 569,
+      "installmentPrice": 569.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/263-0.webp",
       "images": [
@@ -4589,7 +4589,7 @@
       "movementLabel": "Automático",
       "price": 6490,
       "installments": 12,
-      "installmentPrice": 616,
+      "installmentPrice": 616.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/264-0.webp",
       "images": [
@@ -4613,7 +4613,7 @@
       "movementLabel": "Automático",
       "price": 6490,
       "installments": 12,
-      "installmentPrice": 616,
+      "installmentPrice": 616.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/265-0.webp",
       "images": [
@@ -4637,7 +4637,7 @@
       "movementLabel": "Automático",
       "price": 6290,
       "installments": 12,
-      "installmentPrice": 597,
+      "installmentPrice": 597.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/266-0.webp",
       "images": [
@@ -4659,7 +4659,7 @@
       "movementLabel": "Automático",
       "price": 6290,
       "installments": 12,
-      "installmentPrice": 597,
+      "installmentPrice": 597.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/267-0.webp",
       "images": [
@@ -4681,7 +4681,7 @@
       "movementLabel": "Automático",
       "price": 6290,
       "installments": 12,
-      "installmentPrice": 597,
+      "installmentPrice": 597.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/268-0.webp",
       "images": [
@@ -4703,7 +4703,7 @@
       "movementLabel": "Automático",
       "price": 6290,
       "installments": 12,
-      "installmentPrice": 597,
+      "installmentPrice": 597.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/269-0.webp",
       "images": [
@@ -4725,7 +4725,7 @@
       "movementLabel": "Automático",
       "price": 6290,
       "installments": 12,
-      "installmentPrice": 597,
+      "installmentPrice": 597.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/270-0.webp",
       "images": [
@@ -4747,7 +4747,7 @@
       "movementLabel": "Automático",
       "price": 6290,
       "installments": 12,
-      "installmentPrice": 597,
+      "installmentPrice": 597.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/271-0.webp",
       "images": [
@@ -4769,7 +4769,7 @@
       "movementLabel": "Automático",
       "price": 6290,
       "installments": 12,
-      "installmentPrice": 597,
+      "installmentPrice": 597.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/272-0.webp",
       "images": [
@@ -4791,7 +4791,7 @@
       "movementLabel": "Automático",
       "price": 6290,
       "installments": 12,
-      "installmentPrice": 597,
+      "installmentPrice": 597.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/273-0.webp",
       "images": [
@@ -4813,7 +4813,7 @@
       "movementLabel": "Automático",
       "price": 4290,
       "installments": 12,
-      "installmentPrice": 408,
+      "installmentPrice": 407.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/275-0.webp",
       "images": [
@@ -4837,7 +4837,7 @@
       "movementLabel": "Automático",
       "price": 4290,
       "installments": 12,
-      "installmentPrice": 408,
+      "installmentPrice": 407.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/276-0.webp",
       "images": [
@@ -4861,7 +4861,7 @@
       "movementLabel": "Automático",
       "price": 4290,
       "installments": 12,
-      "installmentPrice": 408,
+      "installmentPrice": 407.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/277-0.webp",
       "images": [
@@ -4883,7 +4883,7 @@
       "movementLabel": "Automático",
       "price": 4290,
       "installments": 12,
-      "installmentPrice": 408,
+      "installmentPrice": 407.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/278-0.webp",
       "images": [
@@ -4907,7 +4907,7 @@
       "movementLabel": "Automático",
       "price": 4290,
       "installments": 12,
-      "installmentPrice": 408,
+      "installmentPrice": 407.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/279-0.webp",
       "images": [
@@ -4931,7 +4931,7 @@
       "movementLabel": "Automático",
       "price": 4290,
       "installments": 12,
-      "installmentPrice": 408,
+      "installmentPrice": 407.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/280-0.webp",
       "images": [
@@ -4955,7 +4955,7 @@
       "movementLabel": "Automático",
       "price": 9490,
       "installments": 12,
-      "installmentPrice": 901,
+      "installmentPrice": 901.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/283-0.webp",
       "images": [
@@ -4976,7 +4976,7 @@
       "movementLabel": "Automático",
       "price": 7290,
       "installments": 12,
-      "installmentPrice": 692,
+      "installmentPrice": 692.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/284-0.webp",
       "images": [
@@ -4997,7 +4997,7 @@
       "movementLabel": "Automático",
       "price": 9490,
       "installments": 12,
-      "installmentPrice": 901,
+      "installmentPrice": 901.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/285-0.webp",
       "images": [
@@ -5018,7 +5018,7 @@
       "movementLabel": "Automático",
       "price": 8390,
       "installments": 12,
-      "installmentPrice": 797,
+      "installmentPrice": 797.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/286-0.webp",
       "images": [
@@ -5039,7 +5039,7 @@
       "movementLabel": "Automático",
       "price": 8390,
       "installments": 12,
-      "installmentPrice": 797,
+      "installmentPrice": 797.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/287-0.webp",
       "images": [
@@ -5060,7 +5060,7 @@
       "movementLabel": "Automático",
       "price": 8390,
       "installments": 12,
-      "installmentPrice": 797,
+      "installmentPrice": 797.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/288-0.webp",
       "images": [
@@ -5081,7 +5081,7 @@
       "movementLabel": "Automático",
       "price": 6990,
       "installments": 12,
-      "installmentPrice": 664,
+      "installmentPrice": 664.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/289-0.webp",
       "images": [
@@ -5102,7 +5102,7 @@
       "movementLabel": "Automático",
       "price": 6990,
       "installments": 12,
-      "installmentPrice": 664,
+      "installmentPrice": 664.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/290-0.webp",
       "images": [
@@ -5123,7 +5123,7 @@
       "movementLabel": "Automático",
       "price": 7590,
       "installments": 12,
-      "installmentPrice": 721,
+      "installmentPrice": 721.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/291-0.webp",
       "images": [
@@ -5144,7 +5144,7 @@
       "movementLabel": "Automático",
       "price": 7990,
       "installments": 12,
-      "installmentPrice": 759,
+      "installmentPrice": 759.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/292-0.webp",
       "images": [
@@ -5165,7 +5165,7 @@
       "movementLabel": "Automático",
       "price": 16490,
       "installments": 12,
-      "installmentPrice": 1565,
+      "installmentPrice": 1566.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/294-0.webp",
       "images": [
@@ -5187,7 +5187,7 @@
       "movementLabel": "Automático",
       "price": 14490,
       "installments": 12,
-      "installmentPrice": 1376,
+      "installmentPrice": 1376.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/295-0.webp",
       "images": [
@@ -5209,7 +5209,7 @@
       "movementLabel": "Automático",
       "price": 14490,
       "installments": 12,
-      "installmentPrice": 1376,
+      "installmentPrice": 1376.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/296-0.webp",
       "images": [
@@ -5231,7 +5231,7 @@
       "movementLabel": "Automático",
       "price": 14490,
       "installments": 12,
-      "installmentPrice": 1376,
+      "installmentPrice": 1376.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/297-0.webp",
       "images": [
@@ -5253,7 +5253,7 @@
       "movementLabel": "Automático",
       "price": 11990,
       "installments": 12,
-      "installmentPrice": 1138,
+      "installmentPrice": 1139.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/298-0.webp",
       "images": [
@@ -5275,7 +5275,7 @@
       "movementLabel": "Automático",
       "price": 11990,
       "installments": 12,
-      "installmentPrice": 1138,
+      "installmentPrice": 1139.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/299-0.webp",
       "images": [
@@ -5297,7 +5297,7 @@
       "movementLabel": "Automático",
       "price": 11990,
       "installments": 12,
-      "installmentPrice": 1138,
+      "installmentPrice": 1139.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/300-0.webp",
       "images": [
@@ -5319,7 +5319,7 @@
       "movementLabel": "Automático",
       "price": 11990,
       "installments": 12,
-      "installmentPrice": 1138,
+      "installmentPrice": 1139.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/301-0.webp",
       "images": [
@@ -5341,7 +5341,7 @@
       "movementLabel": "Corda manual",
       "price": 17490,
       "installments": 12,
-      "installmentPrice": 1660,
+      "installmentPrice": 1661.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/302-0.webp",
       "images": [
@@ -5363,7 +5363,7 @@
       "movementLabel": "Corda manual",
       "price": 17490,
       "installments": 12,
-      "installmentPrice": 1660,
+      "installmentPrice": 1661.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/303-0.webp",
       "images": [
@@ -5385,7 +5385,7 @@
       "movementLabel": "Corda manual",
       "price": 17490,
       "installments": 12,
-      "installmentPrice": 1660,
+      "installmentPrice": 1661.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/304-0.webp",
       "images": [
@@ -5407,7 +5407,7 @@
       "movementLabel": "Corda manual",
       "price": 16990,
       "installments": 12,
-      "installmentPrice": 1613,
+      "installmentPrice": 1614.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/305-0.webp",
       "images": [
@@ -5430,7 +5430,7 @@
       "movementLabel": "Corda manual",
       "price": 16990,
       "installments": 12,
-      "installmentPrice": 1613,
+      "installmentPrice": 1614.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/306-0.webp",
       "images": [
@@ -5453,7 +5453,7 @@
       "movementLabel": "Automático (GMT)",
       "price": 11900,
       "installments": 12,
-      "installmentPrice": 1130,
+      "installmentPrice": 1130.5,
       "bestseller": false,
       "image": "/img/sob-encomenda/307-0.webp",
       "images": [
@@ -5479,7 +5479,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/308-0.webp",
       "images": [
@@ -5500,7 +5500,7 @@
       "movementLabel": "Quartzo (cronógrafo)",
       "price": 2990,
       "installments": 12,
-      "installmentPrice": 284,
+      "installmentPrice": 284.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/316-0.webp",
       "images": [
@@ -5521,7 +5521,7 @@
       "movementLabel": "Quartzo (cronógrafo)",
       "price": 2990,
       "installments": 12,
-      "installmentPrice": 284,
+      "installmentPrice": 284.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/317-0.webp",
       "images": [
@@ -5542,7 +5542,7 @@
       "movementLabel": "Automático",
       "price": 3290,
       "installments": 12,
-      "installmentPrice": 313,
+      "installmentPrice": 312.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/318-0.webp",
       "images": [
@@ -5563,7 +5563,7 @@
       "movementLabel": "Automático",
       "price": 7290,
       "installments": 12,
-      "installmentPrice": 692,
+      "installmentPrice": 692.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/320-0.webp",
       "images": [
@@ -5584,7 +5584,7 @@
       "movementLabel": "Automático",
       "price": 7290,
       "installments": 12,
-      "installmentPrice": 692,
+      "installmentPrice": 692.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/sem-foto.webp",
       "images": [
@@ -5605,7 +5605,7 @@
       "movementLabel": "Automático",
       "price": 3490,
       "installments": 12,
-      "installmentPrice": 332,
+      "installmentPrice": 331.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/324-0.webp",
       "images": [
@@ -5626,7 +5626,7 @@
       "movementLabel": "Automático",
       "price": 3990,
       "installments": 12,
-      "installmentPrice": 379,
+      "installmentPrice": 379.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/sem-foto.webp",
       "images": [
@@ -5647,7 +5647,7 @@
       "movementLabel": "Automático",
       "price": 4290,
       "installments": 12,
-      "installmentPrice": 408,
+      "installmentPrice": 407.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/sem-foto.webp",
       "images": [
@@ -5668,7 +5668,7 @@
       "movementLabel": "Automático",
       "price": 2790,
       "installments": 12,
-      "installmentPrice": 265,
+      "installmentPrice": 265.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/330-0.webp",
       "images": [
@@ -5689,7 +5689,7 @@
       "movementLabel": "Quartzo",
       "price": 3290,
       "installments": 12,
-      "installmentPrice": 313,
+      "installmentPrice": 312.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/331-0.webp",
       "images": [
@@ -5710,7 +5710,7 @@
       "movementLabel": "Corda manual",
       "price": 13490,
       "installments": 12,
-      "installmentPrice": 1281,
+      "installmentPrice": 1281.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/332-0.webp",
       "images": [
@@ -5731,7 +5731,7 @@
       "movementLabel": "Corda manual",
       "price": 13490,
       "installments": 12,
-      "installmentPrice": 1281,
+      "installmentPrice": 1281.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/333-0.webp",
       "images": [
@@ -5752,7 +5752,7 @@
       "movementLabel": "Corda manual",
       "price": 13490,
       "installments": 12,
-      "installmentPrice": 1281,
+      "installmentPrice": 1281.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/334-0.webp",
       "images": [
@@ -5773,7 +5773,7 @@
       "movementLabel": "Corda manual",
       "price": 13490,
       "installments": 12,
-      "installmentPrice": 1281,
+      "installmentPrice": 1281.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/335-0.webp",
       "images": [
@@ -5794,7 +5794,7 @@
       "movementLabel": "Corda manual",
       "price": 13490,
       "installments": 12,
-      "installmentPrice": 1281,
+      "installmentPrice": 1281.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/336-0.webp",
       "images": [
@@ -5815,7 +5815,7 @@
       "movementLabel": "Corda manual",
       "price": 13490,
       "installments": 12,
-      "installmentPrice": 1281,
+      "installmentPrice": 1281.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/337-0.webp",
       "images": [
@@ -5836,7 +5836,7 @@
       "movementLabel": "Corda manual",
       "price": 13490,
       "installments": 12,
-      "installmentPrice": 1281,
+      "installmentPrice": 1281.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/338-0.webp",
       "images": [
@@ -5857,7 +5857,7 @@
       "movementLabel": "Corda manual",
       "price": 13490,
       "installments": 12,
-      "installmentPrice": 1281,
+      "installmentPrice": 1281.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/339-0.webp",
       "images": [
@@ -5878,7 +5878,7 @@
       "movementLabel": "Corda manual",
       "price": 13490,
       "installments": 12,
-      "installmentPrice": 1281,
+      "installmentPrice": 1281.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/340-0.webp",
       "images": [
@@ -5899,7 +5899,7 @@
       "movementLabel": "Corda manual",
       "price": 13490,
       "installments": 12,
-      "installmentPrice": 1281,
+      "installmentPrice": 1281.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/341-0.webp",
       "images": [
@@ -5920,7 +5920,7 @@
       "movementLabel": "Corda manual",
       "price": 13990,
       "installments": 12,
-      "installmentPrice": 1328,
+      "installmentPrice": 1329.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/342-0.webp",
       "images": [
@@ -5941,7 +5941,7 @@
       "movementLabel": "Corda manual",
       "price": 13990,
       "installments": 12,
-      "installmentPrice": 1328,
+      "installmentPrice": 1329.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/343-0.webp",
       "images": [
@@ -5962,7 +5962,7 @@
       "movementLabel": "Corda manual",
       "price": 13990,
       "installments": 12,
-      "installmentPrice": 1328,
+      "installmentPrice": 1329.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/344-0.webp",
       "images": [
@@ -5983,7 +5983,7 @@
       "movementLabel": "Corda manual",
       "price": 13990,
       "installments": 12,
-      "installmentPrice": 1328,
+      "installmentPrice": 1329.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/345-0.webp",
       "images": [
@@ -6004,7 +6004,7 @@
       "movementLabel": "Corda manual",
       "price": 13990,
       "installments": 12,
-      "installmentPrice": 1328,
+      "installmentPrice": 1329.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/346-0.webp",
       "images": [
@@ -6025,7 +6025,7 @@
       "movementLabel": "Corda manual",
       "price": 13990,
       "installments": 12,
-      "installmentPrice": 1328,
+      "installmentPrice": 1329.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/347-0.webp",
       "images": [
@@ -6046,7 +6046,7 @@
       "movementLabel": "Corda manual",
       "price": 13990,
       "installments": 12,
-      "installmentPrice": 1328,
+      "installmentPrice": 1329.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/348-0.webp",
       "images": [
@@ -6067,7 +6067,7 @@
       "movementLabel": "Corda manual",
       "price": 13990,
       "installments": 12,
-      "installmentPrice": 1328,
+      "installmentPrice": 1329.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/349-0.webp",
       "images": [
@@ -6088,7 +6088,7 @@
       "movementLabel": "Corda manual",
       "price": 13990,
       "installments": 12,
-      "installmentPrice": 1328,
+      "installmentPrice": 1329.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/350-0.webp",
       "images": [
@@ -6109,7 +6109,7 @@
       "movementLabel": "Corda manual",
       "price": 13990,
       "installments": 12,
-      "installmentPrice": 1328,
+      "installmentPrice": 1329.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/351-0.webp",
       "images": [
@@ -6130,7 +6130,7 @@
       "movementLabel": "Corda manual",
       "price": 13990,
       "installments": 12,
-      "installmentPrice": 1328,
+      "installmentPrice": 1329.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/352-0.webp",
       "images": [
@@ -6151,7 +6151,7 @@
       "movementLabel": "Corda manual",
       "price": 13990,
       "installments": 12,
-      "installmentPrice": 1328,
+      "installmentPrice": 1329.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/353-0.webp",
       "images": [
@@ -6172,7 +6172,7 @@
       "movementLabel": "Corda manual",
       "price": 13990,
       "installments": 12,
-      "installmentPrice": 1328,
+      "installmentPrice": 1329.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/354-0.webp",
       "images": [
@@ -6193,7 +6193,7 @@
       "movementLabel": "Automático",
       "price": 16490,
       "installments": 12,
-      "installmentPrice": 1565,
+      "installmentPrice": 1566.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/355-0.webp",
       "images": [
@@ -6214,7 +6214,7 @@
       "movementLabel": "Automático (GMT)",
       "price": 9890,
       "installments": 12,
-      "installmentPrice": 939,
+      "installmentPrice": 939.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/356-0.webp",
       "images": [
@@ -6237,7 +6237,7 @@
       "movementLabel": "Automático (GMT)",
       "price": 9890,
       "installments": 12,
-      "installmentPrice": 939,
+      "installmentPrice": 939.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/357-0.webp",
       "images": [
@@ -6260,7 +6260,7 @@
       "movementLabel": "Automático (GMT)",
       "price": 9890,
       "installments": 12,
-      "installmentPrice": 939,
+      "installmentPrice": 939.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/358-0.webp",
       "images": [
@@ -6283,7 +6283,7 @@
       "movementLabel": "Automático (GMT)",
       "price": 9890,
       "installments": 12,
-      "installmentPrice": 939,
+      "installmentPrice": 939.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/359-0.webp",
       "images": [
@@ -6306,7 +6306,7 @@
       "movementLabel": "Automático",
       "price": 17490,
       "installments": 12,
-      "installmentPrice": 1660,
+      "installmentPrice": 1661.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/360-0.webp",
       "images": [
@@ -6329,7 +6329,7 @@
       "movementLabel": "Automático",
       "price": 17490,
       "installments": 12,
-      "installmentPrice": 1660,
+      "installmentPrice": 1661.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/361-0.webp",
       "images": [
@@ -6352,7 +6352,7 @@
       "movementLabel": "Automático",
       "price": 17490,
       "installments": 12,
-      "installmentPrice": 1660,
+      "installmentPrice": 1661.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/362-0.webp",
       "images": [
@@ -6375,7 +6375,7 @@
       "movementLabel": "Automático",
       "price": 17490,
       "installments": 12,
-      "installmentPrice": 1660,
+      "installmentPrice": 1661.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/364-0.webp",
       "images": [
@@ -6398,7 +6398,7 @@
       "movementLabel": "Automático",
       "price": 13490,
       "installments": 12,
-      "installmentPrice": 1281,
+      "installmentPrice": 1281.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/367-0.webp",
       "images": [
@@ -6421,7 +6421,7 @@
       "movementLabel": "Automático",
       "price": 13490,
       "installments": 12,
-      "installmentPrice": 1281,
+      "installmentPrice": 1281.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/368-0.webp",
       "images": [
@@ -6444,7 +6444,7 @@
       "movementLabel": "Automático",
       "price": 13490,
       "installments": 12,
-      "installmentPrice": 1281,
+      "installmentPrice": 1281.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/369-0.webp",
       "images": [
@@ -6467,7 +6467,7 @@
       "movementLabel": "Automático",
       "price": 9990,
       "installments": 12,
-      "installmentPrice": 949,
+      "installmentPrice": 949.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/370-0.webp",
       "images": [
@@ -6489,7 +6489,7 @@
       "movementLabel": "Automático",
       "price": 9990,
       "installments": 12,
-      "installmentPrice": 949,
+      "installmentPrice": 949.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/371-0.webp",
       "images": [
@@ -6511,7 +6511,7 @@
       "movementLabel": "Automático",
       "price": 15490,
       "installments": 12,
-      "installmentPrice": 1471,
+      "installmentPrice": 1471.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/372-0.webp",
       "images": [
@@ -6534,7 +6534,7 @@
       "movementLabel": "Automático",
       "price": 15490,
       "installments": 12,
-      "installmentPrice": 1471,
+      "installmentPrice": 1471.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/373-0.webp",
       "images": [
@@ -6557,7 +6557,7 @@
       "movementLabel": "Automático",
       "price": 15490,
       "installments": 12,
-      "installmentPrice": 1471,
+      "installmentPrice": 1471.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/375-0.webp",
       "images": [
@@ -6580,7 +6580,7 @@
       "movementLabel": "Automático",
       "price": 15490,
       "installments": 12,
-      "installmentPrice": 1471,
+      "installmentPrice": 1471.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/376-0.webp",
       "images": [
@@ -6603,7 +6603,7 @@
       "movementLabel": "Automático",
       "price": 15490,
       "installments": 12,
-      "installmentPrice": 1471,
+      "installmentPrice": 1471.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/378-0.webp",
       "images": [
@@ -6626,7 +6626,7 @@
       "movementLabel": "Automático",
       "price": 15990,
       "installments": 12,
-      "installmentPrice": 1518,
+      "installmentPrice": 1519.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/379-0.webp",
       "images": [
@@ -6648,7 +6648,7 @@
       "movementLabel": "Automático",
       "price": 15990,
       "installments": 12,
-      "installmentPrice": 1518,
+      "installmentPrice": 1519.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/380-0.webp",
       "images": [
@@ -6670,7 +6670,7 @@
       "movementLabel": "Automático",
       "price": 15990,
       "installments": 12,
-      "installmentPrice": 1518,
+      "installmentPrice": 1519.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/381-0.webp",
       "images": [
@@ -6692,7 +6692,7 @@
       "movementLabel": "Automático",
       "price": 15990,
       "installments": 12,
-      "installmentPrice": 1518,
+      "installmentPrice": 1519.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/382-0.webp",
       "images": [
@@ -6714,7 +6714,7 @@
       "movementLabel": "Automático",
       "price": 15990,
       "installments": 12,
-      "installmentPrice": 1518,
+      "installmentPrice": 1519.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/383-0.webp",
       "images": [
@@ -6736,7 +6736,7 @@
       "movementLabel": "Automático (GMT)",
       "price": 21900,
       "installments": 12,
-      "installmentPrice": 2079,
+      "installmentPrice": 2080.5,
       "bestseller": false,
       "image": "/img/sob-encomenda/385-0.webp",
       "images": [
@@ -6759,7 +6759,7 @@
       "movementLabel": "Automático (GMT)",
       "price": 21900,
       "installments": 12,
-      "installmentPrice": 2079,
+      "installmentPrice": 2080.5,
       "bestseller": false,
       "image": "/img/sob-encomenda/386-0.webp",
       "images": [
@@ -6782,7 +6782,7 @@
       "movementLabel": "Automático (GMT)",
       "price": 21900,
       "installments": 12,
-      "installmentPrice": 2079,
+      "installmentPrice": 2080.5,
       "bestseller": false,
       "image": "/img/sob-encomenda/387-0.webp",
       "images": [
@@ -6805,7 +6805,7 @@
       "movementLabel": "Automático (GMT)",
       "price": 21900,
       "installments": 12,
-      "installmentPrice": 2079,
+      "installmentPrice": 2080.5,
       "bestseller": false,
       "image": "/img/sob-encomenda/388-0.webp",
       "images": [
@@ -6828,7 +6828,7 @@
       "movementLabel": "Automático (GMT)",
       "price": 26900,
       "installments": 12,
-      "installmentPrice": 2553,
+      "installmentPrice": 2555.5,
       "bestseller": false,
       "image": "/img/sob-encomenda/389-0.webp",
       "images": [
@@ -6852,7 +6852,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/391-0.webp",
       "images": [
@@ -6875,7 +6875,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/392-0.webp",
       "images": [
@@ -6898,7 +6898,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/393-0.webp",
       "images": [
@@ -6921,7 +6921,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/394-0.webp",
       "images": [
@@ -6944,7 +6944,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/395-0.webp",
       "images": [
@@ -6967,7 +6967,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/396-0.webp",
       "images": [
@@ -6990,7 +6990,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/397-0.webp",
       "images": [
@@ -7013,7 +7013,7 @@
       "movementLabel": "Automático",
       "price": 5190,
       "installments": 12,
-      "installmentPrice": 493,
+      "installmentPrice": 493.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/398-0.webp",
       "images": [
@@ -7036,7 +7036,7 @@
       "movementLabel": "Automático",
       "price": 5190,
       "installments": 12,
-      "installmentPrice": 493,
+      "installmentPrice": 493.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/399-0.webp",
       "images": [
@@ -7059,7 +7059,7 @@
       "movementLabel": "Automático",
       "price": 5190,
       "installments": 12,
-      "installmentPrice": 493,
+      "installmentPrice": 493.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/400-0.webp",
       "images": [
@@ -7082,7 +7082,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/401-0.webp",
       "images": [
@@ -7104,7 +7104,7 @@
       "movementLabel": "Quartz",
       "price": 4690,
       "installments": 12,
-      "installmentPrice": 446,
+      "installmentPrice": 445.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/402-0.webp",
       "images": [
@@ -7126,7 +7126,7 @@
       "movementLabel": "Quartz",
       "price": 4690,
       "installments": 12,
-      "installmentPrice": 446,
+      "installmentPrice": 445.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/403-0.webp",
       "images": [
@@ -7148,7 +7148,7 @@
       "movementLabel": "Quartz",
       "price": 4690,
       "installments": 12,
-      "installmentPrice": 446,
+      "installmentPrice": 445.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/404-0.webp",
       "images": [
@@ -7170,7 +7170,7 @@
       "movementLabel": "Quartz",
       "price": 4690,
       "installments": 12,
-      "installmentPrice": 446,
+      "installmentPrice": 445.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/405-0.webp",
       "images": [
@@ -7192,7 +7192,7 @@
       "movementLabel": "Quartz",
       "price": 4690,
       "installments": 12,
-      "installmentPrice": 446,
+      "installmentPrice": 445.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/406-0.webp",
       "images": [
@@ -7214,7 +7214,7 @@
       "movementLabel": "Quartz",
       "price": 4690,
       "installments": 12,
-      "installmentPrice": 446,
+      "installmentPrice": 445.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/407-0.webp",
       "images": [
@@ -7236,7 +7236,7 @@
       "movementLabel": "Quartz",
       "price": 4690,
       "installments": 12,
-      "installmentPrice": 446,
+      "installmentPrice": 445.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/408-0.webp",
       "images": [
@@ -7258,7 +7258,7 @@
       "movementLabel": "Quartz",
       "price": 4690,
       "installments": 12,
-      "installmentPrice": 446,
+      "installmentPrice": 445.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/409-0.webp",
       "images": [
@@ -7280,7 +7280,7 @@
       "movementLabel": "Automático (GMT)",
       "price": 7990,
       "installments": 12,
-      "installmentPrice": 759,
+      "installmentPrice": 759.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/410-0.webp",
       "images": [
@@ -7303,7 +7303,7 @@
       "movementLabel": "Automático (GMT)",
       "price": 7990,
       "installments": 12,
-      "installmentPrice": 759,
+      "installmentPrice": 759.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/411-0.webp",
       "images": [
@@ -7326,7 +7326,7 @@
       "movementLabel": "Automático (GMT)",
       "price": 7990,
       "installments": 12,
-      "installmentPrice": 759,
+      "installmentPrice": 759.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/412-0.webp",
       "images": [
@@ -7349,7 +7349,7 @@
       "movementLabel": "Automático (GMT)",
       "price": 7990,
       "installments": 12,
-      "installmentPrice": 759,
+      "installmentPrice": 759.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/413-0.webp",
       "images": [
@@ -7372,7 +7372,7 @@
       "movementLabel": "Automático",
       "price": 4990,
       "installments": 12,
-      "installmentPrice": 474,
+      "installmentPrice": 474.05,
       "bestseller": false,
       "image": "/img/sob-encomenda/414-0.webp",
       "images": [
@@ -7395,7 +7395,7 @@
       "movementLabel": "Quartz",
       "price": 4290,
       "installments": 12,
-      "installmentPrice": 408,
+      "installmentPrice": 407.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/415-0.webp",
       "images": [
@@ -7419,7 +7419,7 @@
       "movementLabel": "Quartz",
       "price": 4290,
       "installments": 12,
-      "installmentPrice": 408,
+      "installmentPrice": 407.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/416-0.webp",
       "images": [
@@ -7443,7 +7443,7 @@
       "movementLabel": "Quartz",
       "price": 4290,
       "installments": 12,
-      "installmentPrice": 408,
+      "installmentPrice": 407.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/417-0.webp",
       "images": [
@@ -7467,7 +7467,7 @@
       "movementLabel": "Quartz",
       "price": 4290,
       "installments": 12,
-      "installmentPrice": 408,
+      "installmentPrice": 407.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/418-0.webp",
       "images": [
@@ -7491,7 +7491,7 @@
       "movementLabel": "Quartz",
       "price": 4290,
       "installments": 12,
-      "installmentPrice": 408,
+      "installmentPrice": 407.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/419-0.webp",
       "images": [
@@ -7514,7 +7514,7 @@
       "movementLabel": "Quartz",
       "price": 4290,
       "installments": 12,
-      "installmentPrice": 408,
+      "installmentPrice": 407.55,
       "bestseller": false,
       "image": "/img/sob-encomenda/420-0.webp",
       "images": [

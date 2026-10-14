@@ -5,7 +5,7 @@
  * preços e fotos do catálogo da Memora (memorawatches.github.io), no lugar do
  * catálogo antigo e da pronta entrega.
  *
- * O script lê o catalog.json e o config.json direto do repositório deles (é de
+ * O script lê o catalog.json direto do repositório deles (é de
  * onde o próprio site da Memora lê), baixa as fotos pelo jsDelivr, converte pra
  * WebP em public/img/sob-encomenda/ e grava data/sob-encomenda.json, que o
  * data/products.ts transforma em produtos.
@@ -87,9 +87,12 @@ function tipoMovimento(mov) {
 }
 
 /** Parcela de 12x igual à do site deles: preço / (1 - taxa) / 12, arredondado pra cima */
-function parcela12(preco, taxas) {
-  const taxa = (taxas["12"] || 0) / 100;
-  return Math.ceil(preco / (1 - taxa) / 12);
+// Parcelado = preço à vista + 14%, dividido em 12 (pedido do Guilherme,
+// 14/10/2026). Substitui a taxa de maquininha do config.json da Memora.
+const ACRESCIMO_PARCELADO = 0.14;
+
+function parcela12(preco) {
+  return Math.round(((preco * (1 + ACRESCIMO_PARCELADO)) / 12) * 100) / 100;
 }
 
 const moeda = (v) => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
@@ -131,12 +134,93 @@ async function baixarFoto(caminho, destino) {
   if (!r.ok) r = await fetch(`${REPO_RAW}/${caminho}`);
   if (!r.ok) throw new Error(`HTTP ${r.status} em ${caminho}`);
   const buf = Buffer.from(await r.arrayBuffer());
-  await sharp(buf)
-    .rotate()
-    .resize({ width: 1200, height: 1200, fit: "inside", withoutEnlargement: true })
-    .webp({ quality: 82 })
-    .toFile(destino);
-  return "baixada";
+  const pronta = await enquadrar(buf);
+  await sharp(pronta.buffer).webp({ quality: 82 }).toFile(destino);
+  return pronta.enquadrada ? "baixada-enquadrada" : "baixada";
+}
+
+// Enquadramento padrão da foto de produto: relógio inteiro, centralizado, com
+// a mesma folga em cima e embaixo do Mido Ocean Star 39 Azul/Preto (4,4% da
+// altura), que o Gabriel definiu como referência em 14/10/2026. Muitas fotos
+// da Memora vêm com a pulseira encostando na borda ou com o relógio pequeno
+// no meio do quadro.
+const LADO = 1200;
+const FOLGA = 0.044;
+// pixel mais escuro que isso (em qualquer canal) conta como relógio
+const LIMIAR_FUNDO = 238;
+
+/** Só mexe em foto de estúdio (fundo branco nos quatro cantos). Foto de pulso,
+ *  caixa ou ambiente sai só redimensionada. */
+async function enquadrar(buf) {
+  const base = sharp(buf).rotate().flatten({ background: "#ffffff" });
+  const { data, info } = await base.clone().raw().toBuffer({ resolveWithObject: true });
+  const { width: W, height: H, channels: C } = info;
+  const pixel = (x, y) => {
+    const i = (y * W + x) * C;
+    return [data[i], data[i + 1], data[i + 2]];
+  };
+
+  const simples = async () => ({
+    enquadrada: false,
+    buffer: await sharp(buf)
+      .rotate()
+      .resize({ width: LADO, height: LADO, fit: "inside", withoutEnlargement: true })
+      .toBuffer(),
+  });
+
+  // cantos: quadrados de 3% do lado, quase todo pixel tem que ser branco
+  const s = Math.max(4, Math.round(Math.min(W, H) * 0.03));
+  const cantos = [[0, 0], [W - s, 0], [0, H - s], [W - s, H - s]];
+  let soma = [0, 0, 0];
+  let n = 0;
+  for (const [cx, cy] of cantos) {
+    let brancos = 0;
+    for (let y = cy; y < cy + s; y++)
+      for (let x = cx; x < cx + s; x++) {
+        const p = pixel(x, y);
+        if (p[0] >= 235 && p[1] >= 235 && p[2] >= 235) brancos++;
+        soma = soma.map((v, k) => v + p[k]);
+        n++;
+      }
+    if (brancos / (s * s) < 0.98) return simples();
+  }
+  const fundo = soma.map((v) => Math.round(v / n));
+
+  let minX = W, minY = H, maxX = -1, maxY = -1;
+  for (let y = 0; y < H; y++)
+    for (let x = 0; x < W; x++) {
+      const p = pixel(x, y);
+      if (p[0] < LIMIAR_FUNDO || p[1] < LIMIAR_FUNDO || p[2] < LIMIAR_FUNDO) {
+        if (x < minX) minX = x;
+        if (x > maxX) maxX = x;
+        if (y < minY) minY = y;
+        if (y > maxY) maxY = y;
+      }
+    }
+  if (maxX < 0) return simples();
+
+  const largura = maxX - minX + 1;
+  const altura = maxY - minY + 1;
+  const util = Math.round(LADO * (1 - 2 * FOLGA));
+  const escala = Math.min(util / largura, util / altura);
+  const novaL = Math.round(largura * escala);
+  const novaA = Math.round(altura * escala);
+
+  const relogio = await base
+    .clone()
+    .extract({ left: minX, top: minY, width: largura, height: altura })
+    .resize(novaL, novaA)
+    .toBuffer();
+
+  return {
+    enquadrada: true,
+    buffer: await sharp({
+      create: { width: LADO, height: LADO, channels: 3, background: { r: fundo[0], g: fundo[1], b: fundo[2] } },
+    })
+      .composite([{ input: relogio, left: Math.round((LADO - novaL) / 2), top: Math.round((LADO - novaA) / 2) }])
+      .png()
+      .toBuffer(),
+  };
 }
 
 /** roda as tarefas com no máximo `n` ao mesmo tempo, pra não martelar o CDN */
@@ -168,7 +252,7 @@ async function gerarSemFoto() {
 }
 
 async function main() {
-  const [catalogo, config] = await Promise.all([baixarJson("catalog.json"), baixarJson("config.json")]);
+  const catalogo = await baixarJson("catalog.json");
   // marcas que o site já conhece, pra reaproveitar o slug (e o logo) delas
   const brandsTs = await readFile(path.join(process.cwd(), "data", "brands.ts"), "utf8");
   const marcasNossas = [...brandsTs.matchAll(/slug:\s*"([^"]+)",\s*name:\s*"([^"]+)"/g)].map((m) => ({
@@ -226,8 +310,9 @@ async function main() {
   console.log(`${visiveis.length} relógios, ${tarefas.length} fotos. Baixando...`);
   const resultados = await emParalelo(tarefas, 8);
   const erros = resultados.filter((r) => r?.erro);
-  const baixadas = resultados.filter((r) => r?.s === "baixada").length;
-  console.log(`${baixadas} baixadas agora, ${tarefas.length - baixadas - erros.length} já existiam, ${erros.length} com erro`);
+  const baixadas = resultados.filter((r) => r?.s?.startsWith("baixada")).length;
+  const enquadradas = resultados.filter((r) => r?.s === "baixada-enquadrada").length;
+  console.log(`${baixadas} baixadas agora (${enquadradas} reenquadradas), ${tarefas.length - baixadas - erros.length} já existiam, ${erros.length} com erro`);
   erros.forEach((e) => console.log("  erro:", e.erro));
 
   const falhas = new Set(erros.map((e) => e.erro));
@@ -257,7 +342,7 @@ async function main() {
       movementLabel: w.movimento || "",
       price: w.price,
       installments: 12,
-      installmentPrice: parcela12(w.price, config.rates || {}),
+      installmentPrice: parcela12(w.price),
       bestseller: (w.orderCount || 0) > LIMIAR_MAIS_PEDIDO,
       image: fotos[0] ?? SEM_FOTO,
       images: fotos.length ? fotos : [SEM_FOTO],
