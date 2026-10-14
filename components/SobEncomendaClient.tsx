@@ -38,6 +38,14 @@ const marcas = (() => {
     .map(([slug]) => ({ slug, nome: nomeDaMarca(products.find((p) => p.brand === slug)!) }));
 })();
 
+// paginação em quadrados com degradê (pedido do Gabriel, 15/10/2026): a página
+// atual em degradê dourado, as outras em degradê grafite que acende no hover
+const QUADRADO_BASE =
+  "flex h-9 min-w-9 items-center justify-center rounded-md px-2 text-sm transition duration-200";
+const QUADRADO = `${QUADRADO_BASE} border border-white/10 bg-gradient-to-br from-white/[0.09] to-white/[0.01] text-arkano-champagne/70 hover:border-arkano-gold/50 hover:from-arkano-gold/25 hover:to-transparent hover:text-arkano-gold`;
+const QUADRADO_ATUAL = `${QUADRADO_BASE} bg-gradient-to-br from-arkano-gold-light via-arkano-gold to-[#8f6f2a] font-medium text-arkano-black shadow-[0_4px_14px_rgba(201,162,75,0.35)]`;
+const QUADRADO_SETA = `${QUADRADO} disabled:pointer-events-none disabled:opacity-30`;
+
 const selectClass =
   "rounded-full border border-white/10 bg-arkano-graphite px-4 py-2 text-sm text-arkano-champagne focus:border-arkano-gold focus:outline-none";
 
@@ -219,7 +227,7 @@ export default function SobEncomendaClient({ titulo = "h1" }: { titulo?: "h1" | 
                 aria-label="Página anterior"
                 disabled={atual === 1}
                 onClick={() => irPara(atual - 1)}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-arkano-champagne/70 transition hover:border-arkano-gold/50 hover:text-arkano-gold disabled:opacity-30"
+                className={QUADRADO_SETA}
               >
                 <ChevronLeft size={16} />
               </button>
@@ -229,11 +237,7 @@ export default function SobEncomendaClient({ titulo = "h1" }: { titulo?: "h1" | 
                   type="button"
                   aria-current={n === atual ? "page" : undefined}
                   onClick={() => irPara(n)}
-                  className={`h-9 min-w-9 rounded-full px-3 text-sm transition ${
-                    n === atual
-                      ? "bg-arkano-gold font-medium text-arkano-black"
-                      : "border border-white/10 text-arkano-champagne/70 hover:border-arkano-gold/50 hover:text-arkano-gold"
-                  }`}
+                  className={n === atual ? QUADRADO_ATUAL : QUADRADO}
                 >
                   {n}
                 </button>
@@ -243,7 +247,7 @@ export default function SobEncomendaClient({ titulo = "h1" }: { titulo?: "h1" | 
                 aria-label="Próxima página"
                 disabled={atual === totalPaginas}
                 onClick={() => irPara(atual + 1)}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-arkano-champagne/70 transition hover:border-arkano-gold/50 hover:text-arkano-gold disabled:opacity-30"
+                className={QUADRADO_SETA}
               >
                 <ChevronRight size={16} />
               </button>
