@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { products } from "@/data/products";
 import { brands } from "@/data/brands";
-import { SITE_URL } from "@/lib/config";
+import { ABA_SOB_ENCOMENDA, SITE_URL } from "@/lib/config";
 import ProductDetail from "@/components/ProductDetail";
 
 type Props = { params: Promise<{ id: string }> };
@@ -44,7 +44,7 @@ export default async function RelogioPage({ params }: Props) {
   const product = products.find((p) => p.id === id);
   if (!product) notFound();
 
-  const brandName = brands.find((b) => b.slug === product.brand)?.name ?? product.brand;
+  const brandName = brands.find((b) => b.slug === product.brand)?.name ?? product.brandName ?? product.brand;
 
   return (
     <ProductDetail
@@ -53,14 +53,17 @@ export default async function RelogioPage({ params }: Props) {
         brandName,
         category: product.category,
         price: product.price,
+        installments: product.installments,
+        installmentPrice: product.installmentPrice,
         caseDiameter: product.caseDiameter,
         movement: product.movement,
         image: product.image,
+        images: product.images,
         description: product.description,
         history: product.history,
         stockLabel: product.stock === "em-estoque" ? "Em estoque" : "Sob encomenda",
-        backHref: "/#catalogo",
-        backLabel: "Voltar pro catálogo",
+        backHref: ABA_SOB_ENCOMENDA ? "/sob-encomenda" : "/#catalogo",
+        backLabel: ABA_SOB_ENCOMENDA ? "Voltar pro Sob encomenda" : "Voltar pro catálogo",
         variants: product.variants,
       }}
     />

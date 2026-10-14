@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { products } from "@/data/products";
 import { defaultFilters } from "@/lib/filters";
 import { useSearch } from "@/lib/search-context";
-import { ABA_CATALOGO } from "@/lib/config";
+import { ABA_CATALOGO, ABA_PRONTA_ENTREGA, ABA_SOB_ENCOMENDA } from "@/lib/config";
+import SobEncomendaClient from "./SobEncomendaClient";
 import BannerCarousel from "./BannerCarousel";
 import BrandLogoCarousel from "./BrandLogoCarousel";
 import { ProntaEntregaSection, MaisVendidosSection } from "./FeaturedSection";
@@ -44,9 +45,13 @@ export default function HomeClient() {
       />
       )}
 
-      <Reveal>
-        <ProntaEntregaSection />
-      </Reveal>
+      {ABA_PRONTA_ENTREGA && (
+        <Reveal>
+          <ProntaEntregaSection />
+        </Reveal>
+      )}
+
+      {ABA_SOB_ENCOMENDA && <SobEncomendaClient titulo="h2" />}
 
       <CustomOrderCallout />
 

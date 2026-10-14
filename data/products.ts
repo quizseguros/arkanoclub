@@ -1,3 +1,5 @@
+import memora from "./sob-encomenda.json";
+
 export type Stock = "em-estoque" | "sob-encomenda";
 export type Category = "masculino" | "unissex";
 export type Movement = "automático" | "quartzo" | "manual";
@@ -10,6 +12,8 @@ export type ColorVariant = {
 };
 
 export type Product = {
+  /** referência do fabricante, mostrada na página do relógio */
+  ref?: string;
   id: string;
   name: string;
   brand: string;
@@ -44,7 +48,9 @@ export type Product = {
   brandName?: string;
 };
 
-export const products: Product[] = [
+// Catálogo próprio usado até 14/10/2026. Saiu do ar quando o site passou a
+// mostrar o catálogo da Memora (ver sobEncomenda abaixo); fica aqui caso volte.
+export const catalogoAntigo: Product[] = [
   {
     id: "seiko-presage-cocktail",
     name: "Seiko Presage Cocktail Time",
@@ -2186,3 +2192,27 @@ export const products: Product[] = [
     styleCategory: "cronógrafo",
   },
 ];
+
+// Aba "Sob encomenda": catálogo da Memora Watches, gerado por
+// scripts/importar-memora.mjs (mesmos relógios, preços, fotos e ordem do site
+// deles). Pra atualizar, rode o script de novo; não edite o JSON à mão.
+const sobEncomenda: Product[] = memora.relogios.map((r) => ({
+  id: r.id,
+  name: r.name,
+  brand: r.brand,
+  brandName: r.brandName,
+  ref: r.ref || undefined,
+  category: "unissex",
+  price: r.price,
+  installments: r.installments,
+  installmentPrice: r.installmentPrice,
+  caseDiameter: r.caseDiameter,
+  movement: r.movement as Movement,
+  stock: "sob-encomenda",
+  image: r.image,
+  images: r.images,
+  description: r.description,
+  bestseller: r.bestseller,
+}));
+
+export const products: Product[] = sobEncomenda;

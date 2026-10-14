@@ -13,9 +13,12 @@ export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://arkanoclub.
 
 export const INSTAGRAM_URL = "https://instagram.com/arkano.club";
 
-// Abas pausadas a pedido do Guilherme (13/10/2026): o site fica só com Pronta
-// entrega, Quem Somos e Grupo VIP. Pra religar uma aba, troque pra true.
-// As páginas continuam existindo, só saem do menu, do rodapé, do chat e da home.
+// Abas do site. Em 13/10/2026 saíram Catálogo, Vender relógio e Founders; em
+// 14/10/2026 a Pronta entrega também saiu e entrou a Sob encomenda (catálogo
+// da Memora). Pra religar uma aba, troque pra true. As páginas continuam
+// existindo, só saem do menu, do rodapé, do chat e da home.
+export const ABA_SOB_ENCOMENDA = true;
+export const ABA_PRONTA_ENTREGA = false;
 export const ABA_CATALOGO = false;
 export const ABA_VENDER_RELOGIO = false;
 export const ABA_FOUNDERS = false;

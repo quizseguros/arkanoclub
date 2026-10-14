@@ -2,10 +2,14 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { Search } from "lucide-react";
 import { useSearch } from "@/lib/search-context";
 import { searchProducts } from "@/lib/product-search";
+import { ABA_CATALOGO } from "@/lib/config";
+
+// com o catálogo desligado, "ver todos os resultados" filtra a grade do Sob encomenda
+const SECAO_RESULTADOS = ABA_CATALOGO ? { id: "catalogo", href: "/#catalogo" } : { id: "sob-encomenda", href: "/sob-encomenda" };
 
 const currency = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
@@ -18,7 +22,6 @@ export default function SearchAutocomplete({ variant, onNavigate }: Props) {
   const { search, setSearch } = useSearch();
   const [showSuggestions, setShowSuggestions] = useState(false);
   const router = useRouter();
-  const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement>(null);
 
   const suggestions = showSuggestions ? searchProducts(search) : [];
@@ -35,10 +38,11 @@ export default function SearchAutocomplete({ variant, onNavigate }: Props) {
 
   function goToCatalog() {
     setShowSuggestions(false);
-    if (pathname === "/") {
-      document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" });
+    const secao = document.getElementById(SECAO_RESULTADOS.id);
+    if (secao) {
+      secao.scrollIntoView({ behavior: "smooth" });
     } else {
-      router.push("/#catalogo");
+      router.push(SECAO_RESULTADOS.href);
     }
     onNavigate?.();
   }

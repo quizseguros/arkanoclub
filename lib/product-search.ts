@@ -13,7 +13,7 @@ export type SearchableProduct = {
 const catalogIndex: SearchableProduct[] = products.map((p) => ({
   id: p.id,
   name: p.name,
-  brand: brands.find((b) => b.slug === p.brand)?.name ?? p.brand,
+  brand: brands.find((b) => b.slug === p.brand)?.name ?? p.brandName ?? p.brand,
   price: p.price,
   image: p.image,
   href: `/relogio/${p.id}`,

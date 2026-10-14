@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Instagram, MessageCircle } from "lucide-react";
-import { INSTAGRAM_URL, whatsappLink, ABA_CATALOGO, ABA_FOUNDERS, ABA_VENDER_RELOGIO } from "@/lib/config";
+import { INSTAGRAM_URL, whatsappLink, ABA_CATALOGO, ABA_FOUNDERS, ABA_PRONTA_ENTREGA, ABA_SOB_ENCOMENDA, ABA_VENDER_RELOGIO } from "@/lib/config";
 import SeoKeywordsPopup from "@/components/SeoKeywordsPopup";
 
 export default function Footer() {
@@ -21,7 +21,8 @@ export default function Footer() {
         <div>
           <h4 className="mb-4 text-sm font-medium tracking-wide text-arkano-champagne">Navegação</h4>
           <ul className="space-y-2 text-sm text-arkano-champagne/60">
-            <li><Link href="/pronta-entrega" className="hover:text-arkano-gold">Pronta entrega</Link></li>
+            {ABA_SOB_ENCOMENDA && <li><Link href="/sob-encomenda" className="hover:text-arkano-gold">Sob encomenda</Link></li>}
+            {ABA_PRONTA_ENTREGA && <li><Link href="/pronta-entrega" className="hover:text-arkano-gold">Pronta entrega</Link></li>}
             {ABA_CATALOGO && <li><Link href="/#catalogo" className="hover:text-arkano-gold">Catálogo</Link></li>}
             <li><Link href="/quem-somos" className="hover:text-arkano-gold">Quem somos</Link></li>
             {ABA_VENDER_RELOGIO && <li><Link href="/vender-relogio" className="hover:text-arkano-gold">Vender seu relógio</Link></li>}

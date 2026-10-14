@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { MessageCircle, Send, X } from "lucide-react";
-import { whatsappLink, WHATSAPP_GRUPO_VIP, ABA_CATALOGO, ABA_FOUNDERS, ABA_VENDER_RELOGIO } from "@/lib/config";
+import { whatsappLink, WHATSAPP_GRUPO_VIP, ABA_CATALOGO, ABA_FOUNDERS, ABA_SOB_ENCOMENDA, ABA_VENDER_RELOGIO } from "@/lib/config";
 import { searchProducts } from "@/lib/product-search";
 
 const currency = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
@@ -69,11 +69,13 @@ export default function ChatWidget() {
 
   function mainMenu(): QuickAction[] {
     const actions: (QuickAction | false)[] = [
-      ABA_CATALOGO
-        ? { label: "Ver relógios em estoque", onClick: () => goToSection("catalogo", "Ver relógios em estoque") }
-        : { label: "Ver relógios em pronta entrega", onClick: () => goToPage("/pronta-entrega", "Ver relógios em pronta entrega") },
-      // a busca do chat procura no catálogo, então sai junto com ele
-      ABA_CATALOGO && {
+      ABA_SOB_ENCOMENDA
+        ? { label: "Ver os relógios", onClick: () => goToPage("/sob-encomenda", "Ver os relógios") }
+        : ABA_CATALOGO
+          ? { label: "Ver relógios em estoque", onClick: () => goToSection("catalogo", "Ver relógios em estoque") }
+          : { label: "Ver relógios em pronta entrega", onClick: () => goToPage("/pronta-entrega", "Ver relógios em pronta entrega") },
+      // a busca do chat procura em data/products, que hoje é o Sob encomenda
+      (ABA_SOB_ENCOMENDA || ABA_CATALOGO) && {
         label: "Buscar um modelo",
         onClick: () => {
           pushUser("Buscar um modelo");
