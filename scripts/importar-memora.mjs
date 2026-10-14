@@ -28,6 +28,12 @@ const URL_FOTOS = "/img/sob-encomenda";
 const SAIDA = path.join(process.cwd(), "data", "sob-encomenda.json");
 const SEM_FOTO = `${URL_FOTOS}/sem-foto.webp`;
 
+// Fotos oficiais da marca pros relógios em que a foto da Memora corta a
+// pulseira (todos os Baltic, 14/10/2026). Chave = id do relógio na Memora.
+const fotosOficiais = JSON.parse(
+  await readFile(path.join(process.cwd(), "scripts", "fotos-oficiais.json"), "utf8")
+).relogios;
+
 // mesma regra do site deles: esgotado e descontinuado não aparecem na listagem
 const FORA_DO_AR = /esgotado|descontinuado/i;
 // "Mais pedido" no site deles = mais de 2 unidades vendidas
@@ -130,8 +136,9 @@ function descricao(w) {
 async function baixarFoto(caminho, destino) {
   if (existsSync(destino)) return "ja-tinha";
   // o jsDelivr recusa (403) arquivo muito grande; aí vai direto no GitHub
-  let r = await fetch(`${REPO_CDN}/${caminho}`);
-  if (!r.ok) r = await fetch(`${REPO_RAW}/${caminho}`);
+  // caminho completo = foto oficial da marca; o resto vem do repositório da Memora
+  let r = await fetch(caminho.startsWith("http") ? caminho : `${REPO_CDN}/${caminho}`);
+  if (!r.ok && !caminho.startsWith("http")) r = await fetch(`${REPO_RAW}/${caminho}`);
   if (!r.ok) throw new Error(`HTTP ${r.status} em ${caminho}`);
   const buf = Buffer.from(await r.arrayBuffer());
   const pronta = await enquadrar(buf);
@@ -297,10 +304,21 @@ async function main() {
   const fotosPorRelogio = new Map();
   const tarefas = [];
   for (const w of visiveis) {
-    const origem = [...(w.images || []), ...(w.straps || []).flatMap((s) => s.images || [])];
+    // onde a foto da Memora vem cortada, a capa e a primeira foto de cada
+    // pulseira são trocadas pela foto oficial da marca (fotos-oficiais.json)
+    const oficial = fotosOficiais[w.id];
+    const principais = [...(w.images || [])];
+    if (oficial?.principal) principais[0] = oficial.principal;
+    const dasPulseiras = (w.straps || []).flatMap((s, i) => {
+      const imgs = [...(s.images || [])];
+      if (oficial?.pulseiras?.[i]) imgs[0] = oficial.pulseiras[i];
+      return imgs;
+    });
+    const origem = [...principais, ...dasPulseiras];
     const locais = [];
     origem.forEach((caminho, n) => {
-      const arquivo = `${w.id}-${n}.webp`;
+      // nome diferente pra foto oficial: o navegador não reaproveita a antiga em cache
+      const arquivo = caminho.startsWith("http") ? `${w.id}-${n}-oficial.webp` : `${w.id}-${n}.webp`;
       locais.push({ caminho, url: `${URL_FOTOS}/${arquivo}` });
       tarefas.push(() => baixarFoto(caminho, path.join(PASTA_FOTOS, arquivo)).then((s) => ({ s, w, arquivo })));
     });

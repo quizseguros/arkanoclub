@@ -1,0 +1,322 @@
+{
+  "fonte": "baltic-watches.com (fotos frontais oficiais, 14/10/2026)",
+  "relogios": {
+    "233": {
+      "nome": "Baltic Hermétique Summer Pink",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Hermetique_Summer_Pink_Face_d28e6fb0-ac47-4ba1-a6a8-2a949bc27806.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Hermetique_Summer_Face_Pink_BOR.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Hermetique_Summer_Face_Pink_FlatLink.png"
+      ]
+    },
+    "234": {
+      "nome": "Baltic Hermétique Summer Tuquoise",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Hermetique_Summer_Turquoise_Face_ac37c984-1b5d-4eb3-a6eb-7ee907375fcd.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Hermetique_Summer_Face_Turquoise_BOR.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Hermetique_Summer_Face_Turquoise_FlatLink_db6d24ab-1694-4ba1-ae1b-650d4f3bc022.png"
+      ]
+    },
+    "235": {
+      "nome": "Baltic Hermétique Summer Orange",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hermetique_summer_orange_shopify.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Hermetique_Summer_Face_Orange_BOR.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Hermetique_Summer_Face_Orange_FlatLink.png"
+      ]
+    },
+    "236": {
+      "nome": "Baltic Hermétique Summer Yellow",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Hermetique_Summer_Yellow_Face_1156e177-d873-47e5-bd14-c34dca41d42f.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Hermetique_Summer_Face_Yellow_BOR.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Hermetique_Summer_Face_Yellow_FlatLink.png"
+      ]
+    },
+    "237": {
+      "nome": "Baltic Hermétique Tourer Beige",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hermetique-beige-face-tropic-fkm-beige_f3c0b6fb-54e2-44b1-acc6-62099e47aff1.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hermetique-beige-face-bor_ca4dd1d3-dd91-4308-b987-34d4784dbeaf.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hermetique-beige-face-flat-link_c67e7dc5-accf-4393-adef-cfb1f5c84866.png"
+      ]
+    },
+    "238": {
+      "nome": "Baltic Hermétique Tourer Green",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hermetique-green-face-tropic-fkm-green.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hermetique-green-face-bor.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hermetique-green-face-flat-link.png"
+      ]
+    },
+    "239": {
+      "nome": "Baltic Hermétique Tourer Blue",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hermetique-blue-face-tropic-fkm-blue.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hermetique-blue-face-bor.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hermetique-blue-face-flat-link.png"
+      ]
+    },
+    "240": {
+      "nome": "Baltic Hermétique Tourer Bronze Brown",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hermetique-bronze-brown-face-tropic-fkm-brown.png",
+      "pulseiras": []
+    },
+    "241": {
+      "nome": "Baltic Hermétique Tourer Bronze Green",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hermetique-bronze-green-face-tropic-fkm-green.png",
+      "pulseiras": []
+    },
+    "242": {
+      "nome": "Baltic Hermétique Tourer Bronze Blue",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hermetique-bronze-blue-face-tropic-fkm-blue.png",
+      "pulseiras": []
+    },
+    "243": {
+      "nome": "Baltic Aquascaphe Mk2 Blue",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/aquacsaphe-mk2-37-blue-face-rubber-blue.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/MK2_37_Blue_BOR_Face_1353x2000_fb03d5e3-ea39-4279-9949-12e18de572f2.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/MK2_37_Blue_FL_Face_1353x2000_7912e73a-baf9-4088-929d-a30dab18b293.png"
+      ]
+    },
+    "244": {
+      "nome": "Baltic Aquascaphe Mk2 Green",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/aquacsaphe-mk2-37-green-face-rubber-green.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/MK2_37_Green_BOR_Face_1353x2000_e0cde36e-4e5e-406b-a5a6-ef786df698ec.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/MK2_37_Green_FL_Face_1353x2000_6829bf81-f4b8-4475-afa3-7afce9459cc9.png"
+      ]
+    },
+    "245": {
+      "nome": "Baltic Aquascaphe Mk2 Grey",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/aquacsaphe-mk2-37-grey-face-rubber-grey.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/MK2_37_Grey_BOR_Face_1353x2000_7fd8ba9c-008e-47f4-8525-51e551e7e6fb.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/MK2_37_Grey_FL_Face_1353x2000_73f2f226-26ce-4d4c-82db-0f0c31355669.png"
+      ]
+    },
+    "246": {
+      "nome": "Baltic Aquascaphe Mk2 Warm Silver",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/aquacsaphe-mk2-37-warm-silver-face-rubber-ws.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/MK2_37_Silver_BOR_Face_1353x2000_c9784036-54d1-4d98-a02b-9defa02b4f09.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/MK2_37_Silver_FL_Face_1353x2000_35a8396d-c641-43de-8507-574662ed65e8.png"
+      ]
+    },
+    "263": {
+      "nome": "Baltic Hermétique Tourer Brown",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hermetique-brown-face-tropic-fkm-brown.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hermetique-brown-face-bor.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hermetique-brown-face-flat-link.png"
+      ]
+    },
+    "264": {
+      "nome": "Baltic Aquascaphe Classic Blue Gilt",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/aquascaphe-blue-gilt-face-tropic-black.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/products/aquascaphe-blue-gilt-face-bor.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/products/aquascaphe-blue-gilt-face-flat-link.png"
+      ]
+    },
+    "265": {
+      "nome": "Baltic Aquascaphe Classic Black Gilt",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Aquascaphe_Mk1_Gilt_Face_1353x2000_FKM_Black.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Aquascaphe_Mk1_Gilt_Face_1353x2000_BOR.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Aquascaphe_Mk1_Gilt_Face_1353x2000_FlatLink.png"
+      ]
+    },
+    "266": {
+      "nome": "Baltic MR Classic Salmon",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/mr01-salmon-face-stitched-navy-blue_bdb475ec-530f-41e2-9a47-8694d9ae13a2.png",
+      "pulseiras": []
+    },
+    "267": {
+      "nome": "Baltic MR Classic Blue",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/mr01-blue-face-stitched-lion.png",
+      "pulseiras": []
+    },
+    "268": {
+      "nome": "Baltic MR Classic Silver",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/mr01-silver-face-stitched-green.png",
+      "pulseiras": []
+    },
+    "269": {
+      "nome": "Baltic MR Classic Gold",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/mr01-gold-pvd-black-face-stitched-saffiano-black.png",
+      "pulseiras": []
+    },
+    "270": {
+      "nome": "Baltic MR Roulette Blue",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/mr-roulette-blue-face-stitched-lion.png",
+      "pulseiras": []
+    },
+    "271": {
+      "nome": "Baltic MR Roulette Salmon",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/mr-roulette-salmon-face-stitched-lion.png",
+      "pulseiras": []
+    },
+    "272": {
+      "nome": "Baltic MR Roulette Silver",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/mr-roulette-silver-face-stitched-blue-navy.png",
+      "pulseiras": []
+    },
+    "273": {
+      "nome": "Baltic MR Roulette Black",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/mr-roulette-black-face-stitched-light-grey.png",
+      "pulseiras": []
+    },
+    "274": {
+      "nome": "Baltic HMS 002 Silver",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hms-silver-face-stitched-blue-navy.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/products/hms-silver-face-bor.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/products/hms-silver-face-flat-link.png"
+      ]
+    },
+    "275": {
+      "nome": "Baltic HMS 002 Blue Gilt",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hms-blue-face-stitched-lion.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/products/hms-blue-face-bor.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/products/hms-blue-face-flat-link.png"
+      ]
+    },
+    "276": {
+      "nome": "Baltic HMS 002 Black",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hms-black-face-stitched-green.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/products/hms-black-face-bor.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/products/hms-black-face-flat-link.png"
+      ]
+    },
+    "277": {
+      "nome": "Baltic HMS 002 Gold",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hms-002-gold-pvd-black-face-stitched-saffiano-black.png",
+      "pulseiras": []
+    },
+    "278": {
+      "nome": "Baltic HMS 003 Salmon",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hms-salmon-003-face-stitched-lion.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hms-salmon-003-face-bor.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hms-salmon-003-face-flat-link.png"
+      ]
+    },
+    "279": {
+      "nome": "Baltic HMS 003 Blue Gilt",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hms-blue-gilt-003-face-stitched-lion.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hms-blue-gilt-003-face-bor.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hms-blue-gilt-003-face-flat-link.png"
+      ]
+    },
+    "280": {
+      "nome": "Baltic HMS 003 Silver Blue",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hms-silver-blue-003-face-stitched-blue-navy.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hms-silver-blue-003-face-bor.png",
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/hms-silver-blue-003-face-flat-link.png"
+      ]
+    },
+    "294": {
+      "nome": "Baltic Prismic Stone Pietersite",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Prismic_Stone_Pietersite_Face_Mesh.png",
+      "pulseiras": []
+    },
+    "295": {
+      "nome": "Baltic Prismic Stone Pink Albite",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Prismic_Stone_PinkAlbite_Face_Mesh.png",
+      "pulseiras": []
+    },
+    "296": {
+      "nome": "Baltic Prismic Stone Dumortierite",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Prismic_Stone_Dumortierite_Face_Camel.png",
+      "pulseiras": []
+    },
+    "297": {
+      "nome": "Baltic Prismic Stone Bloodstone",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Prismic_Stone_Bloodstone_Face_Mesh.png",
+      "pulseiras": []
+    },
+    "298": {
+      "nome": "Baltic Prismic Purple",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/prismic-purple-mesh.png",
+      "pulseiras": []
+    },
+    "299": {
+      "nome": "Baltic Prismic Grey blue",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/prismic-grey-blue-mesh.png",
+      "pulseiras": []
+    },
+    "300": {
+      "nome": "Baltic Prismic Salmon",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/prismic-salmon-mesh.png",
+      "pulseiras": []
+    },
+    "301": {
+      "nome": "Baltic Prismic Green",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/prismic-green-mesh.png",
+      "pulseiras": []
+    },
+    "302": {
+      "nome": "Baltic Scalegraph Champagne",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Scalegraph_Face_sRGB_Champagne_BOR.png",
+      "pulseiras": []
+    },
+    "303": {
+      "nome": "Baltic Scalegraph Blue",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Scalegraph_Face_sRGB_Blue_BOR.png",
+      "pulseiras": []
+    },
+    "304": {
+      "nome": "Baltic Scalegraph Grey",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/Baltic_Scalegraph_Face_sRGB_Grey_BOR.png",
+      "pulseiras": []
+    },
+    "305": {
+      "nome": "Baltic Scalegraph Classic Panda",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/tricompax-panda-face-flat-link.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/products/tricompax-panda-face-bor.png"
+      ]
+    },
+    "306": {
+      "nome": "Baltic Scalegraph Classic Reverse Panda",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/tricompax-reverse-panda-face-flat-link.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/products/tricompax-reverse-panda-face-bor.png"
+      ]
+    },
+    "356": {
+      "nome": "Baltic Aquascaphe GMT MKII Blue",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/GMT_Blue_Face_BOR.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/GMT_Blue_Face_FL.png"
+      ]
+    },
+    "357": {
+      "nome": "Baltic Aquascaphe GMT MKII Red",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/GMT_Red_Face_BOR.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/GMT_Red_Face_FL.png"
+      ]
+    },
+    "358": {
+      "nome": "Baltic Aquascaphe GMT MKII Grey",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/GMT_Grey_Face_BOR.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/GMT_Grey_Face_FL.png"
+      ]
+    },
+    "359": {
+      "nome": "Baltic Aquascaphe GMT MKII Green",
+      "principal": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/GMT_Green_Face_BOR.png",
+      "pulseiras": [
+        "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/GMT_Green_Face_FL.png"
+      ]
+    }
+  }
+}
