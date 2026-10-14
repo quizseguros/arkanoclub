@@ -1,4 +1,5 @@
 import memora from "./sob-encomenda.json";
+import precosManuais from "./precos-manuais.json";
 
 export type Stock = "em-estoque" | "sob-encomenda";
 export type Category = "masculino" | "unissex";
@@ -2198,6 +2199,11 @@ export const catalogoAntigo: Product[] = [
 // Aba "Sob encomenda": catálogo da Memora Watches, gerado por
 // scripts/importar-memora.mjs (mesmos relógios, preços, fotos e ordem do site
 // deles). Pra atualizar, rode o script de novo; não edite o JSON à mão.
+// Preço que o Guilherme pediu pra trocar à mão (data/precos-manuais.json)
+// passa por cima do importado; a parcela segue a regra de +14% em 12x.
+const manuais: Record<string, number> = precosManuais.precos;
+const preco = (r: { id: string; price: number }) => manuais[r.id] ?? r.price;
+
 const sobEncomenda: Product[] = memora.relogios.map((r) => ({
   id: r.id,
   name: r.name,
@@ -2205,9 +2211,9 @@ const sobEncomenda: Product[] = memora.relogios.map((r) => ({
   brandName: r.brandName,
   ref: r.ref || undefined,
   category: "unissex",
-  price: r.price,
+  price: preco(r),
   installments: r.installments,
-  installmentPrice: r.installmentPrice,
+  installmentPrice: manuais[r.id] ? Math.round(((manuais[r.id] * 1.14) / 12) * 100) / 100 : r.installmentPrice,
   caseDiameter: r.caseDiameter,
   movement: r.movement as Movement,
   stock: "sob-encomenda",
