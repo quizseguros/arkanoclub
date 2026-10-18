@@ -70,16 +70,21 @@ async function main() {
   const env = lerEnv();
   const destino = (env.FTP_DIR || "public_html").replace(/\/+$/, "") || "/";
 
-  const cliente = new Client(60_000);
-  await cliente.access({
-    host: env.FTP_HOST,
-    user: env.FTP_USER,
-    password: env.FTP_PASS,
-    port: Number(env.FTP_PORT || 21),
-    // a Hostinger aceita FTP com TLS; se der erro de certificado, cai pro FTP simples
-    secure: env.FTP_TLS === "nao" ? false : true,
-    secureOptions: { rejectUnauthorized: false },
-  });
+  let cliente = new Client(60_000);
+  async function conectar() {
+    cliente.close();
+    cliente = new Client(60_000);
+    await cliente.access({
+      host: env.FTP_HOST,
+      user: env.FTP_USER,
+      password: env.FTP_PASS,
+      port: Number(env.FTP_PORT || 21),
+      // a Hostinger aceita FTP com TLS; FTP_TLS=nao cai pro FTP simples
+      secure: env.FTP_TLS === "nao" ? false : true,
+      secureOptions: { rejectUnauthorized: false },
+    });
+  }
+  await conectar();
   console.log(`Conectado em ${env.FTP_HOST}.`);
 
   if (soTestar) {
@@ -118,11 +123,24 @@ async function main() {
     const pasta = path.posix.dirname(remoto);
     // cria (ou confere) cada pasta uma vez só; fazer isso por arquivo deixava o
     // envio muito lento
-    if (!pastasProntas.has(pasta)) {
-      await cliente.ensureDir(pasta);
-      pastasProntas.add(pasta);
+    // a Hostinger derruba a sessão de vez em quando no meio de um envio
+    // grande; reconecta e tenta o mesmo arquivo de novo
+    for (let tentativa = 1; ; tentativa++) {
+      try {
+        if (!pastasProntas.has(pasta)) {
+          await cliente.ensureDir(pasta);
+          pastasProntas.add(pasta);
+        }
+        await cliente.uploadFrom(path.join(OUT, rel), remoto);
+        break;
+      } catch (e) {
+        if (tentativa >= 5) throw e;
+        console.log(`  conexão caiu (${e.message}), reconectando...`);
+        writeFileSync(REGISTRO, JSON.stringify(registro));
+        await new Promise((r) => setTimeout(r, 2000 * tentativa));
+        await conectar();
+      }
     }
-    await cliente.uploadFrom(path.join(OUT, rel), remoto);
     registro[rel] = atual[rel];
     feitos++;
     if (feitos % 50 === 0 || feitos === enviar.length) {
