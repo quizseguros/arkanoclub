@@ -7,6 +7,7 @@ import { useSearch } from "@/lib/search-context";
 import { ABA_CATALOGO, ABA_PRONTA_ENTREGA, ABA_SOB_ENCOMENDA } from "@/lib/config";
 import SobEncomendaClient from "./SobEncomendaClient";
 import BannerCarousel from "./BannerCarousel";
+import BlackNovemberCountdown from "./BlackNovemberCountdown";
 import BrandLogoCarousel from "./BrandLogoCarousel";
 import { ProntaEntregaSection, MaisVendidosSection } from "./FeaturedSection";
 import CategoriesSection from "./CategoriesSection";
@@ -31,6 +32,8 @@ export default function HomeClient() {
   return (
     <>
       <BannerCarousel />
+
+      <BlackNovemberCountdown />
 
       {/* esteira, mais vendidos, categorias e catálogo saem juntos: a esteira filtra o catálogo */}
       {ABA_CATALOGO && (

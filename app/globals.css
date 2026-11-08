@@ -212,6 +212,94 @@ input[type="range"]::-moz-range-thumb {
   }
 }
 
+/* ===== Black November 2026 (faixa, contador, balões e confete) ===== */
+.black-bar {
+  background: linear-gradient(110deg, #c9a24b, #e4c878, #ece2cf, #e4c878, #c9a24b);
+  background-size: 300% 100%;
+  animation: founders-gradient 8s ease-in-out infinite;
+}
+
+.black-confete {
+  position: absolute;
+  top: -24px;
+  border-radius: 1px;
+  opacity: 0.85;
+  animation-name: black-confete-cai;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* na tela inteira cai uma vez só */
+.black-confete-tela {
+  animation-name: black-confete-tela;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes black-confete-cai {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.85; }
+  50%  { transform: translate3d(14px, 300px, 0) rotate(calc(var(--gira, 1) * 360deg)); }
+  100% { transform: translate3d(-10px, 620px, 0) rotate(calc(var(--gira, 1) * 720deg)); opacity: 0; }
+}
+
+@keyframes black-confete-tela {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 1; }
+  50%  { transform: translate3d(22px, 55vh, 0) rotate(calc(var(--gira, 1) * 400deg)); }
+  85%  { opacity: 1; }
+  100% { transform: translate3d(-12px, 110vh, 0) rotate(calc(var(--gira, 1) * 800deg)); opacity: 0; }
+}
+
+.black-balao {
+  position: absolute;
+  bottom: -90px;
+  border-radius: 50% 50% 48% 48% / 55% 55% 45% 45%;
+  animation-name: black-balao-sobe;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+/* nozinho e cordinha */
+.black-balao::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 1px;
+  height: 46px;
+  background: linear-gradient(rgba(236, 226, 207, 0.45), transparent);
+  transform: translateX(-50%);
+}
+
+.black-balao-gold {
+  background: radial-gradient(circle at 32% 28%, #f4dc9a 0%, #c9a24b 45%, #7a5a1f 100%);
+  box-shadow: 0 0 24px rgba(201, 162, 75, 0.35);
+}
+
+.black-balao-black {
+  background: radial-gradient(circle at 32% 28%, #5a5a5a 0%, #1c1c1c 50%, #050505 100%);
+  border: 1px solid rgba(201, 162, 75, 0.35);
+}
+
+.black-balao-champagne {
+  background: radial-gradient(circle at 32% 28%, #ffffff 0%, #ece2cf 45%, #a89a7d 100%);
+}
+
+@keyframes black-balao-sobe {
+  0%   { transform: translate3d(0, 0, 0) rotate(-4deg); opacity: 0; }
+  10%  { opacity: 0.9; }
+  50%  { transform: translate3d(18px, -300px, 0) rotate(5deg); }
+  90%  { opacity: 0.9; }
+  100% { transform: translate3d(-8px, -640px, 0) rotate(-3deg); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .black-bar { animation: none; }
+  .black-confete,
+  .black-balao { display: none; }
+}
+
 /* Cadeado da área Arkano Founders: flutua só no eixo vertical */
 .founders-lock-float {
   animation: founders-lock-float 3.2s ease-in-out infinite;

@@ -5,6 +5,9 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Product, products } from "@/data/products";
 import { brands } from "@/data/brands";
 import { useSearch } from "@/lib/search-context";
+import { useFiltroSeisX } from "@/lib/use-black-november";
+import { usePrecosAoVivo } from "@/lib/precos-ao-vivo";
+import { BLACK_PARCELAS, entraNoSeisX } from "@/lib/black-november";
 import BrandLogoCarousel from "./BrandLogoCarousel";
 import ProductCard from "./ProductCard";
 
@@ -71,9 +74,15 @@ export default function SobEncomendaClient({ titulo = "h1" }: { titulo?: "h1" | 
   // texto digitado na busca do topo ("ver todos os resultados")
   const { search, setSearch } = useSearch();
   const busca = normalizar(search.trim());
+  const [filtroSeisX, limparSeisX] = useFiltroSeisX("sob-encomenda");
+  const precosAoVivo = usePrecosAoVivo();
 
   const lista = useMemo(() => {
     let filtrada = marca ? products.filter((p) => p.brand === marca) : products;
+    if (filtroSeisX) {
+      // mesmo preço do card: o ajustado no painel, quando houver
+      filtrada = filtrada.filter((p) => entraNoSeisX({ price: precosAoVivo[p.id] ?? p.price }));
+    }
     if (busca) {
       filtrada = filtrada.filter((p) => normalizar(`${p.name} ${nomeDaMarca(p)} ${p.ref ?? ""}`).includes(busca));
     }
@@ -81,7 +90,7 @@ export default function SobEncomendaClient({ titulo = "h1" }: { titulo?: "h1" | 
     if (ordem === "maior") return [...filtrada].sort((a, b) => b.price - a.price);
     if (ordem === "az") return [...filtrada].sort((a, b) => a.name.localeCompare(b.name, "pt-BR"));
     return filtrada;
-  }, [marca, ordem, busca]);
+  }, [marca, ordem, busca, filtroSeisX, precosAoVivo]);
 
 
   const porPagina = desktop ? POR_PAGINA_DESKTOP : POR_PAGINA_CELULAR;
@@ -110,6 +119,9 @@ export default function SobEncomendaClient({ titulo = "h1" }: { titulo?: "h1" | 
 
   const Titulo = titulo;
   const marcaAtiva = marcas.find((m) => m.slug === marca);
+
+  // filtro ligado/desligado volta pra primeira página
+  useEffect(() => setPagina(1), [filtroSeisX]);
 
   return (
     <>
@@ -164,6 +176,17 @@ export default function SobEncomendaClient({ titulo = "h1" }: { titulo?: "h1" | 
                 </option>
               ))}
             </select>
+
+            {filtroSeisX && (
+              <button
+                type="button"
+                onClick={limparSeisX}
+                className="inline-flex items-center gap-2 rounded-full border border-arkano-gold/50 bg-arkano-gold/10 px-4 py-2 text-xs text-arkano-gold transition hover:bg-arkano-gold/20"
+              >
+                Só relógios em {BLACK_PARCELAS}x sem juros
+                <X size={14} />
+              </button>
+            )}
 
             {marcaAtiva && (
               <button

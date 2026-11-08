@@ -32,3 +32,13 @@ export function usePrecoAoVivo(id: string | undefined, price: number, installmen
   // mesma regra do resto do site: parcelado = à vista + 14%, em 12x
   return { price: ajustado, installmentPrice: Math.round(((ajustado * 1.14) / 12) * 100) / 100 };
 }
+
+/** Mapa id -> preço ajustado no painel (vazio enquanto carrega). Serve pra
+ *  filtrar a lista pelo mesmo preço que o card mostra. */
+export function usePrecosAoVivo(): Record<string, number> {
+  const [precos, setPrecos] = useState<Record<string, number>>({});
+  useEffect(() => {
+    buscarPrecos().then(setPrecos);
+  }, []);
+  return precos;
+}

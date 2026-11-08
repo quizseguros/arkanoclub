@@ -1,4 +1,9 @@
+"use client";
+
+import { Truck } from "lucide-react";
 import { percentualDesconto, precoPromocional } from "@/lib/promo";
+import { BLACK_PARCELAS, parcelaSemJuros } from "@/lib/black-november";
+import { useBlackAtiva } from "@/lib/use-black-november";
 
 const currency = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
@@ -30,8 +35,29 @@ export default function ProductPrice({
   const promo = promoAtiva ? precoPromocional({ price, promoPrice }) : null;
   const grande = size === "lg";
 
+  // Black November: relógio até R$ 8 mil troca o parcelamento cadastrado pelo
+  // 6x sem juros (conta feita aqui, sobre o preço final). Acima disso, ou fora
+  // da campanha, fica o parcelamento de sempre.
+  const blackAtiva = useBlackAtiva();
+  const parcelaBlack = blackAtiva ? parcelaSemJuros(promo ?? price) : null;
+
+  const freteGratis =
+    blackAtiva && grande ? (
+      <span className="mt-1 flex items-center gap-1.5 text-xs text-arkano-gold-light">
+        <Truck size={14} />
+        Frete grátis para todo o Brasil até 30/11
+      </span>
+    ) : null;
+
   const parcelamento =
-    installments && installmentPrice && installments > 0 && installmentPrice > 0 ? (
+    parcelaBlack !== null ? (
+      <span className={`text-arkano-champagne/60 ${grande ? "text-sm" : "text-[11px] sm:text-xs"}`}>
+        em até{" "}
+        <strong className="font-medium text-arkano-gold-light">
+          {BLACK_PARCELAS}x de {currency.format(parcelaBlack)} sem juros
+        </strong>
+      </span>
+    ) : installments && installmentPrice && installments > 0 && installmentPrice > 0 ? (
       <span
         className={`text-arkano-champagne/50 ${grande ? "text-sm" : "text-[11px] sm:text-xs"}`}
       >
@@ -55,6 +81,7 @@ export default function ProductPrice({
           {currency.format(price)}
         </span>
         {parcelamento}
+        {freteGratis}
       </div>
     );
   }
@@ -87,6 +114,7 @@ export default function ProductPrice({
       </span>
 
       {parcelamento}
+      {freteGratis}
 
       {/* só na página de detalhes: no card o selo azul da foto já diz isso, e
           no celular essa linha ainda quebrava em duas */}

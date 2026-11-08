@@ -7,6 +7,8 @@ import PageTransition from "@/components/PageTransition";
 import ChatWidget from "@/components/ChatWidget";
 import SplashScreen from "@/components/SplashScreen";
 import GrupoVipPopup from "@/components/GrupoVipPopup";
+import BlackNovemberBar from "@/components/BlackNovemberBar";
+import BlackNovemberConfete from "@/components/BlackNovemberConfete";
 import { SearchProvider } from "@/lib/search-context";
 import { SITE_URL } from "@/lib/config";
 
@@ -55,7 +57,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${montserrat.variable} font-sans bg-arkano-black text-arkano-champagne antialiased`}>
         <SplashScreen />
         <GrupoVipPopup />
+        <BlackNovemberConfete />
         <SearchProvider>
+          <BlackNovemberBar />
           <Header />
           <PageTransition>{children}</PageTransition>
           <Footer />

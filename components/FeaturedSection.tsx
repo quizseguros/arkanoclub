@@ -5,6 +5,8 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Product, products } from "@/data/products";
 import { fetchLiveWatches } from "@/lib/live-watches";
 import { usePromoAtiva } from "@/lib/use-promo";
+import { useFiltroSeisX } from "@/lib/use-black-november";
+import { entraNoSeisX } from "@/lib/black-november";
 import ProductCard from "./ProductCard";
 
 type Row = { id: string; title: string; items: Product[] };
@@ -74,6 +76,7 @@ export function ProntaEntregaSection() {
   const [items, setItems] = useState<Product[]>(staticProntaEntrega);
   // mesmos relógios da página /pronta-entrega — o preço tem que bater nos dois
   const promoAtiva = usePromoAtiva();
+  const [filtroSeisX] = useFiltroSeisX();
 
   useEffect(() => {
     fetchLiveWatches().then((live) => {
@@ -86,7 +89,11 @@ export function ProntaEntregaSection() {
     <section id="pronta-entrega" className="scroll-mt-24 bg-arkano-black px-4 pb-16 pt-16 sm:px-6">
       <div className="mx-auto max-w-7xl">
         <ProductRow
-          row={{ id: "destaque", title: "Pronta entrega", items }}
+          row={{
+            id: "destaque",
+            title: "Pronta entrega",
+            items: filtroSeisX ? items.filter((p) => entraNoSeisX(p, promoAtiva)) : items,
+          }}
           promoAtiva={promoAtiva}
         />
       </div>

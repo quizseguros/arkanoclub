@@ -6,6 +6,8 @@ import { Product, products } from "@/data/products";
 import { brands } from "@/data/brands";
 import { fetchLiveWatches } from "@/lib/live-watches";
 import { usePromoAtiva } from "@/lib/use-promo";
+import { useFiltroSeisX } from "@/lib/use-black-november";
+import { BLACK_PARCELAS, entraNoSeisX } from "@/lib/black-november";
 import BrandLogoCarousel from "./BrandLogoCarousel";
 import ProntaEntregaGrid from "./ProntaEntregaGrid";
 
@@ -17,6 +19,11 @@ export default function ProntaEntregaClient() {
   const [items, setItems] = useState<Product[]>(staticDisponiveis);
   const [activeBrand, setActiveBrand] = useState<string | null>(null);
   const promoAtiva = usePromoAtiva();
+  const [filtroSeisX, limparSeisX] = useFiltroSeisX("pronta-entrega");
+  const itensVisiveis = useMemo(
+    () => (filtroSeisX ? items.filter((p) => entraNoSeisX(p, promoAtiva)) : items),
+    [filtroSeisX, items, promoAtiva],
+  );
 
   useEffect(() => {
     fetchLiveWatches().then((live) => {
@@ -73,6 +80,17 @@ export default function ProntaEntregaClient() {
             espera de importação. Original, com garantia.
           </p>
 
+          {filtroSeisX && (
+            <button
+              type="button"
+              onClick={limparSeisX}
+              className="mr-2 mt-5 inline-flex items-center gap-2 rounded-full border border-arkano-gold/50 bg-arkano-gold/10 px-4 py-1.5 text-xs text-arkano-gold transition hover:bg-arkano-gold/20"
+            >
+              Mostrando só relógios em {BLACK_PARCELAS}x sem juros
+              <X size={14} />
+            </button>
+          )}
+
           {marcaAtiva && (
             <button
               type="button"
@@ -84,7 +102,7 @@ export default function ProntaEntregaClient() {
             </button>
           )}
 
-          <ProntaEntregaGrid items={items} brandFilter={activeBrand} />
+          <ProntaEntregaGrid items={itensVisiveis} brandFilter={activeBrand} />
         </div>
       </section>
     </>
