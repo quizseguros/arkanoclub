@@ -2202,7 +2202,16 @@ export const catalogoAntigo: Product[] = [
 // Preço que o Guilherme pediu pra trocar à mão (data/precos-manuais.json)
 // passa por cima do importado; a parcela segue a regra de +14% em 12x.
 const manuais: Record<string, number> = precosManuais.precos;
-const preco = (r: { id: string; price: number }) => manuais[r.id] ?? r.price;
+// Reajuste pedido pelo Guilherme em 16/11/2026 (dólar), por faixa do preço:
+// até R$ 3.000 +180, até 5.000 +250, até 8.000 +390, até 11.000 +500,
+// até 15.000 +700, acima disso +900. Vale por cima do importado e do manual.
+// O mesmo reajuste foi aplicado no painel (admin/backups/reajuste-precos-2026-11-16.ts).
+// Pra voltar: git tag antes-reajuste-dolar-2026-11-16.
+const aumentoDolar = (p: number) =>
+  p <= 3000 ? 180 : p <= 5000 ? 250 : p <= 8000 ? 390 : p <= 11000 ? 500 : p <= 15000 ? 700 : 900;
+const reajuste = (p: number) => p + aumentoDolar(p);
+const preco = (r: { id: string; price: number }) => reajuste(manuais[r.id] ?? r.price);
+const parcela12 = (p: number) => Math.round(((p * 1.14) / 12) * 100) / 100;
 
 const sobEncomenda: Product[] = memora.relogios.map((r) => ({
   id: r.id,
@@ -2213,7 +2222,7 @@ const sobEncomenda: Product[] = memora.relogios.map((r) => ({
   category: "unissex",
   price: preco(r),
   installments: r.installments,
-  installmentPrice: manuais[r.id] ? Math.round(((manuais[r.id] * 1.14) / 12) * 100) / 100 : r.installmentPrice,
+  installmentPrice: parcela12(preco(r)),
   caseDiameter: r.caseDiameter,
   movement: r.movement as Movement,
   stock: "sob-encomenda",
@@ -2254,7 +2263,7 @@ const seikosDeVolta: Product[] = Object.entries(SEIKOS_DE_VOLTA).map(([id, ref])
     images: [image],
     variants: undefined,
     installments: 12,
-    installmentPrice: Math.round(((price * 1.14) / 12) * 100) / 100,
+    installmentPrice: parcela12(price),
     price,
     pedidos: 0,
   };
