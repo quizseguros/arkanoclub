@@ -2210,7 +2210,9 @@ const manuais: Record<string, number> = precosManuais.precos;
 const aumentoDolar = (p: number) =>
   p <= 3000 ? 180 : p <= 5000 ? 250 : p <= 8000 ? 390 : p <= 11000 ? 500 : p <= 15000 ? 700 : 900;
 const reajuste = (p: number) => p + aumentoDolar(p);
-const preco = (r: { id: string; price: number }) => reajuste(manuais[r.id] ?? r.price);
+// precosFinais (no mesmo JSON) já vêm com o reajuste e entram como estão.
+const finais: Record<string, number> = precosManuais.precosFinais;
+const preco = (r: { id: string; price: number }) => finais[r.id] ?? reajuste(manuais[r.id] ?? r.price);
 const parcela12 = (p: number) => Math.round(((p * 1.14) / 12) * 100) / 100;
 
 const sobEncomenda: Product[] = memora.relogios.map((r) => ({
