@@ -45,7 +45,7 @@ export default function ProductPrice({
     blackAtiva && grande ? (
       <span className="mt-1 flex items-center gap-1.5 text-xs text-arkano-gold-light">
         <Truck size={14} />
-        Frete grátis para todo o Brasil até 30/11
+        Frete grátis para todo o Brasil até hoje, 28/11
       </span>
     ) : null;
 

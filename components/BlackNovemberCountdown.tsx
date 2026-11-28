@@ -117,7 +117,7 @@ export default function BlackNovemberCountdown() {
         </span>
 
         <h2 className="mt-5 text-2xl font-light text-arkano-champagne sm:text-3xl">
-          Condições especiais até o fim do mês
+          Condições especiais só até hoje, 28/11, à meia-noite
         </h2>
 
         <div className="mt-6 grid grid-cols-4 gap-2 sm:gap-4">

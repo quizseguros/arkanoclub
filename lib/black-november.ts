@@ -16,8 +16,9 @@ export const BLACK_NOME = "Black November";
 /** Domingo, 08/11/2026, 00:00 no horário de Brasília. */
 export const BLACK_INICIO = new Date("2026-11-08T00:00:00-03:00");
 
-/** Segunda, 30/11/2026, 23:59:59 no horário de Brasília. */
-export const BLACK_FIM = new Date("2026-11-30T23:59:59-03:00");
+/** Encerrada antes: termina na virada de sábado 28/11 pra domingo 29/11/2026,
+ *  00:00 no horário de Brasília (pedido de 28/11; antes ia até 30/11). */
+export const BLACK_FIM = new Date("2026-11-29T00:00:00-03:00");
 
 /** Teto do parcelamento sem juros: relógio acima disso segue com o
  *  parcelamento normal cadastrado. */
